@@ -9,16 +9,16 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Business Casual - Start Bootstrap Theme</title>
+<title>Mixirixo</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="<?php echo base_url()?>assets/css/bootstrap.css"
+<link href="assets/css/bootstrap.css"
 	rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="<?php echo base_url()?>assets/css/business-casual.css"
+<link href="assets/css/business-casual.css"
 	rel="stylesheet">
-<link href="<?php echo base_url()?>assets/css/style.css"
+<link href="assets/css/style.css"
 	rel="stylesheet">
 
 <!-- Fonts -->
@@ -45,13 +45,13 @@
             <div class="topoH"></div>
 	<!-- Imgens do topo -->
         <div class="logo">
-            <a href="./" title="Logo Mixirico"><img src="<?php echo base_url()?>assets/img/logo.png" alt="Logo Mixirico" /></a>
+            <a href="./" title="Logo Mixirico"><img src="assets/img/logo.png" alt="Logo Mixirico" /></a>
         </div>
 		<!-- Imgens do topo -->
             
 		<div class="row">
 				
-				<div class="col-lg-9 text-center LogoAjuste">
+				<div class="col-md-9 col-xs-9 col-sm-9 col-lg-9 text-center LogoAjuste">
 						<!-- Menu -->
 					<nav class="navbar navbar-default navbar-static-top menu" role="navigation">
                                             
@@ -77,13 +77,13 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							<div class="item active">
-								<img class="img-responsive img-full" src="<?php echo base_url()?>assets/img/img1.jpg" alt="">
+								<img class="img-responsive img-full" src="assets/img/img1.jpg" alt="">
 							</div>
 							<div class="item">
-								<img class="img-responsive img-full" src="<?php echo base_url()?>assets/img/img2.jpg" alt="">
+								<img class="img-responsive img-full" src="assets/img/img2.jpg" alt="">
 							</div>
 							<div class="item">
-								<img class="img-responsive img-full" src="<?php echo base_url()?>assets/img/img3.jpg"
+								<img class="img-responsive img-full" src="assets/img/img3.jpg"
 									alt="">
 							</div>
 						</div>
@@ -100,24 +100,24 @@
 						<!-- Carrossel -->
 				</div>
 				<!-- Agenda -->
-				<div class="col-lg-3 text-center agenda">
+				<div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 text-center agenda">
                                     <div class="bemvindos"></div>
                                     <div class="cabeca"></div>
                                     <div class="mao"></div>
 					<div class="row">
-						<div class="col-lg-6 text-center">
+						<div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 text-center">
 							<h3>Agenda</h3>
 						</div>
-						<div class="col-lg-6 text-center">
+						<div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 text-center">
 							<h5><a href="#">Ver agenda completa</a></h5>
 						</div>
 					</div>
 					
 					<div class="row">
-						<div class="col-lg-4 text-center">
-							<img alt="" src="<?php echo base_url()?>assets/img/calendario.png">
+						<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 text-center">
+							<img alt="" src="assets/img/calendario.png">
 						</div>
-						<div class="col-lg-8 text-center">
+						<div class="col-md-8 col-xs-8 col-sm-8 col-lg-8 text-center">
 							<h5><a href="#">Show de Humor</a></h5>
 						</div>
 					</div>
@@ -129,34 +129,96 @@
                
 		<div class="row">
 		
-				<div class="col-lg-9">
-                                    <div class="col-lg-12 noticia">
-                                        <div class="col-lg-5">
-						<img class="foto" src="<?php echo base_url()?>assets/img/mi.jpg">
-						<img class="bandeira" src="<?php echo base_url()?>assets/img/bandeira.png">
+				<div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 noticia">
+                                      
+                                        <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
+						<img class="foto" src="assets/img/mi.jpg">
+						<img class="bandeira" src="assets/img/bandeira.png">
 					</div>
-					<div class="col-lg-7">
+					<div class="col-md-7 col-xs-7 col-sm-7 col-lg-7">
+                                            <p class="titulo">Mixirico ganha prêmio de show de humor</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
 						placerat diam quis nisl vestibulum dignissim. In hac habitasse
 						platea dictumst. Interdum et malesuada fames ac ante ipsum primis
 						in faucibus. Pellentesque habitant morbi tristique senectus et
 						netus et malesuada fames ac turpis egestas.</p>
+                                                        <a href="#">Clique para ler a notícia completa</a>
 					</div>
+                                        
                                     </div>
 				</div>
-				<div class="col-lg-3 videos">
+				<div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 videos">
 					
-						<div class="col-lg-12">
+						<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
 							<h3>Ultimos Vídeos</h3>
 						</div>
 						
 					
 				</div>
 		</div>
-                <div class="clearfix"></div>
+                 
+                <div class="row">
+		
+				<div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 noticia">
+                                        <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
+						<img class="foto" src="assets/img/mi.jpg">
+						<img class="bandeira" src="assets/img/bandeira.png">
+					</div>
+					<div class="col-md-7 col-xs-7 col-sm-7 col-lg-7">
+                                                <p class="titulo">Mixirico ganha prêmio de show de humor</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+						placerat diam quis nisl vestibulum dignissim. In hac habitasse
+						platea dictumst. Interdum et malesuada fames ac ante ipsum primis
+						in faucibus. Pellentesque habitant morbi tristique senectus et
+						netus et malesuada fames ac turpis egestas.</p>
+                                                <a href="#">Clique para ler a notícia completa</a>
+					</div>
+                                    </div>
+				</div>
+				<div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 videos">
+					
+						<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+							<h3>Ultimas Fotos</h3>
+						</div>
+				</div>
+		</div>
+               
+                <div class="row">
+		
+				<div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+                                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 noticia">
+                                        <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
+						<img class="foto" src="assets/img/mi.jpg">
+						<img class="bandeira" src="assets/img/bandeira.png">
+					</div>
+					<div class="col-md-7 col-xs-7 col-sm-7 col-lg-7">
+                                                <p class="titulo">Mixirico ganha prêmio de show de humor</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+						placerat diam quis nisl vestibulum dignissim. In hac habitasse
+						platea dictumst. Interdum et malesuada fames ac ante ipsum primis
+						in faucibus. Pellentesque habitant morbi tristique senectus et
+						netus et malesuada fames ac turpis egestas.</p>
+                                                <a href="#">Clique para ler a notícia completa</a>
+					</div>
+                                    </div>
+				</div>
+				<div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 videos">
+					
+						<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                                                    <div class="fb-like-box"
+                                                         data-href="https://www.facebook.com/pages/Taz-Burguer-Sandu%C3%ADches-e-Sucos/1520272128229610"
+                                                         data-colorscheme="light" data-show-faces="true" data-header="false"
+                                                         data-stream="false" data-show-border="false" data-width="220">
+
+                                                    </div>
+						</div>
+				</div>
+		</div>
 		                
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
                         <nav>
                             <ul class="pager">
                                 <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Postagens Antigas</a></li>
@@ -165,8 +227,30 @@
                         </nav>
                     </div>
                 </div>
+                
+               	
+		
+			<div class="row">
+				<div class="col-md-9 col-xs-9 col-sm-9 col-lg-9 noticia">
+                                    <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+                                        <h3>Contatos para Shows</h3>
+                                        <h4>(85) 0000-0000 / (85) 0000-0000</h4>
+                                        <h4>mixirixo@mixirico.com.br</h4>
+                                        
+                                        <a href="#"> <img class="redeSocial" src="assets/img/facebook.png" ></a>
+                                        <a href="#"> <img class="redeSocial" src="assets/img/instagram.png" ></a>
+                                        <a href="#"> <img class="redeSocial" src="assets/img/twitter.png" ></a>
+                                        <a href="#"> <img class="redeSocial" src="assets/img/YouTube.png" ></a>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                                        <img class="sentado" src="assets/img/sentado.png" >
+                                    </div>
+				</div>
+			</div>
+		
+                              
             </div>        
-	</div>
+	
   
 	<!-- /.container -->
         
@@ -181,10 +265,10 @@
 	</footer>-->
 
 	<!-- jQuery -->
-	<script src="<?php echo base_url()?>assets/js/jquery.js"></script>
-	<script src="<?php echo base_url()?>assets/js/app.js"></script>
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/app.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 
 	<!-- Script to Activate the Carousel -->
     <script>

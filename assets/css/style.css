@@ -1,21 +1,18 @@
 @CHARSET "utf-8";
 
-html {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background: url('../img/bg.jpg') no-repeat center center fixed;
+body{
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: url('../img/home.png') no-repeat, url('../img/bg-azul-baixo.png') repeat-x;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
 }
-body{
-    background: url('../img/bg-azul-cima.png') repeat-x left top,url('../img/bg-azul-baixo.png') repeat-x left bottom;
-    margin: 0px;
-    padding: 0px;
-}
+
 .topoH{
     min-height: 80px;
 }
+
 .logo {
 	width: 241px;
 	height: 144px;
@@ -53,7 +50,7 @@ body{
 
 .agenda {
 	background-color: white;
-	min-height: 400px;
+	
 	border-radius: 5px;
         position: relative;
 }
@@ -94,7 +91,7 @@ body{
 .noticia {
 	height: 250px;
 	background-color: white;
-       
+        margin-bottom: 5px;
 }
 .bandeira{
 	
@@ -131,4 +128,39 @@ body{
   max-width: 100%;
   height: auto;
   margin-bottom: 5px;
+}
+
+.sentado{
+    
+    width: 200px;
+    height: 250px;
+}
+
+.redeSocial{
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.pager li > a, .pager li > span {
+display: inline-block;
+padding: 5px 5px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 3px;
+}
+
+.pager {
+padding-left: 0;
+margin: 05px 0;
+text-align: center;
+list-style: none;
+}
+
+.titulo{
+     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-size: 20px;
+     color: #29065e;
+     font-weight: bold;
 }
