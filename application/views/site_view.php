@@ -112,18 +112,18 @@
                 <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
                     {conteudo}
                 </div>
-                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 videos">
-                    <div class="videos">
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                    <div class="boxLateral">
                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                             <h3>Ultimos Vídeos</h3>
                         </div>
                     </div>
-                    <div class="videos">
+                    <div class="boxLateral">
                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                             <h3>Ultimas Fotos</h3>
                         </div>
                     </div>
-                    <div class="videos">
+                    <div class="boxLateral">
                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                             <div class="fb-like-box"
                                  data-href="<?php echo get_setting('facebook') ?>"
