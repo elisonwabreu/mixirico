@@ -107,7 +107,6 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-
             <div class="row">
                 <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
                     {conteudo}
@@ -134,7 +133,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
                     <nav>
@@ -146,14 +144,12 @@
                 </div>
             </div>
             <!-- footer -->
-                <div class="row">
-                    {rodape}
-                </div>
+            <div class="row">
+                {rodape}
+            </div>
         </div>
         <!-- /.container -->
         <!-- jQuery -->
-
-
         <!-- Insercao dos arquivos js -->
         {footerinc}
         {footerinc2}
