@@ -126,7 +126,7 @@
                     <div class="videos">
                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                             <div class="fb-like-box"
-                                 data-href="https://www.facebook.com/pages/Taz-Burguer-Sandu%C3%ADches-e-Sucos/1520272128229610"
+                                 data-href="<?php echo get_setting('facebook') ?>"
                                  data-colorscheme="light" data-show-faces="true" data-header="false"
                                  data-stream="false" data-show-border="false" data-width="220">
                             </div>
