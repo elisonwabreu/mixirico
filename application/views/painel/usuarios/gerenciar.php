@@ -59,7 +59,7 @@
 						printf('<td>%s</td>', $linha->login);
 						printf('<td>%s</td>', $linha->email);
 						printf('<td>%s / %s</td>', ($linha->ativo==0) ? 'Não' : 'Sim', ($linha->adm==0) ? 'Não' : 'Sim');
-						printf('<td class="text-center">%s%s%s</td>', anchor("usuarios/editar/$linha->id", ' ', array('class'=>'table-actions table-edit', 'title'=>'Editar')), anchor("usuarios/alterar_senha/$linha->id", ' ', array('class'=>'table-actions table-pass', 'title'=>'Alterar Senha')), anchor("usuarios/excluir/$linha->id", ' ', array('class'=>'table-actions table-delete deletareg', 'title'=>'Excluir')));
+						printf('<td class="text-center">%s%s%s</td>', anchor("usuarios/editar/$linha->id", ' <i class="glyphicon glyphicon-edit"></i> ', array('class'=>'table-actions table-edit', 'title'=>'Editar')), anchor("usuarios/alterar_senha/$linha->id", ' <i class="glyphicon glyphicon-lock"></i> ', array('class'=>'table-actions table-pass', 'title'=>'Alterar Senha')), anchor("usuarios/excluir/$linha->id", ' <i class="glyphicon glyphicon-trash"></i> ', array('class'=>'table-actions table-delete deletareg', 'title'=>'Excluir')));
 						echo '</tr>';
 					endforeach;
 					?>

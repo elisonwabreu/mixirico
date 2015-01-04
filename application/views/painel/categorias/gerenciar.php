@@ -55,7 +55,7 @@
 						printf('<td>%s</td>', $linha->nome);
 						printf('<td>%s</td>', $linha->tags);
 						printf('<td>%s</td>', resumo_post($linha->descricao, 6));
-						printf('<td class="text-center">%s%s</td>', anchor("categorias/editar/$linha->id", ' ', array('class'=>'table-actions table-edit', 'title'=>'Editar')), anchor("categorias/excluir/$linha->id", ' ', array('class'=>'table-actions table-delete deletareg', 'title'=>'Excluir')));
+						printf('<td class="text-center">%s%s</td>', anchor("categorias/editar/$linha->id", ' <i class="glyphicon glyphicon-edit"></i> ', array('class'=>'table-actions', 'title'=>'Editar')), anchor("categorias/excluir/$linha->id", ' <i class="glyphicon glyphicon-trash"></i> ', array('class'=>'table-actions deletareg', 'title'=>'Excluir')));
 						echo '</tr>';
 					endforeach;
 					?>

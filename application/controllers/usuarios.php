@@ -118,9 +118,8 @@ class Usuarios extends CI_Controller {
     public function gerenciar() {
         esta_logado();
         set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-        set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
         set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-        set_tema('footerinc', load_js(array('settings'),'assets/admin/atlant/js'), FALSE);
+        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
         set_tema('titulo', 'Listagem de usuários');
         set_tema('conteudo', load_modulo('usuarios', 'gerenciar'));
         load_template();
@@ -135,6 +134,7 @@ class Usuarios extends CI_Controller {
             $dados['senha'] = md5($this->input->post('senha'));
             $this->usuarios->do_update($dados, array('id' => $this->input->post('idusuario')));
         endif;
+        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
         set_tema('titulo', 'Alteração de senha');
         set_tema('conteudo', load_modulo('usuarios', 'alterar_senha'));
         load_template();
@@ -150,6 +150,7 @@ class Usuarios extends CI_Controller {
                 $dados['adm'] = ($this->input->post('adm') == 1) ? 1 : 0;
             $this->usuarios->do_update($dados, array('id' => $this->input->post('idusuario')));
         endif;
+        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
         set_tema('titulo', 'Alteração de usuários');
         set_tema('conteudo', load_modulo('usuarios', 'editar'));
         load_template();

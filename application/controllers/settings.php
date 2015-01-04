@@ -34,6 +34,7 @@ class Settings extends CI_Controller {
             endif;
         endif;
         init_htmleditor();
+        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
         set_tema('titulo', 'Configuração do sistema');
         set_tema('conteudo', load_modulo('settings', 'gerenciar'));
         load_template();

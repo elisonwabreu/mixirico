@@ -30,8 +30,8 @@ class Categorias extends CI_Controller {
 
 	public function gerenciar(){
 		set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
                 set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
+                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
 		set_tema('titulo', 'Listagem de mídias');
 		set_tema('conteudo', load_modulo('categorias', 'gerenciar'));
 		load_template();
@@ -46,6 +46,7 @@ class Categorias extends CI_Controller {
                     $dados['slug'] = slug($dados['nome']);
                     $this->categorias->do_update($dados, array('id'=>$this->input->post('idcategorias')));	
 		endif;
+                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
 		set_tema('titulo', 'Alteração de mídia');
 		set_tema('conteudo', load_modulo('categorias', 'editar'));
 		load_template();

@@ -63,7 +63,7 @@ $query = $this->categorias->get_all()->result();
 						printf('<td>%s</td>', $linha->titulo);
 						printf('<td>%s</td>', $linha->slug);
 						printf('<td>%s</td>', resumo_post($linha->conteudo, 6));
-						printf('<td class="text-center">%s%s</td>', anchor("produtos/editar/$linha->id/$linha->cat_prod", ' ', array('class'=>'table-actions table-edit', 'title'=>'Editar')), anchor("produtos/excluir/$linha->id", ' ', array('class'=>'table-actions table-delete deletareg', 'title'=>'Excluir')));
+						printf('<td class="text-center">%s%s</td>', anchor("produtos/editar/$linha->id/$linha->cat_prod", ' <i class="glyphicon glyphicon-edit"></i> ', array('class'=>'table-actions table-edit', 'title'=>'Editar')), anchor("produtos/excluir/$linha->id", ' <i class="glyphicon glyphicon-trash"></i> ', array('class'=>'table-actions table-delete deletareg', 'title'=>'Excluir')));
 						echo '</tr>';
 					endforeach;
 					?>

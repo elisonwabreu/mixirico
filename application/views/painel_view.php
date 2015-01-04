@@ -45,46 +45,54 @@
                             </div>
                         </div>                                                                        
                     </li>
+                    <?php $segimento = $this->uri->segment(1).'/'.$this->uri->segment(2);?>
                     <li class="xn-title">Menu</li>
-                    <li>
+                    <li<?php echo ($this->uri->segment(2) == null ) ? ' class="active"' : '' ;?>>
                         <a href="<?php echo base_url('scwpanel'); ?>"><span class="fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>
-                    </li> 
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-picture-o"></span> <span class="xn-text">Midias</span></a>
+                    </li>  
+                    <li class="xn-openable<?php echo ($segimento == 'posts/categorias' || $segimento == 'posts/cadastrar' || $segimento == 'posts/gerenciar' ) ? ' active' : '' ;?>">
+                        <a href="#"><span class="fa fa-file-text"></span> <span class="xn-text">Posts</span></a>
                         <ul>
-                            <li><?php echo anchor('midia/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
-                            <li><?php echo anchor('midia/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                       
+                            <li<?php echo ($segimento == 'posts/categorias') ? ' class="active"' : '' ;?>><?php echo anchor('posts/categorias', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
+                            <li<?php echo ($segimento == 'posts/cadastrar') ? ' class="active"' : '' ;?>><?php echo anchor('posts/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
+                            <li<?php echo ($segimento == 'posts/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('posts/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>
-                    <!--
-                    <li class="xn-openable">
+                    <li class="xn-openable<?php echo ($segimento == 'paginas/categorias' || $segimento == 'paginas/cadastrar' || $segimento == 'paginas/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-file-text"></span> <span class="xn-text">Paginas</span></a>
                         <ul>
-                            <li><?php //echo anchor('paginas/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
-                            <li><?php //echo anchor('paginas/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
+                            <li<?php echo ($segimento == 'paginas/categorias' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/categorias', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
+                            <li<?php echo ($segimento == 'paginas/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
+                            <li<?php echo ($segimento == 'paginas/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
-                    </li>
-                    -->
-                    <li class="xn-openable">
+                    </li>     
+                    <li class="xn-openable<?php echo ($segimento == 'midia/cadastrar' || $segimento == 'midia/gerenciar' ) ? ' active' : '' ;?>">
+                        <a href="#"><span class="fa fa-picture-o"></span> <span class="xn-text">Midias</span></a>
+                        <ul>
+                            <li<?php echo ($segimento == 'midia/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
+                            <li<?php echo ($segimento == 'midia/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                       
+                        </ul>
+                    </li> 
+                    <li class="xn-openable<?php echo ($segimento == 'categorias/gerenciar' || $segimento == 'produtos/cadastrar' || $segimento == 'produtos/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-money"></span> <span class="xn-text">Produtos</span></a>
                         <ul>
-                            <li><?php echo anchor('categorias/gerenciar', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
-                            <li><?php echo anchor('produtos/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
-                            <li><?php echo anchor('produtos/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
+                            <li<?php echo ($segimento == 'categorias/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('categorias/gerenciar', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
+                            <li<?php echo ($segimento == 'produtos/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('produtos/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
+                            <li<?php echo ($segimento == 'produtos/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('produtos/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>
-                    <li class="xn-openable">
+                    <li class="xn-openable<?php echo ($segimento == 'usuarios/cadastrar' || $segimento == 'usuarios/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Usuários</span></a>
                         <ul>
-                            <li><?php echo anchor('usuarios/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
-                            <li><?php echo anchor('usuarios/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
+                            <li<?php echo ($segimento == 'usuarios/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('usuarios/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
+                            <li<?php echo ($segimento == 'usuarios/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('usuarios/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>
-                    <li class="xn-openable">
+                    <li class="xn-openable"<?php echo ($segimento == 'auditoria/gerenciar' || $segimento == 'settings/gerenciar' ) ? ' active' : '' ;?>>
                         <a href="#"><span class="fa fa-tablet"></span> <span class="xn-text"> Administração</span></a>
                         <ul>
-                            <li><?php echo anchor('auditoria/gerenciar', '<span class="fa fa-table"></span> Auditoria'); ?></li>
-                            <li><?php echo anchor('settings/gerenciar', '<span class="fa fa-cogs"></span> Configurações'); ?></li>
+                            <li<?php echo ($segimento == 'auditoria/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('auditoria/gerenciar', '<span class="fa fa-table"></span> Auditoria'); ?></li>
+                            <li<?php echo ($segimento == 'settings/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('settings/gerenciar', '<span class="fa fa-cogs"></span> Configurações'); ?></li>
                         </ul>
                     </li>
                 </ul>
@@ -141,9 +149,10 @@
         <audio id="audio-fail" src="<?php echo base_url(); ?>assets/admin/atlant/audio/fail.mp3" preload="auto"></audio>
         <!-- END PRELOADS -->                 
         
-    <!-- START SCRIPTS -->
+        <!-- START SCRIPTS -->
+        {settings}
         {loadJS}
         {footerinc}
-    <!-- END SCRIPTS -->         
+        <!-- END SCRIPTS -->         
     </body>
 </html>

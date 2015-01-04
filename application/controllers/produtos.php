@@ -40,9 +40,8 @@ class Produtos extends CI_Controller {
 
 	public function gerenciar(){
 		set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
                 set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-                set_tema('footerinc', load_js(array('settings'),'assets/admin/atlant/js'), FALSE);
+                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
 		set_tema('titulo', 'Páginas');
 		set_tema('conteudo', load_modulo('produtos', 'gerenciar'));
 		load_template();
@@ -60,6 +59,7 @@ class Produtos extends CI_Controller {
 				$this->produtos->do_update($dados, array('id'=>$this->input->post('idprodutos')));	
 		endif;
 		init_htmleditor();
+                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
 		set_tema('titulo', 'Alterar página');
 		set_tema('conteudo', load_modulo('produtos', 'editar'));
 		load_template();

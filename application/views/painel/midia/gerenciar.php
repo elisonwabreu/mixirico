@@ -64,7 +64,7 @@
                 printf('<td>%s</td>', ($linha->tipo == 'B' ? "Banner" : "Geral"));
                 printf('<td><input type="text" value="%s" /></td>', base_url("assets/uploads/$linha->arquivo"));
                 printf('<td>%s</td>', thumb($linha->arquivo, 100, 75, $linha->nome));
-                printf('<td class="text-center">%s%s%s</td>', anchor("assets/uploads/$linha->arquivo", ' ', array('class' => 'table-actions table-view', 'title' => 'Visualizar', 'target' => '_blank')), anchor("midia/editar/$linha->id", ' ', array('class' => 'table-actions table-edit', 'title' => 'Editar')), anchor("midia/excluir/$linha->id", ' ', array('class' => 'table-actions table-delete deletareg', 'title' => 'Excluir')));
+                printf('<td class="text-center">%s%s%s</td>', anchor("assets/uploads/$linha->arquivo", ' <i class="glyphicon glyphicon-search"></i> ', array('class' => 'table-actions', 'title' => 'Visualizar', 'target' => '_blank')), anchor("midia/editar/$linha->id", ' <i class="glyphicon glyphicon-edit"></i> ', array('class' => 'table-actions', 'title' => 'Editar')), anchor("midia/excluir/$linha->id", ' <i class="glyphicon glyphicon-trash"></i> ', array('class' => 'table-actions deletareg', 'title' => 'Excluir')));
                 echo '</tr>';
             endforeach;
             ?>
