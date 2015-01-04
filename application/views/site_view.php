@@ -89,7 +89,7 @@
                     <div class="mao"></div>
                     <div class="row">
                         <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 text-center">
-                            <h3>Agenda</h3>
+                            <h4><i class="fa fa-calendar-o"></i> Agenda</h4>
                         </div>
                         <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 text-center">
                             <h5><a href="#">Ver agenda completa</a></h5>
@@ -114,12 +114,12 @@
                 <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
                     <div class="boxLateral">
                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                            <h3>Ultimos Vídeos</h3>
+                            <h4><i class="fa fa-video-camera"></i> Ultimos Vídeos</h4>
                         </div>
                     </div>
                     <div class="boxLateral">
                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                            <h3>Ultimas Fotos</h3>
+                            <h4><i class="fa fa-picture-o"></i> Ultimas Fotos</h4>
                         </div>
                     </div>
                     <div class="boxLateral">
@@ -146,7 +146,24 @@
             <!-- footer -->
             <div class="row">
                 {rodape}
+                
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                        <div class="boxLateral">
+                            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-center">
+                            <a href="http://doctypesolution.com.br/" target="_blank" >
+                                <img src="<?php echo base_url('assets/theme_site/img/logo-dts.png'); ?>" class="footer-logo" width="116" height="81" alt="Doctype" title="Doctype" />
+                            </a>
+                            <span class="endereco espaco-interno">
+                                <address> <i class="fa fa-laptop"></i> - <a href="http://doctypesolution.com.br/" target="_blank" title="Doctype Solution">http://doctypesolution.com.br</a></address>
+                                <address> <i class="fa fa-phone"></i> - (85) 8796.1779 / (85) 8548.7735 </address>
+                                <address> <i class="fa fa-envelope"></i> - contato@doctypesolution.com.br</address>       
+                                <address>Powered by <a href="http://doctypesolution.com.br/" target="_blank" title="Doctype Solution">DocType Solution</a></address>    
+                            </span>    
+                            </div>
+                        </div>                       
+                    </div>
             </div>
+           
         </div>
         <!-- /.container -->
         <!-- jQuery -->

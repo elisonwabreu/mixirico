@@ -78,8 +78,8 @@ function init_site() {
             <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9 noticia">
                 <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
                     <h3>Contatos para Shows</h3>
-                    <h4>'.$fones.'</h4>
-                    <h4>'.get_setting('emailcom').'</h4>
+                    <h4><i class="fa fa-phone-square"></i> '.$fones.'</h4>
+                    <h4><i class="fa fa-at"></i> '.get_setting('emailcom').'</h4>
 
                     <a href="'.get_setting('facebook').'" target="_blank"> <img class="redeSocial" src="'. base_url() .'assets/theme_site/img/facebook.png" ></a>
                     <a href="'.get_setting('instagram').'" target="_blank"> <img class="redeSocial" src="'. base_url() .'assets/theme_site/img/instagram.png" ></a>
