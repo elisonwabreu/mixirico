@@ -110,12 +110,14 @@ $(function(){
                                             echo form_input(array('name'=>'skype', 'class'=>'form-control',  'placeholder'=>'seu.skype'), set_value('skype', get_setting('skype')));
                                             echo '</div>';
                                             echo '</div>';
+                                            
                                             echo '<div class="form-group">';
                                             echo form_label('Instagram','instagram',array('class' => 'col-md-3 col-xs-12 control-label'));
                                             echo '<div class="col-md-6 col-xs-12">';
                                             echo form_input(array('name'=>'instagram', 'class'=>'form-control',  'placeholder'=>'https://www.instagram.com/seu.instagram'), set_value('instagram', get_setting('instagram')));
                                             echo '</div>';
                                             echo '</div>';
+                                            
                                             echo '<div class="form-group">';
                                             echo form_label('YouTube','youtube',array('class' => 'col-md-3 col-xs-12 control-label'));
                                             echo '<div class="col-md-6 col-xs-12">';
@@ -199,7 +201,7 @@ $(function(){
                                             <?php
                                             echo '<div class="form-group">';
                                             echo '<div class="col-md-12 col-xs-12">';
-                                            echo form_textarea(array('name'=>'txt_home', 'class'=>'htmleditor form-control', 'rows'=>15), set_value('txt_home', get_setting('txt_home')));
+                                            echo form_textarea(array('name'=>'txt_home', 'class'=>'summernote form-control', 'rows'=>15), set_value('txt_home', get_setting('txt_home')));
                                             echo '</div>';
                                             echo '</div>';
                                             ?>
