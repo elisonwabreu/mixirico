@@ -53,15 +53,13 @@
                     <li class="xn-openable<?php echo ($segimento == 'posts/categorias' || $segimento == 'posts/cadastrar' || $segimento == 'posts/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-file-text"></span> <span class="xn-text">Posts</span></a>
                         <ul>
-                            <li<?php echo ($segimento == 'posts/categorias') ? ' class="active"' : '' ;?>><?php echo anchor('posts/categorias', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
                             <li<?php echo ($segimento == 'posts/cadastrar') ? ' class="active"' : '' ;?>><?php echo anchor('posts/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
                             <li<?php echo ($segimento == 'posts/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('posts/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>
-                    <li class="xn-openable<?php echo ($segimento == 'paginas/categorias' || $segimento == 'paginas/cadastrar' || $segimento == 'paginas/gerenciar' ) ? ' active' : '' ;?>">
+                    <li class="xn-openable<?php echo ($segimento == 'paginas/cadastrar' || $segimento == 'paginas/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-file-text"></span> <span class="xn-text">Paginas</span></a>
                         <ul>
-                            <li<?php echo ($segimento == 'paginas/categorias' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/categorias', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
                             <li<?php echo ($segimento == 'paginas/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
                             <li<?php echo ($segimento == 'paginas/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>

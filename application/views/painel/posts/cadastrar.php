@@ -22,7 +22,7 @@
 erros_validacao();
 get_msg('msgok');
 get_msg('msgerro');
-echo form_open('paginas/cadastrar', array('class'=>'form-horizontal'));
+echo form_open('posts/cadastrar', array('class'=>'form-horizontal'));
 echo '<div class="form-group">';
 echo form_label('Título','titulo',array('class' => 'col-md-3 col-xs-12 control-label'));
 echo '<div class="col-md-6 col-xs-12">';
@@ -51,7 +51,7 @@ echo '</div>';
 echo '<div class="form-group">';
 echo form_label('','',array('class' => 'col-md-3 col-xs-12 control-label'));
 echo '<div class="col-md-6 col-xs-12">';
-echo anchor('paginas/gerenciar', 'Cancelar', array('class'=>'btn btn-danger espaco'));
+echo anchor('posts/gerenciar', 'Cancelar', array('class'=>'btn btn-danger espaco'));
 echo form_submit(array('name'=>'cadastrar', 'class'=>'btn btn-info'), 'Publicar Página');
 echo '</div>';
 echo '</div>';

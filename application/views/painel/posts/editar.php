@@ -3,7 +3,7 @@
 		$idpagina = $this->uri->segment(3);
 		if ($idpagina==NULL):
 			set_msg('msgerro', 'Escolha uma página para alterar', 'erro');
-			redirect('paginas/gerenciar');
+			redirect('posts/gerenciar');
 		endif;
                 ?>
 <!-- START BREADCRUMB -->
@@ -26,7 +26,7 @@
                                 
                                 <div class="panel-body">
 <?php
-    $query = $this->paginas->get_byid($idpagina)->row();
+    $query = $this->posts->get_byid($idpagina)->row();
     erros_validacao();
     get_msg('msgok');
     get_msg('msgerro');
@@ -65,7 +65,7 @@ echo '</div>';
     echo '<div class="form-group">';
     echo form_label('','',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
-    echo anchor('paginas/gerenciar', 'Cancelar', array('class'=>'btn btn-danger espaco'));
+    echo anchor('posts/gerenciar', 'Cancelar', array('class'=>'btn btn-danger espaco'));
     echo form_submit(array('name'=>'editar', 'class'=>'btn btn-info'), 'Salvar dados');
     echo '</div>';
 echo '</div>';
