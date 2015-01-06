@@ -88,7 +88,7 @@
                             <li<?php echo ($segimento == 'usuarios/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('usuarios/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>
-                    <li class="xn-openable"<?php echo ($segimento == 'auditoria/gerenciar' || $segimento == 'settings/gerenciar' ) ? ' active' : '' ;?>>
+                    <li class="xn-openable<?php echo ($segimento == 'auditoria/gerenciar' || $segimento == 'settings/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-tablet"></span> <span class="xn-text"> Administração</span></a>
                         <ul>
                             <li<?php echo ($segimento == 'auditoria/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('auditoria/gerenciar', '<span class="fa fa-table"></span> Auditoria'); ?></li>
