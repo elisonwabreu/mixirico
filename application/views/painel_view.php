@@ -150,7 +150,6 @@
         <!-- END PRELOADS -->                 
         
         <!-- START SCRIPTS -->
-        {settings}
         {loadJS}
         {footerinc}
         <!-- END SCRIPTS -->         

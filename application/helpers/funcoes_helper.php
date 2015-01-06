@@ -57,9 +57,7 @@ function init_painel() {
     set_tema('headerinc', load_css(array('app')), FALSE);
     set_tema('headerinc', load_js(array('jquery.min','jquery-ui.min'),'assets/admin/atlant/js/plugins/jquery'), FALSE);
     set_tema('loadJS', load_js(array('bootstrap.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
-    set_tema('loadJS', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
-    set_tema('loadJS', load_js(array('scrolltopcontrol'),'assets/admin/atlant/js/plugins/scrolltotop'), FALSE);
-    set_tema('loadJS', load_js(array('plugins', 'actions','demo_dashboard'),'assets/admin/atlant/js'), FALSE);
+    set_tema('loadJS', load_js(array('plugins', 'actions'),'assets/admin/atlant/js'), FALSE);
     set_tema('footerinc', '');
 }
 
