@@ -67,7 +67,7 @@ $(function(){
                                     </ul>
                                     <div class="panel-body tab-content">
                                         <div class="tab-pane active" id="tab-first">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum dolor sem, quis pharetra dui ultricies vel. Cras non pulvinar tellus, vel bibendum magna. Morbi tellus nulla, cursus non nisi sed, porttitor dignissim erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc facilisis commodo lectus. Vivamus vel tincidunt enim, non vulputate ipsum. Ut pellentesque consectetur arcu sit amet scelerisque. Fusce commodo leo eros, ut eleifend massa congue at.</p>
+                                            
                                             <?php
                                             echo '<div class="form-group">';
                                             echo form_label('Nome do site','nome_site',array('class' => 'col-md-3 col-xs-12 control-label'));
@@ -90,7 +90,7 @@ $(function(){
                                             ?>
                                         </div>
                                         <div class="tab-pane" id="tab-second">
-                                            <p>Donec tristique eu sem et aliquam. Proin sodales elementum urna et euismod. Quisque nisl nisl, venenatis eget dignissim et, adipiscing eu tellus. Sed nulla massa, luctus id orci sed, elementum consequat est. Proin dictum odio quis diam gravida facilisis. Sed pharetra dolor a tempor tristique. Sed semper sed urna ac dignissim. Aenean fermentum leo at posuere mattis. Etiam vitae quam in magna viverra dictum. Curabitur feugiat ligula in dui luctus, sed aliquet neque posuere.</p>
+                                           
                                             <?php
                                             echo '<div class="form-group">';
                                             echo form_label('Twitter','twitter',array('class' => 'col-md-3 col-xs-12 control-label'));
@@ -127,7 +127,7 @@ $(function(){
                                             ?>
                                         </div>                                        
                                         <div class="tab-pane" id="tab-third">
-                                            <p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>
+                                           
                                             <?php
                                             echo '<div class="form-group">';
                                             echo form_label('Rua, Número','rua',array('class' => 'col-md-3 col-xs-12 control-label'));
@@ -174,7 +174,7 @@ $(function(){
                                             ?>
                                         </div>
                                         <div class="tab-pane" id="tab-four">
-                                            <p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>
+                                           
                                             <?php
                                             echo '<div class="form-group">';
                                             echo form_label("Descrição do site (Restam <b><span class=\"descricao_site\" title=\"150\">150</span></b> caracteres)",'descricao_site',array('class' => 'col-md-3 col-xs-12 control-label'));
@@ -197,7 +197,7 @@ $(function(){
                                             ?>
                                         </div>
                                         <div class="tab-pane" id="tab-five">
-                                            <p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>
+                                            
                                             <?php
                                             echo '<div class="form-group">';
                                             echo '<div class="col-md-12 col-xs-12">';

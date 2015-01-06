@@ -9,6 +9,7 @@
         <meta name="description" content="{description}" />
         <meta name="keywords" content="{keywords}" />
         <meta name="author" content="http://doctypesolution.com.br/" />
+        <meta name="designer" content="Lincoln00" />
         <meta name="viewport" content="width=device-width; initial-scale=1.0" />
         <title><?php if (isset($titulo)): ?>{titulo} | <?php endif; ?>{titulo_padrao}</title>
         <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
