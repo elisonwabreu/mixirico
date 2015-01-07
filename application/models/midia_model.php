@@ -15,6 +15,20 @@ class Midia_model extends CI_Model {
                 redirect(current_url());
         endif;
     }
+    
+    public function do_video_insert($dados = NULL, $redir = TRUE) {
+        if ($dados != NULL):
+            $this->db->insert('videos', $dados);
+            if ($this->db->affected_rows() > 0):
+                auditoria('Inclusão de video', 'Novo video cadastrado no sistema');
+                set_msg('msgok', 'Cadastro efetuado com sucesso', 'sucesso');
+            else:
+                set_msg('msgerro', 'Erro ao inserir dados', 'erro');
+            endif;
+            if ($redir)
+                redirect(current_url());
+        endif;
+    }
 
     public function do_update($dados = NULL, $condicao = NULL, $redir = TRUE) {
         if ($dados != NULL && is_array($condicao)):
@@ -29,12 +43,40 @@ class Midia_model extends CI_Model {
                 redirect(current_url());
         endif;
     }
+    
+    public function do_video_update($dados = NULL, $condicao = NULL, $redir = TRUE) {
+        if ($dados != NULL && is_array($condicao)):
+            $this->db->update('videos', $dados, $condicao);
+            if ($this->db->affected_rows() > 0):
+                auditoria('Alteração de video', 'O video com o id "' . $condicao['id'] . '" foi alterado');
+                set_msg('msgok', 'Alteração efetuada com sucesso', 'sucesso');
+            else:
+                set_msg('msgerro', 'Erro ao atualizar dados', 'erro');
+            endif;
+            if ($redir)
+                redirect(current_url());
+        endif;
+    }
 
     public function do_delete($condicao = NULL, $redir = TRUE) {
         if ($condicao != NULL && is_array($condicao)):
             $this->db->delete('midia', $condicao);
             if ($this->db->affected_rows() > 0):
                 auditoria('Exclusão de mídia', 'A mídia com o id "' . $condicao['id'] . '" foi excluída');
+                set_msg('msgok', 'Registro excluído com sucesso', 'sucesso');
+            else:
+                set_msg('msgerro', 'Erro ao excluir registro', 'erro');
+            endif;
+            if ($redir)
+                redirect(current_url());
+        endif;
+    }
+    
+    public function do_video_delete($condicao = NULL, $redir = TRUE) {
+        if ($condicao != NULL && is_array($condicao)):
+            $this->db->delete('videos', $condicao);
+            if ($this->db->affected_rows() > 0):
+                auditoria('Exclusão de video', 'O video com o id "' . $condicao['id'] . '" foi excluído');
                 set_msg('msgok', 'Registro excluído com sucesso', 'sucesso');
             else:
                 set_msg('msgerro', 'Erro ao excluir registro', 'erro');
@@ -77,6 +119,20 @@ class Midia_model extends CI_Model {
         $this->db->order_by('id', 'desc');
         $this->db->limit(15);
         return $this->db->get('midia');
+    }
+    
+    public function get_video_all() {
+        return $this->db->get('videos');
+    }
+    
+    public function get_video_byid($id = NULL) {
+        if ($id != NULL):
+            $this->db->where('id', $id);
+            $this->db->limit(1);
+            return $this->db->get('videos');
+        else:
+            return FALSE;
+        endif;
     }
 
 }

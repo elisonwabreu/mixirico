@@ -32,6 +32,34 @@ class Midia extends CI_Controller {
             set_tema('conteudo', load_modulo('midia', 'cadastrar'));
             load_template();
 	}
+        
+        public function cadastrar_video(){
+            $this->form_validation->set_rules('embed', 'URL DO VIDEO', 'trim|required|ucfirst');
+            if ($this->form_validation->run()==TRUE):
+                //$dados = elements(array('titulo', 'descricao', 'thumb', 'embed', 'server'), $this->input->post());
+                $dados = elements(array('embed'), $this->input->post());
+                if(substr_count($dados['embed'], 'youtube') == 1){
+			$dados['embed']     = substr($dados['embed'], 32, 11);
+			$dados['thumb']     = 'http://i1.ytimg.com/vi/'.$dados['embed'].'/default.jpg';
+			$conteudo           = get_meta_tags('https://www.youtube.com/watch?v='.$dados['embed']);
+			$dados['titulo']    = $conteudo['title'];
+			$dados['descricao'] = $conteudo['description'];
+			$dados['server']    = 'YouTube';
+		}elseif(substr_count($dados['embed'], 'vimeo') == 1){
+			$idVid              = substr($dados['embed'], 17);
+			$url_img            = parse_url($dados['embed']);
+			$conteudo           = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".substr($url_img['path'], 1).".php"));
+			$dados['thumb']     = $conteudo[0]['thumbnail_small'];
+			$dados['titulo']    = $conteudo[0]['title'];
+			$dados['descricao'] = $conteudo[0]['description'];
+			$dados['server']    = 'Vimeo';
+		}
+                $this->midia->do_video_insert($dados);
+            endif;
+            set_tema('titulo', 'Upload de imagens');
+            set_tema('conteudo', load_modulo('midia', 'cadastrar-video'));
+            load_template();
+	}
 
 	public function gerenciar(){
             set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
@@ -39,6 +67,14 @@ class Midia extends CI_Controller {
             set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
             set_tema('titulo', 'Listagem de mídias');
             set_tema('conteudo', load_modulo('midia', 'gerenciar'));
+            load_template();
+	}
+        public function gerenciar_video(){
+            set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
+            set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
+            set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+            set_tema('titulo', 'Listagem de mídias');
+            set_tema('conteudo', load_modulo('midia', 'gerenciar-videos'));
             load_template();
 	}
 
@@ -53,6 +89,19 @@ class Midia extends CI_Controller {
             set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
             set_tema('titulo', 'Alteração de mídia');
             set_tema('conteudo', load_modulo('midia', 'editar'));
+            load_template();
+	}
+        
+        public function editar_video(){
+            $this->form_validation->set_rules('titulo', 'NOME', 'trim|required|ucfirst');
+            $this->form_validation->set_rules('descricao', 'DESCRICAO', 'trim');
+            if ($this->form_validation->run()==TRUE):
+                $dados = elements(array('titulo', 'descricao'), $this->input->post());
+                $this->midia->do_video_update($dados, array('id'=>$this->input->post('idmidia')));
+            endif;
+            set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+            set_tema('titulo', 'Alteração de mídia');
+            set_tema('conteudo', load_modulo('midia', 'editar-video'));
             load_template();
 	}
 
@@ -75,6 +124,22 @@ class Midia extends CI_Controller {
                 endif;
             endif;
             redirect('midia/gerenciar');
+	}
+        
+        public function excluir_video(){
+            if (is_admin(TRUE)):
+                $idmidia = $this->uri->segment(3);
+                if ($idmidia != NULL):
+                    $query = $this->midia->get_video_byid($idmidia);
+                    if ($query->num_rows()==1):
+                        $query = $query->row();
+                        $this->midia->do_video_delete(array('id'=>$query->id), FALSE);
+                    endif;
+                else:
+                    set_msg('msgerro', 'Escolha uma mídia para excluir', 'erro');
+                endif;
+            endif;
+            redirect('midia/gerenciar_video');
 	}
 	
 	public function get_imgs(){

@@ -1,12 +1,12 @@
 <?php if ( ! defined("BASEPATH")) exit("No direct script access allowed");
 
-class Paginas extends CI_Controller {
+class Agenda extends CI_Controller {
 		
 	public function __construct(){
 		parent::__construct();
 		init_painel();
 		esta_logado();
-		$this->load->model('paginas_model', 'paginas');
+		$this->load->model('agenda_model', 'agenda');
 	}
 
 	public function index(){
@@ -20,11 +20,11 @@ class Paginas extends CI_Controller {
 		if ($this->form_validation->run()==TRUE):
 			$dados = elements(array('titulo', 'slug', 'conteudo'), $this->input->post());
                         ($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
-                        $this->paginas->do_insert($dados);			
+                        $this->agenda->do_insert($dados);			
 		endif;
 		init_htmleditor();
 		set_tema('titulo', 'Cadastrar nova página');
-		set_tema('conteudo', load_modulo('paginas', 'cadastrar'));
+		set_tema('conteudo', load_modulo('agenda', 'cadastrar'));
 		load_template();
 	}
 
@@ -34,7 +34,7 @@ class Paginas extends CI_Controller {
                 set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
                 set_tema('footerinc', load_js(array('settings'),'assets/admin/atlant/js'), FALSE);
 		set_tema('titulo', 'Páginas');
-		set_tema('conteudo', load_modulo('paginas', 'gerenciar'));
+		set_tema('conteudo', load_modulo('agenda', 'gerenciar'));
 		load_template();
 	}
 	
@@ -45,11 +45,11 @@ class Paginas extends CI_Controller {
 		if ($this->form_validation->run()==TRUE):
 			$dados = elements(array('titulo', 'slug', 'conteudo'), $this->input->post());
 				($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
-				$this->paginas->do_update($dados, array('id'=>$this->input->post('idpagina')));	
+				$this->agenda->do_update($dados, array('id'=>$this->input->post('idpagina')));	
 		endif;
 		init_htmleditor();
 		set_tema('titulo', 'Alterar página');
-		set_tema('conteudo', load_modulo('paginas', 'editar'));
+		set_tema('conteudo', load_modulo('agenda', 'editar'));
 		load_template();
 	}
 	
@@ -57,19 +57,19 @@ class Paginas extends CI_Controller {
 		if (is_admin(TRUE)):
 			$idpagina = $this->uri->segment(3);
 			if ($idpagina != NULL):
-				$query = $this->paginas->get_byid($idpagina);
+				$query = $this->agenda->get_byid($idpagina);
 				if ($query->num_rows()==1):
 					$query = $query->row();
-					$this->paginas->do_delete(array('id'=>$query->id), FALSE);
+					$this->agenda->do_delete(array('id'=>$query->id), FALSE);
 				endif;
 			else:
 				set_msg('msgerro', 'Escolha uma página para excluir', 'erro');
 			endif;
 		endif;
-		redirect('paginas/gerenciar');
+		redirect('agenda/gerenciar');
 	}
 	
 }
 
-/* End of file paginas.php */
-/* Location: ./application/controllers/paginas.php */
+/* End of file agenda.php */
+/* Location: ./application/controllers/agenda.php */
