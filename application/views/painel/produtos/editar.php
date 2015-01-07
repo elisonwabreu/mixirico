@@ -43,16 +43,24 @@ $query = $this->categorias->get_all()->result();
     echo form_dropdown('cat_prod', $opcoes, $idcat,'class="form-control"');
     echo '</div>';
     echo '</div>';
+    
     echo '<div class="form-group">';
     echo form_label('Título','titulo',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
     echo form_input(array('name'=>'titulo', 'class'=>'form-control'), set_value('titulo',$query->titulo), 'autofocus');
     echo '</div>';
     echo '</div>';
+    
     echo '<div class="form-group">';
-    echo '<div class="col-md-6 col-xs-12 pull-right">';
+    echo form_label('','',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
     echo thumb($query->arquivo, 300, 180, $query->titulo); 
-    echo '<br/><br/>';
+    echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('','',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
     echo '<p>'.anchor('#', 'Inserir imagens', array('class'=>'btn btn-info addimg','data-toggle'=>'modal','data-target'=>'#modal_basic'));
     echo anchor('midia/cadastrar', 'Upload de imagens', 'target="_blank" class="btn btn-warning"').'</p>';
     echo '</div>';

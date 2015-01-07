@@ -33,18 +33,67 @@
     echo form_open(current_url(), array('class'=>'form-horizontal'));
     
     echo '<div class="form-group">';
-    echo form_label('Título','cat_prod',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo form_label('Título','titulo',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
     echo form_input(array('name'=>'titulo', 'class'=>'form-control'), set_value('titulo', $query->titulo), 'autofocus');
     echo '</div>';
-echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('Data','data',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
+    echo form_input(array('name'=>'data', 'class'=>'form-control'), set_value('data', $query->data));
+    echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('Hora','hora',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
+    echo form_input(array('name'=>'hora', 'class'=>'form-control'), set_value('hora', $query->hora));
+    echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('Logradouro','logradouro',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
+    echo form_input(array('name'=>'logradouro', 'class'=>'form-control','placeholder' => 'Rua, Travessa, Avenida. Ex. Rua maracanlha'), set_value('logradouro', $query->logradouro));
+    echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('Numero','numero',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
+    echo form_input(array('name'=>'numero', 'class'=>'form-control'), set_value('numero', $query->numero));
+    echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('Bairro','bairro',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
+    echo form_input(array('name'=>'bairro', 'class'=>'form-control','placeholder' => 'Rua, Travessa, Avenida. Ex. Rua maracanlha'), set_value('bairro', $query->bairro));
+    echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('Cidade','cidade',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
+    echo form_input(array('name'=>'cidade', 'class'=>'form-control'), set_value('cidade', $query->cidade));
+    echo '</div>';
+    echo '</div>';
+    
+    echo '<div class="form-group">';
+    echo form_label('Estado','estado',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo '<div class="col-md-6 col-xs-12">';
+    echo form_input(array('name'=>'estado', 'class'=>'form-control'), set_value('estado', $query->estado));
+    echo '</div>';
+    echo '</div>';
 
     echo '<div class="form-group">';
-    echo form_label('Slug','',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo form_label('','',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
-    echo form_input(array('name'=>'slug', 'class'=>'form-control','placeholder' => 'deixe em branco se não souber do que se trata'), set_value('slug', $query->slug));
+    echo thumb($query->banner, 300, 180, $query->titulo); 
     echo '</div>';
-echo '</div>';
+    echo '</div>';
 
     echo '<div class="form-group">';
     echo form_label('','',array('class' => 'col-md-3 col-xs-12 control-label'));
@@ -52,15 +101,15 @@ echo '</div>';
     echo '<p>'. anchor('#', 'Inserir imagens', array('class'=>'btn btn-info addimg','data-toggle'=>'modal','data-target'=>'#modal_basic'));
     echo anchor('midia/cadastrar', 'Upload de imagens', 'target="_blank" class="btn btn-warning radius"').'</p>';
     echo '</div>';
-echo '</div>';
+    echo '</div>';
 
     echo '<div class="form-group">';
-    echo form_label('Conteúdo','conteudo',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo form_label('Descricao','descricao',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
-    echo form_textarea(array('name'=>'conteudo', 'class'=>'htmleditor form-control', 'rows'=>20), set_value('conteudo', to_html($query->conteudo)));
+    echo form_textarea(array('name'=>'descricao', 'class'=>'htmleditor form-control', 'rows'=>20), set_value('descricao', to_html($query->conteudo)));
     echo form_hidden('idpagina', $query->id);
     echo '</div>';
-echo '</div>';
+    echo '</div>';
 
     echo '<div class="form-group">';
     echo form_label('','',array('class' => 'col-md-3 col-xs-12 control-label'));
@@ -68,7 +117,7 @@ echo '</div>';
     echo anchor('agenda/gerenciar', 'Cancelar', array('class'=>'btn btn-danger espaco'));
     echo form_submit(array('name'=>'editar', 'class'=>'btn btn-info'), 'Salvar dados');
     echo '</div>';
-echo '</div>';
+    echo '</div>';
     
     echo form_close();
     ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Jan-2015 às 17:12
+-- Generation Time: 06-Jan-2015 às 22:34
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -23,6 +23,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `agenda`
+--
+
+CREATE TABLE IF NOT EXISTS `agenda` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(70) NOT NULL,
+  `descricao` text NOT NULL,
+  `data` varchar(10) NOT NULL,
+  `hora` varchar(5) NOT NULL,
+  `banner` int(11) DEFAULT NULL,
+  `logradouro` varchar(60) NOT NULL,
+  `bairro` varchar(60) NOT NULL,
+  `numero` varchar(60) NOT NULL,
+  `cidade` varchar(60) NOT NULL,
+  `estado` varchar(60) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `auditoria`
 --
 
@@ -34,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `query` text NOT NULL,
   `observacao` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=182 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=205 ;
 
 --
 -- Extraindo dados da tabela `auditoria`
@@ -221,7 +243,31 @@ INSERT INTO `auditoria` (`id`, `usuario`, `data_hora`, `operacao`, `query`, `obs
 (178, 'oshima', '2015-01-03 17:19:54', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''email_adm'', `valor_config` = ''antevertonlima@gmail.com.br'' WHERE `nome_config` =  ''email_adm''', 'A configuração para o campo "email_adm" foi alterada'),
 (179, 'oshima', '2015-01-03 17:29:59', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''email_adm'', `valor_config` = ''elisonwabreu@gmail.com.br'' WHERE `nome_config` =  ''email_adm''', 'A configuração para o campo "email_adm" foi alterada'),
 (180, 'oshima', '2015-01-03 17:30:00', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''emailcom'', `valor_config` = ''elisonwabreu@gmail.com'' WHERE `nome_config` =  ''emailcom''', 'A configuração para o campo "emailcom" foi alterada'),
-(181, 'oshima', '2015-01-03 18:52:12', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema');
+(181, 'oshima', '2015-01-03 18:52:12', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(182, 'oshima', '2015-01-03 20:20:05', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''facebook'', `valor_config` = ''https://www.facebook.com/doctypesolution'' WHERE `nome_config` =  ''facebook''', 'A configuração para o campo "facebook" foi alterada'),
+(183, 'oshima', '2015-01-03 20:20:05', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''instagram'', '''')', 'Nova configuração cadastrada no sistema'),
+(184, 'oshima', '2015-01-03 20:20:05', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''youtube'', '''')', 'Nova configuração cadastrada no sistema'),
+(185, 'oshima', '2015-01-04 02:18:44', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(186, 'oshima', '2015-01-04 03:25:14', 'Exclusão de página', 'DELETE FROM `produtos`\nWHERE `id` =  ''2''', 'A página com o id "2" foi excluída'),
+(187, 'oshima', '2015-01-04 03:25:16', 'Exclusão de página', 'DELETE FROM `produtos`\nWHERE `id` =  ''3''', 'A página com o id "3" foi excluída'),
+(188, 'oshima', '2015-01-04 03:25:19', 'Exclusão de página', 'DELETE FROM `produtos`\nWHERE `id` =  ''1''', 'A página com o id "1" foi excluída'),
+(189, 'oshima', '2015-01-04 03:25:21', 'Exclusão de página', 'DELETE FROM `produtos`\nWHERE `id` =  ''4''', 'A página com o id "4" foi excluída'),
+(190, 'oshima', '2015-01-04 21:18:39', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(191, 'oshima', '2015-01-05 23:56:25', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(192, 'oshima', '2015-01-06 01:48:26', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(193, 'oshima', '2015-01-06 15:10:39', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(194, 'oshima', '2015-01-06 18:28:27', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(195, 'oshima', '2015-01-06 18:52:48', 'Inclusão de página', 'INSERT INTO `paginas` (`titulo`, `slug`, `conteudo`) VALUES (''Maluco doido'', ''maluco-doido'', ''&lt;p&gt;&lt;img src=&quot;http://localhost/mixirico/assets/uploads/logo-estampas-e-bordados.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;'')', 'Nova página cadastrada no sistema'),
+(196, 'oshima', '2015-01-06 19:54:25', 'Alteração de página', 'UPDATE `paginas` SET `titulo` = ''Release'', `slug` = ''release'', `conteudo` = ''&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;img style=&quot;text-align: center;&quot; title=&quot;logo mixirico&quot; src=&quot;http://localhost/mixirico/uploads/images/logo_mixirico.png&quot; alt=&quot;Logomarca Mixirico - Feio, mas elegante!&quot; width=&quot;229&quot; height=&quot;88&quot; /&gt;&lt;/p&gt;\\r\\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\\r\\n&lt;p&gt;&lt;strong&gt;MIXIRICO&lt;/strong&gt;&lt;br /&gt; Nascido no interior do interior do interior do Cear&amp;aacute;, sempre foi o &lt;strong&gt;MAIS&lt;/strong&gt; de sua casa o &lt;strong&gt;MAIS&lt;/strong&gt; feio, &lt;strong&gt;MAIS&lt;/strong&gt; magro, &lt;strong&gt;MAIS &lt;/strong&gt;gaiato e o &lt;strong&gt;MAIS &lt;/strong&gt;azarado, Incorporando o tipo &lt;strong&gt;&quot;BREGA RURAL&quot;&lt;/strong&gt; (Matuto) encanta as pessoas e desencanta o mist&amp;eacute;rio de ser &lt;strong&gt;FEIO&lt;/strong&gt; e &lt;strong&gt;EXCLU&amp;Iacute;DO &lt;/strong&gt;com muita gra&amp;ccedil;a e talento, Ele &amp;eacute; t&amp;atilde;o feio que foi a &amp;uacute;nica crian&amp;ccedil;a a passar 18 meses pra nascer,pois da vez que ele botou a cabe&amp;ccedil;a pra fora o parteiro olhou e disse&lt;strong&gt;:&quot;VOC&amp;Ecirc; N&amp;Atilde;O T&amp;Aacute; PRONTO N&amp;Atilde;O,VOLTE&quot;&lt;/strong&gt;...mas apesar de sua fei&amp;uacute;ra ele conseguiu casar pois afinal de contas &lt;strong&gt;MILAGRES &lt;/strong&gt;acontecem, o desfecho dessa hist&amp;oacute;ria s&amp;oacute; contratando-o pra saber.&lt;br /&gt; Arranca seus &lt;strong&gt;&quot;CAUSOS&quot; &lt;/strong&gt;do dia a dia e &amp;eacute; tido como um dos melhores contador de &lt;strong&gt;PIADAS&lt;/strong&gt; a n&amp;iacute;vel local, com a vis&amp;atilde;o cr&amp;iacute;tica elabora seus textos temas com cad&amp;ecirc;ncia.&lt;br /&gt; Participou de um dos maiores festivais de humor do Cear&amp;aacute; em 1992 e foi o &amp;uacute;nico representante do Cear&amp;aacute; que ele mesmo denomina como um &lt;strong&gt;&quot;ESTADO DE GRA&amp;Ccedil;A&quot;&lt;/strong&gt; pelo povo hospitaleiro e acolhedor.&lt;br /&gt; Foi convidado a participar da&lt;strong&gt;&quot;SEMANA DO CEAR&amp;Aacute;&quot;&lt;/strong&gt;promovida pela &lt;strong&gt;SETUR-SECRETARIA DE TURISMO&lt;/strong&gt; do CEAR&amp;Aacute; e &lt;strong&gt;TAM LINHAS A&amp;Eacute;REAS&lt;/strong&gt;, um fato in&amp;eacute;dito na hist&amp;oacute;ria do humor brasileiro e da Avia&amp;ccedil;&amp;atilde;o pois a semana do Cear&amp;aacute; constava em fazer apresenta&amp;ccedil;&amp;otilde;es de humor a bordo das aeronaves,eram apenas 10 minutos ap&amp;oacute;s o servi&amp;ccedil;o de bordo.Foi uma experi&amp;ecirc;ncia grandiosa, que deu ao comediante um &lt;strong&gt;STATUS &lt;/strong&gt;maior perante os demais humoristas. &lt;br /&gt; Atualmente MIXIRICO &amp;eacute; um dos nomes mais cotados pelas casas e restaurantes locais que tem o humor como refer&amp;ecirc;ncia, e se apresenta todo final de semana por diversos bairros mostrando o seu talento de &lt;strong&gt;&quot;FAZER RIR&quot;&lt;/strong&gt;.&lt;br /&gt; Sempre preocupado em atender a todos os tipos gostos e plat&amp;eacute;ias procura agradar dos &lt;strong&gt;08 aos 800 anos de idade&lt;/strong&gt;,assim ele est&amp;aacute; dentre os melhores do humor cearense.&lt;/p&gt;\\r\\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\\r\\n&lt;p&gt;&amp;Uacute;nico humorista patrocinado pelo F.M.I &lt;strong&gt;Fundo de Molecagem Intensa&lt;/strong&gt;.&lt;/p&gt;\\r\\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\\r\\n&lt;p style=&quot;text-align: left;&quot;&gt;Agora em dezembro de 2011 foi ganhador do quadro &lt;strong&gt;&quot;QUEM CHEGA&lt;/strong&gt; &lt;strong&gt;L&amp;Aacute;&quot;&lt;/strong&gt; do doming&amp;atilde;o do Faust&amp;atilde;o na &lt;strong&gt;REDE GLOBO&lt;/strong&gt; justamente com a pe&amp;ccedil;a &lt;strong&gt;BAR ZIL A COM&amp;Eacute;DIA&lt;/strong&gt; escrita por ele e compartilhada com mais tr&amp;ecirc;s companheiros de profiss&amp;atilde;o ao qual deu o nome de &lt;strong&gt;&quot;QUARTETO&lt;/strong&gt; &lt;strong&gt;EM RIR&quot; .&lt;/strong&gt;&lt;/p&gt;\\r\\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\\r\\n&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Contatos para shows em todo o Brasil(85)9956.5011.&lt;/span&gt;&lt;/p&gt;\\r\\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\\r\\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img title=&quot;Mixirico Sentado&quot; src=&quot;http://localhost/mixirico/uploads/images/fjs_5700.jpg&quot; alt=&quot;Mixirico Sentado na mala&quot; width=&quot;199&quot; height=&quot;298&quot; /&gt;&lt;/p&gt;'' WHERE `id` =  ''1''', 'A página com o id "1" foi alterada');
+INSERT INTO `auditoria` (`id`, `usuario`, `data_hora`, `operacao`, `query`, `observacao`) VALUES
+(197, 'oshima', '2015-01-06 22:20:52', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(198, 'oshima', '2015-01-06 23:07:17', 'Alteração de video', 'UPDATE `videos` SET `titulo` = ''Humor de grac?a - Mixirico'', `descricao` = ''fgdfgdfgdfg'' WHERE `id` =  ''3''', 'O video com o id "3" foi alterado'),
+(199, 'oshima', '2015-01-06 23:07:35', 'Alteração de video', 'UPDATE `videos` SET `titulo` = ''Video SBT'', `descricao` = ''Video gravado em um restaurante local.'' WHERE `id` =  ''4''', 'O video com o id "4" foi alterado'),
+(200, 'oshima', '2015-01-06 23:08:47', 'Alteração de video', 'UPDATE `videos` SET `titulo` = ''Humor de graça - Mixirico'', `descricao` = ''fgdfgdfgdfg'' WHERE `id` =  ''3''', 'O video com o id "3" foi alterado'),
+(201, 'oshima', '2015-01-07 00:10:48', 'Inclusão de video', 'INSERT INTO `videos` (`embed`, `thumb`, `titulo`, `descricao`, `server`) VALUES (''tl95fmvREqk'', ''http://i1.ytimg.com/vi/tl95fmvREqk/default.jpg'', ''Programa Leruaite 22/10/2014 - Humorista Mixirico'', ''Programa Leruaite 22/10/2014 - Humorista Mixirico'', ''YouTube'')', 'Novo video cadastrado no sistema'),
+(202, 'oshima', '2015-01-07 00:11:59', 'Inclusão de video', 'INSERT INTO `videos` (`embed`, `thumb`, `titulo`, `descricao`, `server`) VALUES (''Http://vimeo.com/21361914'', ''http://i.vimeocdn.com/video/137356918_100x75.jpg'', ''Sistema helpdesk Final - Corrigindo listas e datas, enviando e-mails do sistema'', ''Saudações meus queridos, aqui estou eu entrando com a última aula de nosso sistema de suporte em helpdesk com PHP!<br />\\n<br />\\nE nessa veremos uma pequena correção na ordenação das listas e nas datas. Espero que tenham gostado de mais essa seqüência e que tenha ajudado vocês com suas tarefas.<br />\\n<br />\\nDeixo aquele forte abraço e até a próxima!<br />\\n<br />\\nOS ARQUIVOS DESENVOLVIODOS E SCRIPTS, ASSIM COMO AS AULAS ESTÃO EM: http://www.upinside.com.br/categoria/especiais/sistema-helpedesk-com-php'', ''Vimeo'')', 'Novo video cadastrado no sistema'),
+(203, 'oshima', '2015-01-07 00:27:32', 'Alteração de video', 'UPDATE `videos` SET `titulo` = ''Sistema helpdesk Final - Corrigindo listas e datas, enviando e-mails do sistema'', `descricao` = ''Saudações meus queridos, aqui estou eu entrando com a última aula de nosso sistema de suporte em helpdesk com PHP!<br />\\r\\n<br />\\r\\nE nessa veremos uma pequena correção na ordenação das listas e nas datas. Espero que tenham gostado de mais essa seqüência e que tenha ajudado vocês com suas tarefas.<br />\\r\\n<br />\\r\\nDeixo aquele forte abraço e até a próxima!<br />\\r\\n<br />\\r\\nOS ARQUIVOS DESENVOLVIODOS E SCRIPTS, ASSIM COMO AS AULAS ESTÃO EM: http://www.upinside.com.br/categoria/especiais/sistema-helpedesk-com-php'' WHERE `id` =  ''7''', 'O video com o id "7" foi alterado'),
+(204, 'oshima', '2015-01-07 00:34:50', 'Exclusão de video', 'DELETE FROM `videos`\nWHERE `id` =  ''7''', 'O video com o id "7" foi excluído');
 
 -- --------------------------------------------------------
 
@@ -275,6 +321,43 @@ INSERT INTO `midia` (`id`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `paginas`
+--
+
+CREATE TABLE IF NOT EXISTS `paginas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `tags` varchar(255) NOT NULL,
+  `conteudo` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `paginas`
+--
+
+INSERT INTO `paginas` (`id`, `titulo`, `slug`, `tags`, `conteudo`) VALUES
+(1, 'Release', 'release', '', '&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;img style=&quot;text-align: center;&quot; title=&quot;logo mixirico&quot; src=&quot;http://localhost/mixirico/uploads/images/logo_mixirico.png&quot; alt=&quot;Logomarca Mixirico - Feio, mas elegante!&quot; width=&quot;229&quot; height=&quot;88&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;MIXIRICO&lt;/strong&gt;&lt;br /&gt; Nascido no interior do interior do interior do Cear&amp;aacute;, sempre foi o &lt;strong&gt;MAIS&lt;/strong&gt; de sua casa o &lt;strong&gt;MAIS&lt;/strong&gt; feio, &lt;strong&gt;MAIS&lt;/strong&gt; magro, &lt;strong&gt;MAIS &lt;/strong&gt;gaiato e o &lt;strong&gt;MAIS &lt;/strong&gt;azarado, Incorporando o tipo &lt;strong&gt;&quot;BREGA RURAL&quot;&lt;/strong&gt; (Matuto) encanta as pessoas e desencanta o mist&amp;eacute;rio de ser &lt;strong&gt;FEIO&lt;/strong&gt; e &lt;strong&gt;EXCLU&amp;Iacute;DO &lt;/strong&gt;com muita gra&amp;ccedil;a e talento, Ele &amp;eacute; t&amp;atilde;o feio que foi a &amp;uacute;nica crian&amp;ccedil;a a passar 18 meses pra nascer,pois da vez que ele botou a cabe&amp;ccedil;a pra fora o parteiro olhou e disse&lt;strong&gt;:&quot;VOC&amp;Ecirc; N&amp;Atilde;O T&amp;Aacute; PRONTO N&amp;Atilde;O,VOLTE&quot;&lt;/strong&gt;...mas apesar de sua fei&amp;uacute;ra ele conseguiu casar pois afinal de contas &lt;strong&gt;MILAGRES &lt;/strong&gt;acontecem, o desfecho dessa hist&amp;oacute;ria s&amp;oacute; contratando-o pra saber.&lt;br /&gt; Arranca seus &lt;strong&gt;&quot;CAUSOS&quot; &lt;/strong&gt;do dia a dia e &amp;eacute; tido como um dos melhores contador de &lt;strong&gt;PIADAS&lt;/strong&gt; a n&amp;iacute;vel local, com a vis&amp;atilde;o cr&amp;iacute;tica elabora seus textos temas com cad&amp;ecirc;ncia.&lt;br /&gt; Participou de um dos maiores festivais de humor do Cear&amp;aacute; em 1992 e foi o &amp;uacute;nico representante do Cear&amp;aacute; que ele mesmo denomina como um &lt;strong&gt;&quot;ESTADO DE GRA&amp;Ccedil;A&quot;&lt;/strong&gt; pelo povo hospitaleiro e acolhedor.&lt;br /&gt; Foi convidado a participar da&lt;strong&gt;&quot;SEMANA DO CEAR&amp;Aacute;&quot;&lt;/strong&gt;promovida pela &lt;strong&gt;SETUR-SECRETARIA DE TURISMO&lt;/strong&gt; do CEAR&amp;Aacute; e &lt;strong&gt;TAM LINHAS A&amp;Eacute;REAS&lt;/strong&gt;, um fato in&amp;eacute;dito na hist&amp;oacute;ria do humor brasileiro e da Avia&amp;ccedil;&amp;atilde;o pois a semana do Cear&amp;aacute; constava em fazer apresenta&amp;ccedil;&amp;otilde;es de humor a bordo das aeronaves,eram apenas 10 minutos ap&amp;oacute;s o servi&amp;ccedil;o de bordo.Foi uma experi&amp;ecirc;ncia grandiosa, que deu ao comediante um &lt;strong&gt;STATUS &lt;/strong&gt;maior perante os demais humoristas. &lt;br /&gt; Atualmente MIXIRICO &amp;eacute; um dos nomes mais cotados pelas casas e restaurantes locais que tem o humor como refer&amp;ecirc;ncia, e se apresenta todo final de semana por diversos bairros mostrando o seu talento de &lt;strong&gt;&quot;FAZER RIR&quot;&lt;/strong&gt;.&lt;br /&gt; Sempre preocupado em atender a todos os tipos gostos e plat&amp;eacute;ias procura agradar dos &lt;strong&gt;08 aos 800 anos de idade&lt;/strong&gt;,assim ele est&amp;aacute; dentre os melhores do humor cearense.&lt;/p&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;p&gt;&amp;Uacute;nico humorista patrocinado pelo F.M.I &lt;strong&gt;Fundo de Molecagem Intensa&lt;/strong&gt;.&lt;/p&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;p style=&quot;text-align: left;&quot;&gt;Agora em dezembro de 2011 foi ganhador do quadro &lt;strong&gt;&quot;QUEM CHEGA&lt;/strong&gt; &lt;strong&gt;L&amp;Aacute;&quot;&lt;/strong&gt; do doming&amp;atilde;o do Faust&amp;atilde;o na &lt;strong&gt;REDE GLOBO&lt;/strong&gt; justamente com a pe&amp;ccedil;a &lt;strong&gt;BAR ZIL A COM&amp;Eacute;DIA&lt;/strong&gt; escrita por ele e compartilhada com mais tr&amp;ecirc;s companheiros de profiss&amp;atilde;o ao qual deu o nome de &lt;strong&gt;&quot;QUARTETO&lt;/strong&gt; &lt;strong&gt;EM RIR&quot; .&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Contatos para shows em todo o Brasil(85)9956.5011.&lt;/span&gt;&lt;/p&gt;\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img title=&quot;Mixirico Sentado&quot; src=&quot;http://localhost/mixirico/uploads/images/fjs_5700.jpg&quot; alt=&quot;Mixirico Sentado na mala&quot; width=&quot;199&quot; height=&quot;298&quot; /&gt;&lt;/p&gt;');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `posts`
+--
+
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) NOT NULL,
+  `slug` varchar(150) NOT NULL,
+  `tags` varchar(255) NOT NULL,
+  `conteudo` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `produtos`
 --
 
@@ -288,17 +371,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `tags` varchar(100) NOT NULL,
   `conteudo` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Extraindo dados da tabela `produtos`
---
-
-INSERT INTO `produtos` (`id`, `titulo`, `cat_prod`, `preco`, `arquivo`, `slug`, `tags`, `conteudo`) VALUES
-(1, 'Gfdfgh', 5, 0, 'glyphicons-halflings.png', 'gfdfgh', 'gfdfgh', '&lt;p&gt;fdfghnfghfghjghj&lt;/p&gt;'),
-(2, 'Dophg', 5, 0, 'bg-body.jpg', 'dophg', 'dophg', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in felis hendrerit, fringilla ex id, tempus lectus. Quisque pellentesque erat dictum justo molestie, in maximus turpis gravida. Cras leo felis, euismod tempor turpis a, cursus bibendum purus. In hac habitasse platea dictumst. In mollis massa ut viverra eleifend. Donec tempus non enim eu luctus. Aenean imperdiet in nibh et laoreet. Sed in lorem eu nunc elementum hendrerit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas aliquam mi ut metus congue, a pulvinar orci mollis. Vestibulum at eros a eros aliquam euismod rutrum sit amet nisl. Aenean sapien tellus, porta imperdiet sagittis ac, congue id nibh.&lt;/p&gt;\r\n&lt;p&gt;Nulla ut fringilla sem, vitae interdum justo. Quisque vitae massa ut augue interdum lobortis eu cursus risus. Integer nec quam non est pharetra tempor a sed turpis. Phasellus sed tincidunt erat. Mauris lacinia vehicula eros, sit amet cursus libero placerat vitae. Suspendisse eget dictum nulla, vestibulum malesuada lorem. Suspendisse purus ipsum, posuere nec metus eget, mollis aliquet diam. Aliquam scelerisque ultricies tempor.&lt;/p&gt;\r\n&lt;p&gt;Mauris vitae tempor erat. Pellentesque blandit lacus quis massa feugiat, et blandit lorem maximus. Quisque blandit libero quis mi ullamcorper dapibus ut nec ex. Etiam commodo est eu tellus congue, vel sollicitudin leo iaculis. Integer placerat tortor at mollis faucibus. Cras lobortis dui sed tortor aliquam, nec pellentesque ligula gravida. Nullam vitae maximus lorem, quis placerat leo. Proin fermentum, mauris nec pellentesque placerat, magna magna faucibus turpis, id lacinia velit quam eu sem. Sed a lacus eget lorem sollicitudin finibus nec auctor libero. Ut augue mauris, congue ac sem eget, cursus ornare est. Aenean viverra ipsum a gravida aliquet. Donec volutpat ut mi varius tempus. Duis commodo tincidunt auctor. Sed vitae nibh nec tortor gravida sagittis.&lt;/p&gt;\r\n&lt;p&gt;Nam et pellentesque justo, id feugiat tellus. Sed ultrices gravida ornare. Praesent sollicitudin laoreet ullamcorper. Praesent pretium lacinia accumsan. Integer volutpat purus quis metus viverra ultricies. Praesent aliquam dolor a dolor pretium dictum. Nullam sit amet porta arcu, eget posuere purus. Cras quis quam ex. Nulla ullamcorper mauris vitae ante interdum, vel blandit diam consequat.&lt;/p&gt;\r\n&lt;p&gt;Vivamus eu justo tincidunt, semper velit a, fringilla eros. Nulla facilisi. Ut ultricies auctor dui. Etiam egestas scelerisque ex vel auctor. Aliquam ut tellus scelerisque, accumsan mi vel, sodales mi. Praesent eleifend quam vitae nulla rhoncus imperdiet vel at nisi. Curabitur et ex condimentum, facilisis metus eget, tincidunt elit. Aenean sit amet posuere ligula, ac blandit lectus. Fusce hendrerit elementum arcu, a fringilla nunc porta at. Cras luctus viverra odio ac sodales. Vivamus vehicula ut eros eu luctus. Vivamus rhoncus ligula at lectus sollicitudin eleifend. Nulla maximus placerat neque ac feugiat. In at gravida risus.&lt;/p&gt;'),
-(3, 'Dophg01', 5, 0, 'bg-body1.jpg', 'dophg01', 'dophg01', '&lt;p&gt;sfgsdfgsdf&lt;/p&gt;'),
-(4, 'Maluco doido', 5, 0, 'scwpanel.png', 'maluco-doido', 'maluco-doido', '&lt;p&gt;&lt;img src=&quot;http://localhost/scwpanel/assets/uploads/logo-estampas-e-bordados.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -311,7 +384,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `nome_config` varchar(255) NOT NULL,
   `valor_config` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Extraindo dados da tabela `settings`
@@ -325,7 +398,7 @@ INSERT INTO `settings` (`id`, `nome_config`, `valor_config`) VALUES
 (15, 'cep', '60.866-320'),
 (16, 'telcom', '(85) 8796-1779'),
 (17, 'telcel', '(85) 8548-7735'),
-(18, 'facebook', 'https://www.facebook.com/doctype'),
+(18, 'facebook', 'https://www.facebook.com/doctypesolution'),
 (20, 'skype', 'oshima.gdm'),
 (21, 'rua', 'Rua 303, 284'),
 (22, 'bairro', 'Jangurussu'),
@@ -334,7 +407,9 @@ INSERT INTO `settings` (`id`, `nome_config`, `valor_config`) VALUES
 (25, 'descricao_site', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapi'),
 (26, 'descricao_curta', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integ'),
 (27, 'keywords_site', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet '),
-(28, 'txt_home', '<p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>');
+(28, 'txt_home', '<p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>'),
+(29, 'instagram', ''),
+(30, 'youtube', '');
 
 -- --------------------------------------------------------
 
@@ -359,6 +434,35 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `login`, `senha`, `ativo`, `adm`) VALUES
 (1, 'Everton Lima', 'antevertonlima@gmail.com', 'oshima', '98353ac2d5ed63bbc6e9a73ba4e2b19f', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `videos`
+--
+
+CREATE TABLE IF NOT EXISTS `videos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(200) NOT NULL,
+  `descricao` text NOT NULL,
+  `thumb` varchar(70) NOT NULL,
+  `embed` varchar(30) NOT NULL,
+  `server` varchar(50) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Extraindo dados da tabela `videos`
+--
+
+INSERT INTO `videos` (`id`, `titulo`, `descricao`, `thumb`, `embed`, `server`, `status`) VALUES
+(1, 'OlimPiadas - Marcos Aurélio (Mixirico)', 'humorista cearense Marcos Aurélio (Mixirico) participando do OlimPiadas quadro do Programa Tudo é Possível com Ana Hickman na Rede Record. Gleiciano Silva FG...', 'http://i1.ytimg.com/vi/zvAwku9GKrI/default.jpg', 'zvAwku9GKrI', 'YouTube', '1'),
+(2, 'Quarteto em Rir - Ceará No Faustão.', 'Apresentação do grupo cearense em que nosso amigo Juan esteve participando. Parabéns Juan!!!', 'http://i1.ytimg.com/vi/EEjMdOrSFn4/default.jpg', 'EEjMdOrSFn4', 'YouTube', '1'),
+(3, 'Humor de graça - Mixirico', 'fgdfgdfgdfg', 'http://i1.ytimg.com/vi/YjLMA5DoX24/default.jpg', 'YjLMA5DoX24', 'YouTube', '1'),
+(4, 'Video SBT', 'Video gravado em um restaurante local.', 'http://i1.ytimg.com/vi/N0Sdgi2Mxng/default.jpg', 'N0Sdgi2Mxng', 'YouTube', '1'),
+(5, 'show de humor com mixirico', 'Um humorista cearense.', 'http://i1.ytimg.com/vi/kJrf2W3p7-M/default.jpg', 'kJrf2W3p7-M', 'YouTube', '1'),
+(6, 'Programa Leruaite 22/10/2014 - Humorista Mixirico', 'Programa Leruaite 22/10/2014 - Humorista Mixirico', 'http://i1.ytimg.com/vi/tl95fmvREqk/default.jpg', 'tl95fmvREqk', 'YouTube', '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
