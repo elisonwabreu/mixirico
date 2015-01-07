@@ -44,8 +44,9 @@
 				<thead>
 					<tr>
 						<th>Título</th>
-						<th>Slug</th>
 						<th>Resumo</th>
+						<th>Data</th>
+						<th>Hora</th>
 						<th class="text-center">Ações</th>
 					</tr>
 				</thead>
@@ -55,8 +56,9 @@
 					foreach ($query as $linha):
 						echo '<tr>';
 						printf('<td>%s</td>', $linha->titulo);
-						printf('<td>%s</td>', $linha->slug);
-						printf('<td>%s</td>', resumo_post($linha->conteudo, 6));
+						printf('<td>%s</td>', resumo_post($linha->descricao, 6));
+						printf('<td>%s</td>', $linha->data);
+						printf('<td>%s</td>', $linha->hora);
 						printf('<td class="text-center">%s%s</td>', anchor("agenda/editar/$linha->id", ' <i class="glyphicon glyphicon-edit"></i> ', array('class'=>'table-actions table-edit', 'title'=>'Editar')), anchor("agenda/excluir/$linha->id", ' <i class="glyphicon glyphicon-trash"></i> ', array('class'=>'table-actions table-delete deletareg', 'title'=>'Excluir')));
 						echo '</tr>';
 					endforeach;

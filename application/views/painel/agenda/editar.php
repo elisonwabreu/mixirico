@@ -106,7 +106,7 @@
     echo '<div class="form-group">';
     echo form_label('Descricao','descricao',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
-    echo form_textarea(array('name'=>'descricao', 'class'=>'htmleditor form-control', 'rows'=>20), set_value('descricao', to_html($query->conteudo)));
+    echo form_textarea(array('name'=>'descricao', 'class'=>'htmleditor form-control', 'rows'=>20), set_value('descricao', to_html($query->descricao)));
     echo form_hidden('idpagina', $query->id);
     echo '</div>';
     echo '</div>';

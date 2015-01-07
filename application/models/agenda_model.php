@@ -40,6 +40,20 @@ class Agenda_model extends CI_Model {
 			if ($redir) redirect(current_url());
 		endif;
 	}
+        
+        public function do_upload($campo) {
+            $config['upload_path'] = './assets/uploads/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = '10240';
+            $config['max_width'] = '15000';
+            $config['max_height'] = '15000';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload($campo)):
+                return $this->upload->data();
+            else:
+                return $this->upload->display_errors();
+            endif;
+        }
 	
 	public function get_all(){
 		return $this->db->get('agenda');

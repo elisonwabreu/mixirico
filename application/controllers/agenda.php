@@ -15,12 +15,18 @@ class Agenda extends CI_Controller {
 	
 	public function cadastrar(){
 		$this->form_validation->set_rules('titulo', 'TÍTULO', 'trim|required|ucfirst');
-		$this->form_validation->set_rules('slug', 'SLUG', 'trim');
-		$this->form_validation->set_rules('conteudo', 'CONTEÚDO', 'trim|required|htmlentities');
+//		$this->form_validation->set_rules('slug', 'SLUG', 'trim');
+//		$this->form_validation->set_rules('conteudo', 'CONTEÚDO', 'trim|required|htmlentities');
 		if ($this->form_validation->run()==TRUE):
-			$dados = elements(array('titulo', 'slug', 'conteudo'), $this->input->post());
-                        ($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
-                        $this->agenda->do_insert($dados);			
+                        $upload = $this->agenda->do_upload('banner');
+			if (is_array($upload) && $upload['file_name'] != ''):
+				$dados = elements(array('titulo', 'descricao', 'data', 'hora', 'logradouro', 'bairro', 'numero', 'cidade', 'estado'), $this->input->post());
+				$dados['banner'] = $upload['file_name'];
+				$this->agenda->do_insert($dados);	
+			else:
+				set_msg('msgerro', $upload, 'erro');
+				redirect(current_url());
+			endif;	
 		endif;
 		init_htmleditor();
 		set_tema('titulo', 'Cadastrar nova página');
@@ -40,11 +46,9 @@ class Agenda extends CI_Controller {
 	
 	public function editar(){
 		$this->form_validation->set_rules('titulo', 'TÍTULO', 'trim|required|ucfirst');
-		$this->form_validation->set_rules('slug', 'SLUG', 'trim');
-		$this->form_validation->set_rules('conteudo', 'CONTEÚDO', 'trim|required|htmlentities');
+		$this->form_validation->set_rules('descricao', 'DESCRIÇÂO', 'trim|required|htmlentities');
 		if ($this->form_validation->run()==TRUE):
-			$dados = elements(array('titulo', 'slug', 'conteudo'), $this->input->post());
-				($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
+			$dados = elements(array('titulo', 'descricao', 'data', 'hora', 'logradouro', 'bairro', 'numero', 'cidade', 'estado'), $this->input->post());
 				$this->agenda->do_update($dados, array('id'=>$this->input->post('idpagina')));	
 		endif;
 		init_htmleditor();
