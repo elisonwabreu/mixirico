@@ -53,26 +53,32 @@
                     <li class="xn-openable<?php echo ($segimento == 'posts/categorias' || $segimento == 'posts/cadastrar' || $segimento == 'posts/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-file-text"></span> <span class="xn-text">Posts</span></a>
                         <ul>
-                            <li<?php echo ($segimento == 'posts/categorias') ? ' class="active"' : '' ;?>><?php echo anchor('posts/categorias', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
                             <li<?php echo ($segimento == 'posts/cadastrar') ? ' class="active"' : '' ;?>><?php echo anchor('posts/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
                             <li<?php echo ($segimento == 'posts/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('posts/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>
-                    <li class="xn-openable<?php echo ($segimento == 'paginas/categorias' || $segimento == 'paginas/cadastrar' || $segimento == 'paginas/gerenciar' ) ? ' active' : '' ;?>">
+                    <li class="xn-openable<?php echo ($segimento == 'paginas/cadastrar' || $segimento == 'paginas/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-file-text"></span> <span class="xn-text">Paginas</span></a>
                         <ul>
-                            <li<?php echo ($segimento == 'paginas/categorias' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/categorias', '<span class="fa fa-clipboard"></span> Categorias'); ?></li>
                             <li<?php echo ($segimento == 'paginas/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
                             <li<?php echo ($segimento == 'paginas/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>     
-                    <li class="xn-openable<?php echo ($segimento == 'midia/cadastrar' || $segimento == 'midia/gerenciar' ) ? ' active' : '' ;?>">
+                    <li class="xn-openable<?php echo ($segimento == 'midia/cadastrar' || $segimento == 'midia/gerenciar' || $segimento == 'midia/gerenciar_video' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-picture-o"></span> <span class="xn-text">Midias</span></a>
                         <ul>
-                            <li<?php echo ($segimento == 'midia/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
-                            <li<?php echo ($segimento == 'midia/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                       
+                            <li<?php echo ($segimento == 'midia/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar Imagens'); ?></a></li>
+                            <li<?php echo ($segimento == 'midia/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/gerenciar', '<span class="fa fa-table"></span> Gerenciar Imagens'); ?></a></li>                       
+                            <li<?php echo ($segimento == 'midia/gerenciar_video' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/gerenciar_video', '<span class="fa fa-table"></span> Gerenciar Videos'); ?></a></li>                       
                         </ul>
                     </li> 
+                     <li class="xn-openable<?php echo ($segimento == 'agenda/cadastrar' || $segimento == 'agenda/gerenciar' ) ? ' active' : '' ;?>">
+                        <a href="#"><span class="fa fa-calendar-o"></span> <span class="xn-text">Agenda</span></a>
+                        <ul>
+                            <li<?php echo ($segimento == 'agenda/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('agenda/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar'); ?></a></li>
+                            <li<?php echo ($segimento == 'agenda/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('agenda/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
+                        </ul>
+                    </li>
                     <li class="xn-openable<?php echo ($segimento == 'categorias/gerenciar' || $segimento == 'produtos/cadastrar' || $segimento == 'produtos/gerenciar' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-money"></span> <span class="xn-text">Produtos</span></a>
                         <ul>
@@ -150,7 +156,6 @@
         <!-- END PRELOADS -->                 
         
         <!-- START SCRIPTS -->
-        {settings}
         {loadJS}
         {footerinc}
         <!-- END SCRIPTS -->         

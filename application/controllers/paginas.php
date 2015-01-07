@@ -19,8 +19,8 @@ class Paginas extends CI_Controller {
 		$this->form_validation->set_rules('conteudo', 'CONTEÚDO', 'trim|required|htmlentities');
 		if ($this->form_validation->run()==TRUE):
 			$dados = elements(array('titulo', 'slug', 'conteudo'), $this->input->post());
-				($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
-				$this->paginas->do_insert($dados);			
+                        ($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
+                        $this->paginas->do_insert($dados);			
 		endif;
 		init_htmleditor();
 		set_tema('titulo', 'Cadastrar nova página');
