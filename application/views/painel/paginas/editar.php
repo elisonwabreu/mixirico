@@ -33,14 +33,14 @@
     echo form_open(current_url(), array('class'=>'form-horizontal'));
     
     echo '<div class="form-group">';
-    echo form_label('Título','cat_prod',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo form_label('Título','titulo',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
     echo form_input(array('name'=>'titulo', 'class'=>'form-control'), set_value('titulo', $query->titulo), 'autofocus');
     echo '</div>';
 echo '</div>';
 
     echo '<div class="form-group">';
-    echo form_label('Slug','',array('class' => 'col-md-3 col-xs-12 control-label'));
+    echo form_label('Slug','slug',array('class' => 'col-md-3 col-xs-12 control-label'));
     echo '<div class="col-md-6 col-xs-12">';
     echo form_input(array('name'=>'slug', 'class'=>'form-control','placeholder' => 'deixe em branco se não souber do que se trata'), set_value('slug', $query->slug));
     echo '</div>';

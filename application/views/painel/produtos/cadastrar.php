@@ -48,6 +48,7 @@ echo '<div class="col-md-6 col-xs-12">';
 echo form_input(array('name'=>'preco', 'class'=>'form-control'), set_value('preco'));
 echo '</div>';
 echo '</div>';
+
 echo '<div class="form-group">';
 echo form_label('Capa do Produto','arquivo',array('class' => 'col-md-3 col-xs-12 control-label'));
 echo '<div class="col-md-6 col-xs-12">';
