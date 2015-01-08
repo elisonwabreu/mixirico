@@ -71,9 +71,20 @@ body{
     height: 83px;
     margin: 0;
     text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #efefef;
+    font-size: 16px;
+    padding: 2px 0;
+}
+.numero{
+    font-size: 26px;
 }
 .dividiBandeira {
-    margin: 2px 0;
+    border: 1px solid #efefef;
+    width: 80%;
+    margin:0 auto;
+    margin-top: -4px;
 }
 
 .bemvindos {
