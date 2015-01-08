@@ -63,7 +63,17 @@ body{
     position: absolute;
     right: 100px;
     top: -216px;
+}
 
+.bandeira {
+    background-image: url(../img/bandeira.png); /* Insere a imagem */
+    width: 47px;
+    height: 83px;
+    margin: 0;
+    text-align: center;
+}
+.dividiBandeira {
+    margin: 2px 0;
 }
 
 .bemvindos {

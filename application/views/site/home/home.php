@@ -5,8 +5,9 @@
 
     <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
         <img class="foto" src="<?php echo base_url(); ?>assets/theme_site/img/mi.jpg">
-        <img class="bandeira" src="<?php echo base_url(); ?>assets/theme_site/img/bandeira.png">
+        <span class="bandeira">19<hr class="dividiBandeira"/>NOV</span>
     </div>
+    
     <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7">
         <p class="titulo">Mixirico ganha prêmio de show de humor</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
