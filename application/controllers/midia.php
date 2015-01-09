@@ -28,8 +28,16 @@ class Midia extends CI_Controller {
                     redirect(current_url());
                 endif;
             endif;
+            init_tema_forms_simples();           
             set_tema('titulo', 'Upload de imagens');
             set_tema('conteudo', load_modulo('midia', 'cadastrar'));
+            load_template();
+	}
+        
+        public function cadastrar_galeria(){
+            init_tema_forms_full();    
+            set_tema('titulo', 'Upload de imagens');
+            set_tema('conteudo', load_modulo('midia', 'cadastrar-galeria'));
             load_template();
 	}
         
@@ -56,23 +64,20 @@ class Midia extends CI_Controller {
 		}
                 $this->midia->do_video_insert($dados);
             endif;
+            init_tema_forms_simples();                
             set_tema('titulo', 'Upload de imagens');
             set_tema('conteudo', load_modulo('midia', 'cadastrar-video'));
             load_template();
 	}
 
 	public function gerenciar(){
-            set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-            set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-            set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+            init_tables();
             set_tema('titulo', 'Listagem de mídias');
             set_tema('conteudo', load_modulo('midia', 'gerenciar'));
             load_template();
 	}
         public function gerenciar_video(){
-            set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-            set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-            set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+            init_tables();
             set_tema('titulo', 'Listagem de mídias');
             set_tema('conteudo', load_modulo('midia', 'gerenciar-videos'));
             load_template();
@@ -86,7 +91,7 @@ class Midia extends CI_Controller {
                 $dados = elements(array('tipo','nome', 'descricao'), $this->input->post());
                 $this->midia->do_update($dados, array('id'=>$this->input->post('idmidia')));
             endif;
-            set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+            init_tema_forms_simples();
             set_tema('titulo', 'Alteração de mídia');
             set_tema('conteudo', load_modulo('midia', 'editar'));
             load_template();
@@ -99,7 +104,7 @@ class Midia extends CI_Controller {
                 $dados = elements(array('titulo', 'descricao'), $this->input->post());
                 $this->midia->do_video_update($dados, array('id'=>$this->input->post('idmidia')));
             endif;
-            set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+            init_tema_forms_simples();
             set_tema('titulo', 'Alteração de mídia');
             set_tema('conteudo', load_modulo('midia', 'editar-video'));
             load_template();

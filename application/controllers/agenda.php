@@ -28,17 +28,15 @@ class Agenda extends CI_Controller {
 				redirect(current_url());
 			endif;	
 		endif;
-		init_htmleditor();
+                init_tema_forms_simples();
+		
 		set_tema('titulo', 'Cadastrar nova página');
 		set_tema('conteudo', load_modulo('agenda', 'cadastrar'));
 		load_template();
 	}
 
 	public function gerenciar(){
-		set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-                set_tema('footerinc', load_js(array('settings'),'assets/admin/atlant/js'), FALSE);
+                init_tables();
 		set_tema('titulo', 'Páginas');
 		set_tema('conteudo', load_modulo('agenda', 'gerenciar'));
 		load_template();
@@ -51,7 +49,8 @@ class Agenda extends CI_Controller {
 			$dados = elements(array('titulo', 'descricao', 'data', 'hora', 'logradouro', 'bairro', 'numero', 'cidade', 'estado'), $this->input->post());
 				$this->agenda->do_update($dados, array('id'=>$this->input->post('idpagina')));	
 		endif;
-		init_htmleditor();
+                init_tema_forms_simples();
+		
 		set_tema('titulo', 'Alterar página');
 		set_tema('conteudo', load_modulo('agenda', 'editar'));
 		load_template();

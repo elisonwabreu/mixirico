@@ -23,18 +23,17 @@ class Categorias extends CI_Controller {
                                             $this->categorias->do_insert($dados);
                                             redirect(current_url());
 		endif;
+                init_tema_forms_simples();
 		set_tema('titulo', 'Cadastro de Categorias');
 		set_tema('conteudo', load_modulo('categorias', 'cadastrar'));
 		load_template();
 	}
 
 	public function gerenciar(){
-		set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
-		set_tema('titulo', 'Listagem de mídias');
-		set_tema('conteudo', load_modulo('categorias', 'gerenciar'));
-		load_template();
+	    init_tables();
+            set_tema('titulo', 'Listagem de mídias');
+            set_tema('conteudo', load_modulo('categorias', 'gerenciar'));
+            load_template();
 	}
 
 	public function editar(){
@@ -46,26 +45,26 @@ class Categorias extends CI_Controller {
                     $dados['slug'] = slug($dados['nome']);
                     $this->categorias->do_update($dados, array('id'=>$this->input->post('idcategorias')));	
 		endif;
-                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+                init_tema_forms_simples();
 		set_tema('titulo', 'Alteração de mídia');
 		set_tema('conteudo', load_modulo('categorias', 'editar'));
 		load_template();
 	}
 
 	public function excluir(){
-		if (is_admin(TRUE)):
-			$idcategorias = $this->uri->segment(3);
-			if ($idcategorias != NULL):
-				$query = $this->categorias->get_byid($idcategorias);
-				if ($query->num_rows()==1):
-					$query = $query->row();
-					$this->categorias->do_delete(array('id'=>$query->id), FALSE);
-				endif;
-			else:
-				set_msg('msgerro', 'Escolha uma mídia para excluir', 'erro');
-			endif;
-		endif;
-		redirect('categorias/gerenciar');
+            if (is_admin(TRUE)):
+                    $idcategorias = $this->uri->segment(3);
+                    if ($idcategorias != NULL):
+                            $query = $this->categorias->get_byid($idcategorias);
+                            if ($query->num_rows()==1):
+                                    $query = $query->row();
+                                    $this->categorias->do_delete(array('id'=>$query->id), FALSE);
+                            endif;
+                    else:
+                            set_msg('msgerro', 'Escolha uma mídia para excluir', 'erro');
+                    endif;
+            endif;
+            redirect('categorias/gerenciar');
 	}
 	
 	public function get_imgs(){

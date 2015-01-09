@@ -52,13 +52,6 @@ function init_painel() {
   </footer> 	    
     ');
     set_tema('template', 'painel_view');
-
-    set_tema('headerinc', load_css(array('theme-default'),'assets/admin/atlant/css'), FALSE);
-    set_tema('headerinc', load_css(array('app')), FALSE);
-    set_tema('headerinc', load_js(array('jquery.min','jquery-ui.min'),'assets/admin/atlant/js/plugins/jquery'), FALSE);
-    set_tema('loadJS', load_js(array('bootstrap.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
-    set_tema('loadJS', load_js(array('plugins', 'actions'),'assets/admin/atlant/js'), FALSE);
-    set_tema('footerinc', '');
 }
 
 function init_site() {
@@ -104,6 +97,123 @@ function init_site() {
 function init_htmleditor() {
     set_tema('footerinc', load_js(base_url('htmleditor/jquery.tinymce.js'), NULL, TRUE), FALSE);
     set_tema('footerinc', incluir_arquivo('htmleditor', 'includes', FALSE), FALSE);
+}
+
+//inicia importação dos estilos das paginas com formularios
+function init_tema_forms_simples() {
+    set_tema('headerinc', load_css(array('theme-default'),'assets/admin/atlant/css'), FALSE);
+    set_tema('headerinc', load_css(array('app')), FALSE);
+    //carregando javascript do tema no topo da pagina
+    set_tema('headerinc', load_js(array('jquery.min','jquery-ui.min'),'assets/admin/atlant/js/plugins/jquery'), FALSE);
+    set_tema('headerinc', load_js(array('bootstrap.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    //carregando javascript do tema no rodape da pagina
+    set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
+    set_tema('footerinc', load_js(array('scrolltopcontrol.min'),'assets/admin/atlant/js/plugins/scrolltotop'), FALSE);
+
+    set_tema('footerinc', load_js(array('bootstrap-datepicker'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-timepicker.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-colorpicker'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-file-input'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-select'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.tagsinput.min'),'assets/admin/atlant/js/plugins/tagsinput'), FALSE);
+    
+    set_tema('footerinc', load_js(base_url('htmleditor/jquery.tinymce.js'), NULL, TRUE), FALSE);
+    set_tema('footerinc', incluir_arquivo('htmleditor', 'includes', FALSE), FALSE);
+
+    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    set_tema('footerinc', load_js(array('plugins', 'actions','demo_file_handling','app'),'assets/admin/atlant/js'), FALSE);
+}
+
+function init_tema_forms_codemirror() {
+    set_tema('headerinc', load_css(array('theme-default'),'assets/admin/atlant/css'), FALSE);
+    set_tema('headerinc', load_css(array('app')), FALSE);
+    //carregando javascript do tema no topo da pagina
+    set_tema('headerinc', load_js(array('jquery.min','jquery-ui.min'),'assets/admin/atlant/js/plugins/jquery'), FALSE);
+    set_tema('headerinc', load_js(array('bootstrap.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    //carregando javascript do tema no rodape da pagina
+    set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
+    set_tema('footerinc', load_js(array('scrolltopcontrol.min'),'assets/admin/atlant/js/plugins/scrolltotop'), FALSE);
+
+    set_tema('footerinc', load_js(array('bootstrap-datepicker'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-timepicker.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-colorpicker'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-file-input'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-select'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.tagsinput.min'),'assets/admin/atlant/js/plugins/tagsinput'), FALSE);
+    set_tema('footerinc', load_js(array('codemirror'),'assets/admin/atlant/js/plugins/codemirror'), FALSE);
+    set_tema('footerinc', load_js(array('htmlmixed'),'assets/admin/atlant/js/plugins/codemirror/mode/htmlmixed'), FALSE);
+    set_tema('footerinc', load_js(array('xml'),'assets/admin/atlant/js/plugins/codemirror/mode/xml'), FALSE);
+    set_tema('footerinc', load_js(array('javascript'),'assets/admin/atlant/js/plugins/codemirror/mode/javascript'), FALSE);
+    set_tema('footerinc', load_js(array('css'),'assets/admin/atlant/js/plugins/codemirror/mode/css'), FALSE);
+    set_tema('footerinc', load_js(array('clike'),'assets/admin/atlant/js/plugins/codemirror/mode/clike'), FALSE);
+    set_tema('footerinc', load_js(array('php'),'assets/admin/atlant/js/plugins/codemirror/mode/php'), FALSE);
+    set_tema('footerinc', load_js(array('summernote'),'assets/admin/atlant/js/plugins/summernote'), FALSE);
+
+    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    set_tema('footerinc', load_js(array('plugins', 'actions','app'),'assets/admin/atlant/js'), FALSE);    
+}
+
+function init_tema_forms_full() {
+    set_tema('headerinc', load_css(array('theme-default'),'assets/admin/atlant/css'), FALSE);
+    set_tema('headerinc', load_css(array('app')), FALSE);
+    //carregando javascript do tema no topo da pagina
+    set_tema('headerinc', load_js(array('jquery.min','jquery-ui.min'),'assets/admin/atlant/js/plugins/jquery'), FALSE);
+    set_tema('headerinc', load_js(array('bootstrap.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    //carregando javascript do tema no rodape da pagina
+    set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
+    set_tema('footerinc', load_js(array('scrolltopcontrol.min'),'assets/admin/atlant/js/plugins/scrolltotop'), FALSE);
+
+    set_tema('footerinc', load_js(array('bootstrap-datepicker'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-timepicker.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-colorpicker'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-file-input'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('bootstrap-select'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.tagsinput.min'),'assets/admin/atlant/js/plugins/tagsinput'), FALSE);
+    set_tema('footerinc', load_js(array('codemirror'),'assets/admin/atlant/js/plugins/codemirror'), FALSE);
+    set_tema('footerinc', load_js(array('htmlmixed'),'assets/admin/atlant/js/plugins/codemirror/mode/htmlmixed'), FALSE);
+    set_tema('footerinc', load_js(array('xml'),'assets/admin/atlant/js/plugins/codemirror/mode/xml'), FALSE);
+    set_tema('footerinc', load_js(array('javascript'),'assets/admin/atlant/js/plugins/codemirror/mode/javascript'), FALSE);
+    set_tema('footerinc', load_js(array('css'),'assets/admin/atlant/js/plugins/codemirror/mode/css'), FALSE);
+    set_tema('footerinc', load_js(array('clike'),'assets/admin/atlant/js/plugins/codemirror/mode/clike'), FALSE);
+    set_tema('footerinc', load_js(array('php'),'assets/admin/atlant/js/plugins/codemirror/mode/php'), FALSE);
+    set_tema('footerinc', load_js(array('summernote'),'assets/admin/atlant/js/plugins/summernote'), FALSE);
+
+    set_tema('footerinc', load_js(array('dropzone.min'),'assets/admin/atlant/js/plugins/dropzone'), FALSE);
+    set_tema('footerinc', load_js(array('fileinput.min'),'assets/admin/atlant/js/plugins/fileinput'), FALSE);
+    set_tema('footerinc', load_js(array('jqueryFileTree'),'assets/admin/atlant/js/plugins/filetree'), FALSE);
+    set_tema('footerinc', load_js(array('cropper.min'),'assets/admin/atlant/js/plugins/cropper'), FALSE);
+    set_tema('footerinc', load_js(array('jstree.min'),'assets/admin/atlant/js/plugins/jstree'), FALSE);
+
+    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    set_tema('footerinc', load_js(array('plugins', 'actions','demo_file_handling','app'),'assets/admin/atlant/js'), FALSE);
+}
+
+//inicia tema das paginas com datatable
+function init_tables() {
+    //carregando css do tema no topo da pagina
+    set_tema('headerinc', load_css(array('theme-default'),'assets/admin/atlant/css'), FALSE);
+    set_tema('headerinc', load_css(array('app')), FALSE);
+    //carregando javascript do tema no topo da pagina
+    set_tema('headerinc', load_js(array('jquery.min','jquery-ui.min'),'assets/admin/atlant/js/plugins/jquery'), FALSE);
+    set_tema('headerinc', load_js(array('bootstrap.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
+    //carregando javascript do tema no rodape da pagina
+    set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
+    set_tema('footerinc', load_js(array('scrolltopcontrol.min'),'assets/admin/atlant/js/plugins/scrolltotop'), FALSE);
+
+    set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
+    set_tema('footerinc', load_js(array('tableExport'),'assets/admin/atlant/js/plugins/tableexport'), FALSE);
+    set_tema('footerinc', load_js(array('jquery.base64'),'assets/admin/atlant/js/plugins/tableexport'), FALSE);
+    set_tema('footerinc', load_js(array('html2canvas'),'assets/admin/atlant/js/plugins/tableexport'), FALSE);
+    set_tema('footerinc', load_js(array('sprintf'),'assets/admin/atlant/js/plugins/tableexport/jspdf/libs'), FALSE);
+    set_tema('footerinc', load_js(array('jspdf'),'assets/admin/atlant/js/plugins/tableexport/jspdf'), FALSE);
+    set_tema('footerinc', load_js(array('base64'),'assets/admin/atlant/js/plugins/tableexport/jspdf/libs'), FALSE);
+
+    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    set_tema('footerinc', load_js(array('plugins', 'actions','app'),'assets/admin/atlant/js'), FALSE);
 }
 
 //retorna ou printa o conteúdo de uma view
@@ -470,9 +580,9 @@ function get_menuVert() {
                 }
             }
             echo '
-			         </ul>
-	         	 </li>
-	        ';
+                    </ul>
+                </li>
+            ';
         }
         echo '</ul>';
     else:

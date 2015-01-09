@@ -24,13 +24,14 @@ $(function(){
     
     // End jsTree
     
-    // File upload
+   // File upload
     $("#file-simple").fileinput({
-            showUpload: false,
+			url: 'assets/fileupload/index.php',
+            showUpload: true,
             showCaption: false,
             browseClass: "btn btn-danger",
             fileType: "any"
-    });             
+    })
     // End File upload
     
     // File Tree

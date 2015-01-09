@@ -33,8 +33,7 @@ class Settings extends CI_Controller {
                 redirect('settings/gerenciar');
             endif;
         endif;
-        init_htmleditor();
-        set_tema('loadJS', load_js(array('summernote'),'assets/admin/atlant/js/plugins/summernote'), FALSE);
+        init_tema_forms_codemirror();
         set_tema('titulo', 'Configuração do sistema');
         set_tema('conteudo', load_modulo('settings', 'gerenciar'));
         load_template();

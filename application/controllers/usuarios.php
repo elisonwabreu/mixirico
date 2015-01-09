@@ -51,6 +51,7 @@ class Usuarios extends CI_Controller {
                 redirect('usuarios/login');
             endif;
         endif;
+        init_tema_forms_simples();
         set_tema('titulo', 'Login');
         set_tema('conteudo', load_modulo('usuarios', 'login'));
         set_tema('rodape', '');
@@ -88,6 +89,7 @@ class Usuarios extends CI_Controller {
                 redirect('usuarios/nova_senha');
             endif;
         endif;
+        init_tema_forms_simples();
         set_tema('titulo', 'Recuperar senha');
         set_tema('conteudo', load_modulo('usuarios', 'nova_senha'));
         set_tema('rodape', '');
@@ -110,6 +112,7 @@ class Usuarios extends CI_Controller {
                 $dados['adm'] = ($this->input->post('adm') == 1) ? 1 : 0;
             $this->usuarios->do_insert($dados);
         endif;
+        init_tema_forms_simples();
         set_tema('titulo', 'Cadastro de usuários');
         set_tema('conteudo', load_modulo('usuarios', 'cadastrar'));
         load_template();
@@ -117,9 +120,7 @@ class Usuarios extends CI_Controller {
 
     public function gerenciar() {
         esta_logado();
-        set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-        set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+        init_tables();
         set_tema('titulo', 'Listagem de usuários');
         set_tema('conteudo', load_modulo('usuarios', 'gerenciar'));
         load_template();
@@ -134,7 +135,7 @@ class Usuarios extends CI_Controller {
             $dados['senha'] = md5($this->input->post('senha'));
             $this->usuarios->do_update($dados, array('id' => $this->input->post('idusuario')));
         endif;
-        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+        init_tema_forms_simples();
         set_tema('titulo', 'Alteração de senha');
         set_tema('conteudo', load_modulo('usuarios', 'alterar_senha'));
         load_template();
@@ -150,7 +151,7 @@ class Usuarios extends CI_Controller {
                 $dados['adm'] = ($this->input->post('adm') == 1) ? 1 : 0;
             $this->usuarios->do_update($dados, array('id' => $this->input->post('idusuario')));
         endif;
-        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+        init_tema_forms_simples();
         set_tema('titulo', 'Alteração de usuários');
         set_tema('conteudo', load_modulo('usuarios', 'editar'));
         load_template();

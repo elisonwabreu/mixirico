@@ -32,37 +32,34 @@ class Produtos extends CI_Controller {
 				redirect(current_url());
 			endif;		
 		endif;
-		init_htmleditor();
+                init_tema_forms_simples();		
 		set_tema('titulo', 'Cadastrar nova página');
 		set_tema('conteudo', load_modulo('produtos', 'cadastrar'));
 		load_template();
 	}
 
 	public function gerenciar(){
-		set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
-		set_tema('titulo', 'Páginas');
-		set_tema('conteudo', load_modulo('produtos', 'gerenciar'));
-		load_template();
+            init_tables();
+            set_tema('titulo', 'Páginas');
+            set_tema('conteudo', load_modulo('produtos', 'gerenciar'));
+            load_template();
 	}
 	
 	public function editar(){
-		$this->form_validation->set_rules('cat_prod', 'CATEGORIA DO PRODUTO', 'trim|required');
-		$this->form_validation->set_rules('titulo', 'TÍTULO', 'trim|required|ucfirst');
-		$this->form_validation->set_rules('slug', 'SLUG', 'trim');
-		$this->form_validation->set_rules('conteudo', 'CONTEÚDO', 'trim|required|htmlentities');
-		if ($this->form_validation->run()==TRUE):
-			$dados = elements(array('titulo', 'conteudo','preco','slug','cat_prod'), $this->input->post());
-				($dados['tags'] != '') ? $dados['tags']=slug($dados['tags']) : $dados['tags']=slug($dados['titulo']);
-				($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
-				$this->produtos->do_update($dados, array('id'=>$this->input->post('idprodutos')));	
-		endif;
-		init_htmleditor();
-                set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
-		set_tema('titulo', 'Alterar página');
-		set_tema('conteudo', load_modulo('produtos', 'editar'));
-		load_template();
+            $this->form_validation->set_rules('cat_prod', 'CATEGORIA DO PRODUTO', 'trim|required');
+            $this->form_validation->set_rules('titulo', 'TÍTULO', 'trim|required|ucfirst');
+            $this->form_validation->set_rules('slug', 'SLUG', 'trim');
+            $this->form_validation->set_rules('conteudo', 'CONTEÚDO', 'trim|required|htmlentities');
+            if ($this->form_validation->run()==TRUE):
+                    $dados = elements(array('titulo', 'conteudo','preco','slug','cat_prod'), $this->input->post());
+                            ($dados['tags'] != '') ? $dados['tags']=slug($dados['tags']) : $dados['tags']=slug($dados['titulo']);
+                            ($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
+                            $this->produtos->do_update($dados, array('id'=>$this->input->post('idprodutos')));	
+            endif;
+            init_tema_forms_simples();            
+            set_tema('titulo', 'Alterar página');
+            set_tema('conteudo', load_modulo('produtos', 'editar'));
+            load_template();
 	}
 	
 	public function excluir(){

@@ -22,20 +22,18 @@ class Posts extends CI_Controller {
 				($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
 				$this->posts->do_insert($dados);			
 		endif;
-		init_htmleditor();
+                init_tema_forms_simples();
+		
 		set_tema('titulo', 'Cadastrar nova página');
 		set_tema('conteudo', load_modulo('posts', 'cadastrar'));
 		load_template();
 	}
 
 	public function gerenciar(){
-		set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.mCustomScrollbar.min'),'assets/admin/atlant/js/plugins/mcustomscrollbar'), FALSE);
-                set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-                set_tema('footerinc', load_js(array('settings'),'assets/admin/atlant/js'), FALSE);
-		set_tema('titulo', 'Páginas');
-		set_tema('conteudo', load_modulo('posts', 'gerenciar'));
-		load_template();
+            init_tables();
+            set_tema('titulo', 'Páginas');
+            set_tema('conteudo', load_modulo('posts', 'gerenciar'));
+            load_template();
 	}
 	
 	public function editar(){
@@ -47,7 +45,8 @@ class Posts extends CI_Controller {
 				($dados['slug'] != '') ? $dados['slug']=slug($dados['slug']) : $dados['slug']=slug($dados['titulo']);
 				$this->posts->do_update($dados, array('id'=>$this->input->post('idpagina')));	
 		endif;
-		init_htmleditor();
+                init_tema_forms_simples();
+		
 		set_tema('titulo', 'Alterar página');
 		set_tema('conteudo', load_modulo('posts', 'editar'));
 		load_template();

@@ -14,14 +14,12 @@ class Scwpanel extends CI_Controller {
 	
 	public function inicio(){
 		if (esta_logado(FALSE)):
-			set_tema('footerinc', load_js(array('icheck.min'),'assets/admin/atlant/js/plugins/icheck'), FALSE);
-                        set_tema('footerinc', load_js(array('jquery.dataTables.min'),'assets/admin/atlant/js/plugins/datatables'), FALSE);
-                        set_tema('settings', incluir_arquivo('settings', 'includes', FALSE), FALSE);
-			set_tema('titulo', 'SCWPANEL - Sistema de Controle de Website');
-			set_tema('conteudo', load_modulo('auditoria', 'gerenciar'));
-			load_template();
+                    init_tables();                    
+                    set_tema('titulo', 'SCWPANEL - Sistema de Controle de Website');
+                    set_tema('conteudo', load_modulo('auditoria', 'gerenciar'));
+                    load_template();
 		else:
-			redirect('usuarios/login');
+                    redirect('usuarios/login');
 		endif;
 	}
 	
