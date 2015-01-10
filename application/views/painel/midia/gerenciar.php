@@ -37,7 +37,7 @@
     ?>
     <div class="panel panel-default">
     <div class="panel-heading">                                
-        <h3 class="panel-title">Auditoria</h3>
+        <h3 class="panel-title"><?php echo getTitulo(); ?></h3>
         <ul class="panel-controls">
             <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
             <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
