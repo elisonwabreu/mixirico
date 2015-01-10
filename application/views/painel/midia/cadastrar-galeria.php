@@ -1,6 +1,6 @@
 <base href="<?php echo base_url(); ?>">
 <!-- The file upload form used as target for the file upload widget -->
-<form id="fileupload" action="upload/do_upload" method="POST" enctype="multipart/form-data">
+<form id="fileupload" action="midia/do_upload/2" method="POST" enctype="multipart/form-data">
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <div class="row fileupload-buttonbar">
         <div class="col-lg-7">

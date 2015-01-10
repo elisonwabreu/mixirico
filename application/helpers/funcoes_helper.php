@@ -224,7 +224,7 @@ function init_tema_forms_full() {
                                 <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload-ui.js"></script>
                                 <!-- The main application script -->
                                 <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/main.js"></script>', FALSE);
-    
+    //set_tema('footerinc', incluir_arquivo('main_jquery_file_upload', 'includes', FALSE), FALSE);
     set_tema('footerinc', load_js(array('jstree.min'),'assets/admin/atlant/js/plugins/jstree'), FALSE);
 
     set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);

@@ -1,4 +1,5 @@
-/*
+<script type="text/javascript">
+    /*
  * jQuery File Upload Plugin JS Example 8.9.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
@@ -13,16 +14,12 @@
 
 $(function () {
     'use strict';
-    
-    var url      = window.location.href;
-    var items = url.split("/");
-    var idGal = items[6];
 
     // Initialize the jQuery File Upload widget:
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: 'midia/do_upload/' + idGal
+        url: 'midia/do_upload/' + <?php echo $this->uri->segment(3); ?>
     });
 
     // Enable iframe cross-domain access via redirect option:
@@ -50,7 +47,7 @@ $(function () {
         // Upload server status check for browsers with CORS support:
         if ($.support.cors) {
             $.ajax({
-                url: 'midia/do_upload/' + idGal,
+                url: 'midia/do_upload/' + <?php echo $this->uri->segment(3); ?>,
                 type: 'HEAD'
             }).fail(function () {
                 $('<div class="alert alert-danger"/>')
@@ -77,3 +74,4 @@ $(function () {
     }
 
 });
+</script>
