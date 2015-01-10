@@ -155,7 +155,17 @@ function init_tema_forms_codemirror() {
     set_tema('footerinc', load_js(array('plugins', 'actions','app'),'assets/admin/atlant/js'), FALSE);    
 }
 
-function init_tema_forms_full() {
+function init_tema_forms_full() {   
+    
+    set_tema('headerinc', load_css(array('cropper.min'),'assets/admin/atlant/css/cropper'), FALSE);
+    set_tema('headerinc', load_css(array('jstree.min'),'assets/admin/atlant/css/jstree'), FALSE);
+    
+    set_tema('headerinc', '<link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+                           <link rel="stylesheet" href="'.  base_url() .'assets/admin/atlant/js/fileupload/css/jquery.fileupload.css">
+                           <link rel="stylesheet" href="'.  base_url() .'assets/admin/atlant/js/fileupload/css/jquery.fileupload-ui.css">
+                           <noscript><link rel="stylesheet" href="'.  base_url() .'assets/admin/atlant/js/fileupload/css/jquery.fileupload-noscript.css"></noscript>
+                           <noscript><link rel="stylesheet" href="'.  base_url() .'assets/admin/atlant/js/fileupload/css/jquery.fileupload-ui-noscript.css"></noscript>', FALSE);
+    
     set_tema('headerinc', load_css(array('theme-default'),'assets/admin/atlant/css'), FALSE);
     set_tema('headerinc', load_css(array('app')), FALSE);
     //carregando javascript do tema no topo da pagina
@@ -172,6 +182,7 @@ function init_tema_forms_full() {
     set_tema('footerinc', load_js(array('bootstrap-file-input'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
     set_tema('footerinc', load_js(array('bootstrap-select'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
     set_tema('footerinc', load_js(array('jquery.tagsinput.min'),'assets/admin/atlant/js/plugins/tagsinput'), FALSE);
+
     set_tema('footerinc', load_js(array('codemirror'),'assets/admin/atlant/js/plugins/codemirror'), FALSE);
     set_tema('footerinc', load_js(array('htmlmixed'),'assets/admin/atlant/js/plugins/codemirror/mode/htmlmixed'), FALSE);
     set_tema('footerinc', load_js(array('xml'),'assets/admin/atlant/js/plugins/codemirror/mode/xml'), FALSE);
@@ -181,14 +192,45 @@ function init_tema_forms_full() {
     set_tema('footerinc', load_js(array('php'),'assets/admin/atlant/js/plugins/codemirror/mode/php'), FALSE);
     set_tema('footerinc', load_js(array('summernote'),'assets/admin/atlant/js/plugins/summernote'), FALSE);
 
-    set_tema('footerinc', load_js(array('dropzone.min'),'assets/admin/atlant/js/plugins/dropzone'), FALSE);
-    set_tema('footerinc', load_js(array('fileinput.min'),'assets/admin/atlant/js/plugins/fileinput'), FALSE);
+    //set_tema('footerinc', load_js(array('dropzone.min'),'assets/admin/atlant/js/plugins/dropzone'), FALSE);
+    //set_tema('footerinc', load_js(array('fileinput.min'),'assets/admin/atlant/js/plugins/fileinput'), FALSE);
     set_tema('footerinc', load_js(array('jqueryFileTree'),'assets/admin/atlant/js/plugins/filetree'), FALSE);
     set_tema('footerinc', load_js(array('cropper.min'),'assets/admin/atlant/js/plugins/cropper'), FALSE);
     set_tema('footerinc', load_js(array('jstree.min'),'assets/admin/atlant/js/plugins/jstree'), FALSE);
+    
+    set_tema('footerinc', '<!-- The Templates plugin is included to render the upload/download listings -->
+                                <script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+                                <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+                                <script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+                                <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+                                <script src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+                                <!-- blueimp Gallery script -->
+                                <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+                                <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.iframe-transport.js"></script>
+                                <!-- The basic File Upload plugin -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload.js"></script>
+                                <!-- The File Upload processing plugin -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload-process.js"></script>
+                                <!-- The File Upload image preview & resize plugin -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload-image.js"></script>
+                                <!-- The File Upload audio preview plugin -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload-audio.js"></script>
+                                <!-- The File Upload video preview plugin -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload-video.js"></script>
+                                <!-- The File Upload validation plugin -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload-validate.js"></script>
+                                <!-- The File Upload user interface plugin -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/jquery.fileupload-ui.js"></script>
+                                <!-- The main application script -->
+                                <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/main.js"></script>', FALSE);
+    
+    set_tema('footerinc', load_js(array('jstree.min'),'assets/admin/atlant/js/plugins/jstree'), FALSE);
 
     set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
-    set_tema('footerinc', load_js(array('plugins', 'actions','demo_file_handling','app'),'assets/admin/atlant/js'), FALSE);
+    set_tema('footerinc', load_js(array('plugins', 'actions'),'assets/admin/atlant/js'), FALSE);
+    //set_tema('footerinc', incluir_arquivo('demo_file_handling', 'includes', FALSE), FALSE);
+    set_tema('footerinc', load_js(array('app'),'assets/admin/atlant/js'), FALSE);
 }
 
 //inicia tema das paginas com datatable
