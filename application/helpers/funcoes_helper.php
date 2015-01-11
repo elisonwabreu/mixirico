@@ -102,7 +102,7 @@ function init_htmleditor() {
 //inicia importação dos estilos das paginas com formularios
 function init_tema_forms_simples() {
     set_tema('headerinc', load_css(array('theme-default'),'assets/admin/atlant/css'), FALSE);
-    set_tema('headerinc', load_css(array('app')), FALSE);
+    set_tema('headerinc', load_css(array('app'),'assets/admin/atlant/css'), FALSE);
     //carregando javascript do tema no topo da pagina
     set_tema('headerinc', load_js(array('jquery.min','jquery-ui.min'),'assets/admin/atlant/js/plugins/jquery'), FALSE);
     set_tema('headerinc', load_js(array('bootstrap.min'),'assets/admin/atlant/js/plugins/bootstrap'), FALSE);
@@ -121,7 +121,14 @@ function init_tema_forms_simples() {
     set_tema('footerinc', load_js(base_url('htmleditor/jquery.tinymce.js'), NULL, TRUE), FALSE);
     set_tema('footerinc', incluir_arquivo('htmleditor', 'includes', FALSE), FALSE);
 
-    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    $CI = & get_instance();
+    $segimento = $CI->uri->segment(1).'/'.$CI->uri->segment(2);
+    if( $segimento != 'usuarios/login' && $segimento != 'usuarios/nova_senha' ):
+        set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    else:
+        return false;
+    endif;
+    
     set_tema('footerinc', load_js(array('plugins', 'actions','demo_file_handling','app'),'assets/admin/atlant/js'), FALSE);
 }
 
@@ -151,7 +158,13 @@ function init_tema_forms_codemirror() {
     set_tema('footerinc', load_js(array('php'),'assets/admin/atlant/js/plugins/codemirror/mode/php'), FALSE);
     set_tema('footerinc', load_js(array('summernote'),'assets/admin/atlant/js/plugins/summernote'), FALSE);
 
-    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    $CI = & get_instance();
+    $segimento = $CI->uri->segment(1).'/'.$CI->uri->segment(2);
+    if( $segimento != 'usuarios/login' || $segimento != 'usuarios/nova_senha' ):
+        set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    else:
+        return false;
+    endif;
     set_tema('footerinc', load_js(array('plugins', 'actions','app'),'assets/admin/atlant/js'), FALSE);    
 }
 
@@ -226,8 +239,15 @@ function init_tema_forms_full() {
                                 <script src="'.  base_url() .'assets/admin/atlant/js/fileupload/main.js"></script>', FALSE);
     //set_tema('footerinc', incluir_arquivo('main_jquery_file_upload', 'includes', FALSE), FALSE);
     set_tema('footerinc', load_js(array('jstree.min'),'assets/admin/atlant/js/plugins/jstree'), FALSE);
-
-    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    
+    $CI = & get_instance();
+    $segimento = $CI->uri->segment(1).'/'.$CI->uri->segment(2);
+    if( $segimento != 'usuarios/login' || $segimento != 'usuarios/nova_senha' ):
+        set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    else:
+        return false;
+    endif;
+    
     set_tema('footerinc', load_js(array('plugins', 'actions'),'assets/admin/atlant/js'), FALSE);
     //set_tema('footerinc', incluir_arquivo('demo_file_handling', 'includes', FALSE), FALSE);
     set_tema('footerinc', load_js(array('app'),'assets/admin/atlant/js'), FALSE);
@@ -254,7 +274,13 @@ function init_tables() {
     set_tema('footerinc', load_js(array('jspdf'),'assets/admin/atlant/js/plugins/tableexport/jspdf'), FALSE);
     set_tema('footerinc', load_js(array('base64'),'assets/admin/atlant/js/plugins/tableexport/jspdf/libs'), FALSE);
 
-    set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    $CI = & get_instance();
+    $segimento = $CI->uri->segment(1).'/'.$CI->uri->segment(2);
+    if( $segimento != 'usuarios/login' || $segimento != 'usuarios/nova_senha' ):
+        set_tema('footerinc', incluir_arquivo('settings', 'includes', FALSE), FALSE);
+    else:
+        return false;
+    endif;
     set_tema('footerinc', load_js(array('plugins', 'actions','app'),'assets/admin/atlant/js'), FALSE);
 }
 

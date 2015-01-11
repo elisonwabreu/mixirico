@@ -14,7 +14,7 @@
 $(function () {
     'use strict';
     
-    var url      = window.location.href;
+    var url   = window.location.href;
     var items = url.split("/");
     var idGal = items[6];
 

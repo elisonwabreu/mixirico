@@ -64,11 +64,10 @@
                             <li<?php echo ($segimento == 'paginas/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('paginas/gerenciar', '<span class="fa fa-table"></span> Gerenciar'); ?></a></li>                        
                         </ul>
                     </li>     
-                    <li class="xn-openable<?php echo ($segimento == 'midia/cadastrar_galeria' || $segimento == 'midia/cadastrar' || $segimento == 'midia/gerenciar' || $segimento == 'midia/gerenciar_video' ) ? ' active' : '' ;?>">
+                    <li class="xn-openable<?php echo ($segimento == 'midia/cadastrar_video' || $segimento == 'midia/gerenciar_galeria' || $segimento == 'midia/cadastrar_galeria' || $segimento == 'midia/cadastrar' || $segimento == 'midia/gerenciar' || $segimento == 'midia/gerenciar_video' ) ? ' active' : '' ;?>">
                         <a href="#"><span class="fa fa-picture-o"></span> <span class="xn-text">Midias</span></a>
                         <ul>
-                            <li<?php echo ($segimento == 'midia/cadastrar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/cadastrar', '<span class="fa fa-plus-square"></span> Cadastrar Imagens'); ?></a></li>
-                            <li<?php echo ($segimento == 'midia/cadastrar_galeria' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/cadastrar_galeria', '<span class="fa fa-plus-square"></span> Cadastrar Galerias'); ?></a></li>
+                            <li<?php echo ($segimento == 'midia/gerenciar_galeria' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/gerenciar_galeria', '<span class="fa fa-plus-square"></span> Gerenciar Galerias'); ?></a></li>
                             <li<?php echo ($segimento == 'midia/gerenciar' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/gerenciar', '<span class="fa fa-table"></span> Gerenciar Imagens'); ?></a></li>                       
                             <li<?php echo ($segimento == 'midia/gerenciar_video' ) ? ' class="active"' : '' ;?>><?php echo anchor('midia/gerenciar_video', '<span class="fa fa-table"></span> Gerenciar Videos'); ?></a></li>                       
                         </ul>

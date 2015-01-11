@@ -7,6 +7,7 @@ class Midia extends CI_Controller {
             init_painel();
             esta_logado();
             $this->load->model('midia_model', 'midia');
+            $this->load->model('galerias_model', 'galerias');
 	}
 
 	public function index(){
@@ -35,9 +36,29 @@ class Midia extends CI_Controller {
 	}
         
         public function cadastrar_galeria(){
-            init_tema_forms_full();    
+            $this->form_validation->set_rules('titulo', 'TITULO', 'trim|required|ucfirst');
+            $this->form_validation->set_rules('descricao', 'DESCRICAO', 'trim');
+            if ($this->form_validation->run()==TRUE):
+                $upload = $this->midia->do_upload('arquivo');
+                if (is_array($upload) && $upload['file_name'] != ''):
+                    $dados = elements(array('titulo','descricao'), $this->input->post());
+                    $dados['arquivo'] = $upload['file_name'];
+                    $this->galerias->do_insert($dados);
+                else:
+                    set_msg('msgerro', $upload, 'erro');
+                    redirect(current_url());
+                endif;
+            endif;
+            init_tema_forms_simples();  
+            //init_tema_forms_full();    
             set_tema('titulo', 'Upload de imagens');
             set_tema('conteudo', load_modulo('midia', 'cadastrar-galeria'));
+            load_template();
+	}
+        public function cadastrar_img_galeria(){
+            init_tema_forms_full();    
+            set_tema('titulo', 'Upload de imagens');
+            set_tema('conteudo', load_modulo('midia', 'cadastrar-img-galeria'));
             load_template();
 	}
         
@@ -171,6 +192,13 @@ class Midia extends CI_Controller {
             set_tema('conteudo', load_modulo('midia', 'gerenciar-videos'));
             load_template();
 	}
+        
+        public function gerenciar_galeria(){
+            init_tables();
+            set_tema('titulo', 'Listagem de mídias');
+            set_tema('conteudo', load_modulo('midia', 'gerenciar-galeria'));
+            load_template();
+	}
 
 	public function editar(){
             $this->form_validation->set_rules('tipo', 'TIPO', 'trim|required');
@@ -183,6 +211,19 @@ class Midia extends CI_Controller {
             init_tema_forms_simples();
             set_tema('titulo', 'Alteração de mídia');
             set_tema('conteudo', load_modulo('midia', 'editar'));
+            load_template();
+	}
+        
+        public function editar_galeria(){
+            $this->form_validation->set_rules('titulo', 'TITULO', 'trim|required|ucfirst');
+            $this->form_validation->set_rules('descricao', 'DESCRICAO', 'trim');
+            if ($this->form_validation->run()==TRUE):
+                $dados = elements(array('titulo', 'descricao'), $this->input->post());
+                $this->galerias->do_update($dados, array('id'=>$this->input->post('idmidia')));
+            endif;
+            init_tema_forms_simples();
+            set_tema('titulo', 'Alteração de mídia');
+            set_tema('conteudo', load_modulo('midia', 'editar-galeria'));
             load_template();
 	}
         
@@ -234,6 +275,22 @@ class Midia extends CI_Controller {
                 endif;
             endif;
             redirect('midia/gerenciar_video');
+	}
+        
+        public function excluir_galeria(){
+            if (is_admin(TRUE)):
+                $idmidia = $this->uri->segment(3);
+                if ($idmidia != NULL):
+                    $query = $this->galerias->get_byid($idmidia);
+                    if ($query->num_rows()==1):
+                        $query = $query->row();
+                        $this->galerias->do_delete(array('id'=>$query->id), FALSE);
+                    endif;
+                else:
+                    set_msg('msgerro', 'Escolha uma mídia para excluir', 'erro');
+                endif;
+            endif;
+            redirect('midia/gerenciar_galeria');
 	}
 	
 	public function get_imgs(){
