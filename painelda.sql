@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Jan-2015 às 22:34
+-- Generation Time: 15-Jan-2015 às 16:43
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -40,7 +40,14 @@ CREATE TABLE IF NOT EXISTS `agenda` (
   `estado` varchar(60) NOT NULL,
   `status` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `agenda`
+--
+
+INSERT INTO `agenda` (`id`, `titulo`, `descricao`, `data`, `hora`, `banner`, `logradouro`, `bairro`, `numero`, `cidade`, `estado`, `status`) VALUES
+(1, 'Mussum ipsum', '<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&eacute; pra quem &eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>\r\n<p>Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>\r\n<p>Casamentiss faiz malandris se pirulit&aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&eacute; intende tudis nuam golada, vinho, uiski, carir&iacute;, rum da jamaikis, s&oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>\r\n<p>Cevadis im ampola pa arma uma pindureta. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justis enim. Atirei o pau no gatis. Viva Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravidis.</p>\r\n<p>Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Etiam ultricies tincidunt ligula, sed accumsan sapien mollis et. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravida. Quisque vitae metus id massa tincidunt iaculis sed sed purus. Vestibulum viverra lobortis faucibus. Vestibulum et turpis.</p>\r\n<p>Vitis e adipiscing enim. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justo enim. Atirei o pau no gatis. Quisque dignissim felis quis sapien ullamcorper varius tempor sem varius. Vivamus lobortis posuere facilisis. Sed auctor eros ac sapien sagittis accumsan. Integer semper accumsan arcu, at aliquam nisl sollicitudin non. Nullam pellentesque metus nec libero laoreet vitae vestibulum ante ultricies. Phasellus non mollis purus. Integer vel lacus dolor. Proin eget mi nec mauris convallis ullamcorper vel ac nulla. Nulla et semper metus.</p>', '16/01/2015', '20:00', 385429, 'rua 303', 'Jangurussu', '284', 'fortaleza', 'ce', '1');
 
 -- --------------------------------------------------------
 
@@ -56,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `query` text NOT NULL,
   `observacao` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=205 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=340 ;
 
 --
 -- Extraindo dados da tabela `auditoria`
@@ -267,7 +274,143 @@ INSERT INTO `auditoria` (`id`, `usuario`, `data_hora`, `operacao`, `query`, `obs
 (201, 'oshima', '2015-01-07 00:10:48', 'Inclusão de video', 'INSERT INTO `videos` (`embed`, `thumb`, `titulo`, `descricao`, `server`) VALUES (''tl95fmvREqk'', ''http://i1.ytimg.com/vi/tl95fmvREqk/default.jpg'', ''Programa Leruaite 22/10/2014 - Humorista Mixirico'', ''Programa Leruaite 22/10/2014 - Humorista Mixirico'', ''YouTube'')', 'Novo video cadastrado no sistema'),
 (202, 'oshima', '2015-01-07 00:11:59', 'Inclusão de video', 'INSERT INTO `videos` (`embed`, `thumb`, `titulo`, `descricao`, `server`) VALUES (''Http://vimeo.com/21361914'', ''http://i.vimeocdn.com/video/137356918_100x75.jpg'', ''Sistema helpdesk Final - Corrigindo listas e datas, enviando e-mails do sistema'', ''Saudações meus queridos, aqui estou eu entrando com a última aula de nosso sistema de suporte em helpdesk com PHP!<br />\\n<br />\\nE nessa veremos uma pequena correção na ordenação das listas e nas datas. Espero que tenham gostado de mais essa seqüência e que tenha ajudado vocês com suas tarefas.<br />\\n<br />\\nDeixo aquele forte abraço e até a próxima!<br />\\n<br />\\nOS ARQUIVOS DESENVOLVIODOS E SCRIPTS, ASSIM COMO AS AULAS ESTÃO EM: http://www.upinside.com.br/categoria/especiais/sistema-helpedesk-com-php'', ''Vimeo'')', 'Novo video cadastrado no sistema'),
 (203, 'oshima', '2015-01-07 00:27:32', 'Alteração de video', 'UPDATE `videos` SET `titulo` = ''Sistema helpdesk Final - Corrigindo listas e datas, enviando e-mails do sistema'', `descricao` = ''Saudações meus queridos, aqui estou eu entrando com a última aula de nosso sistema de suporte em helpdesk com PHP!<br />\\r\\n<br />\\r\\nE nessa veremos uma pequena correção na ordenação das listas e nas datas. Espero que tenham gostado de mais essa seqüência e que tenha ajudado vocês com suas tarefas.<br />\\r\\n<br />\\r\\nDeixo aquele forte abraço e até a próxima!<br />\\r\\n<br />\\r\\nOS ARQUIVOS DESENVOLVIODOS E SCRIPTS, ASSIM COMO AS AULAS ESTÃO EM: http://www.upinside.com.br/categoria/especiais/sistema-helpedesk-com-php'' WHERE `id` =  ''7''', 'O video com o id "7" foi alterado'),
-(204, 'oshima', '2015-01-07 00:34:50', 'Exclusão de video', 'DELETE FROM `videos`\nWHERE `id` =  ''7''', 'O video com o id "7" foi excluído');
+(204, 'oshima', '2015-01-07 00:34:50', 'Exclusão de video', 'DELETE FROM `videos`\nWHERE `id` =  ''7''', 'O video com o id "7" foi excluído'),
+(205, 'oshima', '2015-01-07 01:54:37', 'Inclusão de página', 'INSERT INTO `agenda` (`titulo`, `descricao`, `data`, `hora`, `logradouro`, `bairro`, `numero`, `cidade`, `estado`, `banner`) VALUES (''Humor de graça - Mixirico'', ''<p><img src=\\"http://localhost/mixirico/assets/uploads/logo-estampas-e-bordados.png\\" alt=\\"\\" /></p>'', ''16/01/2015'', ''20:00'', ''rua 303'', ''Jangurussu'', ''284'', ''fortaleza'', ''ce'', ''08.jpg'')', 'Nova página cadastrada no sistema'),
+(206, 'oshima', '2015-01-07 02:00:45', 'Alteração de página', 'UPDATE `agenda` SET `titulo` = ''Humor de graça - Mixirico'', `descricao` = ''&lt;p&gt;&lt;span&gt;Lorem Ipsum&lt;/span&gt;&lt;span&gt;&amp;nbsp;&amp;eacute; simplesmente uma simula&amp;ccedil;&amp;atilde;o de texto da ind&amp;uacute;stria tipogr&amp;aacute;fica e de impressos, e vem sendo utilizado desde o s&amp;eacute;culo XVI, quando um impressor&amp;nbsp;&lt;/span&gt;&lt;/p&gt;'', `data` = ''16/01/2015'', `hora` = ''20:00'', `logradouro` = ''rua 303'', `bairro` = ''Jangurussu'', `numero` = ''284'', `cidade` = ''fortaleza'', `estado` = ''ce'' WHERE `id` =  ''1''', 'A página com o id "1" foi alterada'),
+(207, 'oshima', '2015-01-07 02:01:08', 'Exclusão de página', 'DELETE FROM `agenda`\nWHERE `id` =  ''1''', 'A página com o id "1" foi excluída'),
+(208, 'oshima', '2015-01-09 01:26:51', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(209, 'oshima', '2015-01-09 14:19:40', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(210, 'oshima', '2015-01-09 21:15:11', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(211, 'oshima', '2015-01-09 22:19:55', 'Inclusão de video', 'INSERT INTO `videos` (`embed`, `thumb`, `titulo`, `descricao`, `server`) VALUES (''-y8tvDpgdPc'', ''http://i1.ytimg.com/vi/-y8tvDpgdPc/default.jpg'', ''Gaijin Sentai - Jingle Bells (feat Julio Cesar)'', ''Band: Gaijin Sentai Music: Jingle Bells Merry Kurishimasu!!! www.gaijinsentai.wordpress.com www.myspace.com/gaijinsentai www.twitter.com/GaijinSentai'', ''YouTube'')', 'Novo video cadastrado no sistema'),
+(212, 'oshima', '2015-01-09 22:20:09', 'Exclusão de video', 'DELETE FROM `videos`\nWHERE `id` =  ''7''', 'O video com o id "7" foi excluído'),
+(213, 'oshima', '2015-01-09 23:48:48', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''3''', 'A mídia com o id "3" foi excluída'),
+(214, 'oshima', '2015-01-09 23:48:51', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''2''', 'A mídia com o id "2" foi excluída'),
+(215, 'oshima', '2015-01-09 23:48:54', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''4''', 'A mídia com o id "4" foi excluída'),
+(216, 'oshima', '2015-01-09 23:48:59', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''5''', 'A mídia com o id "5" foi excluída'),
+(217, 'oshima', '2015-01-10 01:38:23', 'Logoff no sistema', '', 'O usuário "oshima" fez logoff do sistema'),
+(218, 'oshima', '2015-01-10 01:38:53', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(219, 'oshima', '2015-01-10 02:17:52', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''sleeping_in_the_car_seat.jpg'', ''Upload via Ajax.'', ''sleeping_in_the_car_seat.jpg'')', 'Nova mídia cadastrada no sistema'),
+(220, 'oshima', '2015-01-10 02:17:53', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''baby_against_blue_sky_204313.jpg'', ''Upload via Ajax.'', ''baby_against_blue_sky_204313.jpg'')', 'Nova mídia cadastrada no sistema'),
+(221, 'oshima', '2015-01-10 02:17:53', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''04.jpg'', ''Upload via Ajax.'', ''04.jpg'')', 'Nova mídia cadastrada no sistema'),
+(222, 'oshima', '2015-01-10 02:17:53', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''03.jpg'', ''Upload via Ajax.'', ''03.jpg'')', 'Nova mídia cadastrada no sistema'),
+(223, 'oshima', '2015-01-10 02:40:15', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(224, 'oshima', '2015-01-10 02:50:26', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''Barcodes2_r2d.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d.jpg'')', 'Nova mídia cadastrada no sistema'),
+(225, 'oshima', '2015-01-10 02:50:26', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''63503204d18160dd6a733e989b70c404_XL.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL.jpg'')', 'Nova mídia cadastrada no sistema'),
+(226, 'oshima', '2015-01-10 02:50:26', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''boleto.jpg'', ''Upload via Ajax.'', ''boleto.jpg'')', 'Nova mídia cadastrada no sistema'),
+(227, 'oshima', '2015-01-10 02:52:01', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''Barcodes2_r2d1.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(228, 'oshima', '2015-01-10 02:52:02', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''boleto1.jpg'', ''Upload via Ajax.'', ''boleto1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(229, 'oshima', '2015-01-10 02:52:02', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''63503204d18160dd6a733e989b70c404_XL1.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(230, 'oshima', '2015-01-10 02:52:57', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''Barcodes2_r2d.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d.jpg'')', 'Nova mídia cadastrada no sistema'),
+(231, 'oshima', '2015-01-10 02:52:57', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''boleto.jpg'', ''Upload via Ajax.'', ''boleto.jpg'')', 'Nova mídia cadastrada no sistema'),
+(232, 'oshima', '2015-01-10 02:52:57', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''63503204d18160dd6a733e989b70c404_XL.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL.jpg'')', 'Nova mídia cadastrada no sistema'),
+(233, 'oshima', '2015-01-10 02:58:11', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''1'', ''G'', ''boleto1.jpg'', ''Upload via Ajax.'', ''boleto1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(234, 'oshima', '2015-01-10 03:01:37', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''2'', ''G'', ''63503204d18160dd6a733e989b70c404_XL.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL.jpg'')', 'Nova mídia cadastrada no sistema'),
+(235, 'oshima', '2015-01-10 03:03:04', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''63503204d18160dd6a733e989b70c404_XL1.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(236, 'oshima', '2015-01-10 03:03:04', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''Barcodes2_r2d.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d.jpg'')', 'Nova mídia cadastrada no sistema'),
+(237, 'oshima', '2015-01-10 03:03:56', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''2'', ''G'', ''63503204d18160dd6a733e989b70c404_XL2.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL2.jpg'')', 'Nova mídia cadastrada no sistema'),
+(238, 'oshima', '2015-01-10 03:07:55', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''2'', ''G'', ''63503204d18160dd6a733e989b70c404_XL3.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL3.jpg'')', 'Nova mídia cadastrada no sistema'),
+(239, 'oshima', '2015-01-10 03:15:39', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''63503204d18160dd6a733e989b70c404_XL.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL.jpg'')', 'Nova mídia cadastrada no sistema'),
+(240, 'oshima', '2015-01-10 03:15:39', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''Barcodes2_r2d.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d.jpg'')', 'Nova mídia cadastrada no sistema'),
+(241, 'oshima', '2015-01-10 03:15:39', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (0, ''G'', ''boleto.jpg'', ''Upload via Ajax.'', ''boleto.jpg'')', 'Nova mídia cadastrada no sistema'),
+(242, 'oshima', '2015-01-10 03:18:33', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''10'', ''G'', ''63503204d18160dd6a733e989b70c404_XL1.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(243, 'oshima', '2015-01-10 03:18:33', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''10'', ''G'', ''Barcodes2_r2d1.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(244, 'oshima', '2015-01-10 13:33:04', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(245, 'oshima', '2015-01-10 17:39:56', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(246, 'oshima', '2015-01-10 17:43:04', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(247, 'oshima', '2015-01-10 17:43:52', 'Alteração de video', 'UPDATE `videos` SET `titulo` = ''Humor de graça - Mixirico'', `descricao` = ''iosdhfgpaudshfgiphaipdfhgiupsdfipgasipudgiups'' WHERE `id` =  ''3''', 'O video com o id "3" foi alterado'),
+(248, 'oshima', '2015-01-10 17:45:48', 'Inclusão de mídia', 'INSERT INTO `midia` (`tipo`, `nome`, `descricao`, `arquivo`) VALUES (''B'', ''Maluco doido'', ''DOP'', ''63503204d18160dd6a733e989b70c404_XL2.jpg'')', 'Nova mídia cadastrada no sistema'),
+(249, 'oshima', '2015-01-10 17:46:28', 'Inclusão de mídia', 'INSERT INTO `midia` (`tipo`, `nome`, `descricao`, `arquivo`) VALUES (''G'', ''DOP'', ''logo'', ''boleto1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(250, 'oshima', '2015-01-10 17:56:55', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''1'', ''G'', ''63503204d18160dd6a733e989b70c404_XL3.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL3.jpg'')', 'Nova mídia cadastrada no sistema'),
+(251, 'oshima', '2015-01-10 17:56:56', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''1'', ''G'', ''boleto2.jpg'', ''Upload via Ajax.'', ''boleto2.jpg'')', 'Nova mídia cadastrada no sistema'),
+(252, 'oshima', '2015-01-10 17:56:55', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''1'', ''G'', ''Barcodes2_r2d2.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d2.jpg'')', 'Nova mídia cadastrada no sistema'),
+(253, 'oshima', '2015-01-10 17:58:06', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''1'', ''G'', ''63503204d18160dd6a733e989b70c404_XL.jpg'', ''Upload via Ajax.'', ''63503204d18160dd6a733e989b70c404_XL.jpg'')', 'Nova mídia cadastrada no sistema'),
+(254, 'oshima', '2015-01-10 17:58:06', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''1'', ''G'', ''7WEMh2Y.png'', ''Upload via Ajax.'', ''7WEMh2Y.png'')', 'Nova mídia cadastrada no sistema'),
+(255, 'oshima', '2015-01-10 17:58:06', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''1'', ''G'', ''Barcodes2_r2d.jpg'', ''Upload via Ajax.'', ''Barcodes2_r2d.jpg'')', 'Nova mídia cadastrada no sistema'),
+(256, 'oshima', '2015-01-10 17:58:43', 'Logoff no sistema', '', 'O usuário "oshima" fez logoff do sistema'),
+(257, 'oshima', '2015-01-10 18:05:12', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(258, 'oshima', '2015-01-10 18:05:29', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''facebook'', `valor_config` = ''https://www.facebook.com/pages/Zedoidin/1545837109005479'' WHERE `nome_config` =  ''facebook''', 'A configuração para o campo "facebook" foi alterada'),
+(259, 'oshima', '2015-01-10 18:05:29', 'Exclusão de configuração', 'DELETE FROM `settings`\nWHERE `nome_config` =  ''instagram''', 'A configuração do campo "instagram" foi excluída'),
+(260, 'oshima', '2015-01-10 18:05:30', 'Exclusão de configuração', 'DELETE FROM `settings`\nWHERE `nome_config` =  ''youtube''', 'A configuração do campo "youtube" foi excluída'),
+(261, 'oshima', '2015-01-10 22:55:44', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(262, 'oshima', '2015-01-10 22:58:07', 'Logoff no sistema', '', 'O usuário "oshima" fez logoff do sistema'),
+(263, 'oshima', '2015-01-10 23:33:34', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(264, 'oshima', '2015-01-11 00:45:08', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(265, 'oshima', '2015-01-11 01:05:54', 'Inclusão de página', 'INSERT INTO `galerias` (`titulo`, `descricao`, `arquivo`) VALUES (''Maluco doido'', ''dgsdfg sdfgsdfg'', ''08.jpg'')', 'Nova página cadastrada no sistema'),
+(266, 'oshima', '2015-01-11 01:06:13', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''4''', 'A mídia com o id "4" foi excluída'),
+(267, 'oshima', '2015-01-11 01:06:19', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''5''', 'A mídia com o id "5" foi excluída'),
+(268, 'oshima', '2015-01-11 01:06:23', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''2''', 'A mídia com o id "2" foi excluída'),
+(269, 'oshima', '2015-01-11 01:06:27', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''1''', 'A mídia com o id "1" foi excluída'),
+(270, 'oshima', '2015-01-11 01:06:33', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''3''', 'A mídia com o id "3" foi excluída'),
+(271, 'oshima', '2015-01-11 01:25:59', 'Alteração de página', 'UPDATE `galerias` SET `titulo` = ''Maluco doido'', `descricao` = ''maluco doido'' WHERE `id` =  ''7''', 'A página com o id "7" foi alterada'),
+(272, 'oshima', '2015-01-11 01:28:24', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''7''', 'A mídia com o id "7" foi excluída'),
+(273, 'oshima', '2015-01-11 01:29:19', 'Exclusão de página', 'DELETE FROM `galerias`\nWHERE `id` =  ''7''', 'A página com o id "7" foi excluída'),
+(274, 'oshima', '2015-01-11 01:46:33', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''06.jpg'', ''Upload via Ajax.'', ''06.jpg'')', 'Nova mídia cadastrada no sistema'),
+(275, 'oshima', '2015-01-11 01:46:33', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''05.jpg'', ''Upload via Ajax.'', ''05.jpg'')', 'Nova mídia cadastrada no sistema'),
+(276, 'oshima', '2015-01-11 01:46:34', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''07.jpg'', ''Upload via Ajax.'', ''07.jpg'')', 'Nova mídia cadastrada no sistema'),
+(277, 'oshima', '2015-01-11 01:46:34', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''081.jpg'', ''Upload via Ajax.'', ''081.jpg'')', 'Nova mídia cadastrada no sistema'),
+(278, 'oshima', '2015-01-11 01:48:28', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''082.jpg'', ''Upload via Ajax.'', ''082.jpg'')', 'Nova mídia cadastrada no sistema'),
+(279, 'oshima', '2015-01-11 01:48:28', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''071.jpg'', ''Upload via Ajax.'', ''071.jpg'')', 'Nova mídia cadastrada no sistema'),
+(280, 'oshima', '2015-01-11 01:48:28', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''061.jpg'', ''Upload via Ajax.'', ''061.jpg'')', 'Nova mídia cadastrada no sistema'),
+(281, 'oshima', '2015-01-11 01:50:24', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''05.jpg'', ''Upload via Ajax.'', ''05.jpg'')', 'Nova mídia cadastrada no sistema'),
+(282, 'oshima', '2015-01-11 01:50:24', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''06.jpg'', ''Upload via Ajax.'', ''06.jpg'')', 'Nova mídia cadastrada no sistema'),
+(283, 'oshima', '2015-01-11 01:50:25', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''07.jpg'', ''Upload via Ajax.'', ''07.jpg'')', 'Nova mídia cadastrada no sistema'),
+(284, 'oshima', '2015-01-11 01:50:25', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''08.jpg'', ''Upload via Ajax.'', ''08.jpg'')', 'Nova mídia cadastrada no sistema'),
+(285, 'oshima', '2015-01-11 01:53:25', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''escalator_2012.jpg'', ''Upload via Ajax.'', ''escalator_2012.jpg'')', 'Nova mídia cadastrada no sistema'),
+(286, 'oshima', '2015-01-11 01:53:25', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''shopping_mall.jpg'', ''Upload via Ajax.'', ''shopping_mall.jpg'')', 'Nova mídia cadastrada no sistema'),
+(287, 'oshima', '2015-01-11 01:58:20', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''sleeping_in_the_car_seat.jpg'', ''Upload via Ajax.'', ''sleeping_in_the_car_seat.jpg'')', 'Nova mídia cadastrada no sistema'),
+(288, 'oshima', '2015-01-11 01:58:20', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''04.jpg'', ''Upload via Ajax.'', ''04.jpg'')', 'Nova mídia cadastrada no sistema'),
+(289, 'oshima', '2015-01-11 01:58:20', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''baby_against_blue_sky_204313.jpg'', ''Upload via Ajax.'', ''baby_against_blue_sky_204313.jpg'')', 'Nova mídia cadastrada no sistema'),
+(290, 'oshima', '2015-01-11 01:58:21', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''03.jpg'', ''Upload via Ajax.'', ''03.jpg'')', 'Nova mídia cadastrada no sistema'),
+(291, 'oshima', '2015-01-11 02:09:46', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''051.jpg'', ''Upload via Ajax.'', ''051.jpg'')', 'Nova mídia cadastrada no sistema'),
+(292, 'oshima', '2015-01-11 02:09:46', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''baby_against_blue_sky_2043131.jpg'', ''Upload via Ajax.'', ''baby_against_blue_sky_2043131.jpg'')', 'Nova mídia cadastrada no sistema'),
+(293, 'oshima', '2015-01-11 02:09:46', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''sleeping_in_the_car_seat1.jpg'', ''Upload via Ajax.'', ''sleeping_in_the_car_seat1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(294, 'oshima', '2015-01-11 02:09:46', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''061.jpg'', ''Upload via Ajax.'', ''061.jpg'')', 'Nova mídia cadastrada no sistema'),
+(295, 'oshima', '2015-01-11 02:14:09', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''01.jpg'', ''Upload via Ajax.'', ''01.jpg'')', 'Nova mídia cadastrada no sistema'),
+(296, 'oshima', '2015-01-11 02:14:09', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''06.jpg'', ''Upload via Ajax.'', ''06.jpg'')', 'Nova mídia cadastrada no sistema'),
+(297, 'oshima', '2015-01-11 02:14:09', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''05.jpg'', ''Upload via Ajax.'', ''05.jpg'')', 'Nova mídia cadastrada no sistema'),
+(298, 'oshima', '2015-01-11 02:14:09', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''02.jpg'', ''Upload via Ajax.'', ''02.jpg'')', 'Nova mídia cadastrada no sistema'),
+(299, 'oshima', '2015-01-11 02:14:09', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''03.jpg'', ''Upload via Ajax.'', ''03.jpg'')', 'Nova mídia cadastrada no sistema'),
+(300, 'oshima', '2015-01-11 02:14:09', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''04.jpg'', ''Upload via Ajax.'', ''04.jpg'')', 'Nova mídia cadastrada no sistema'),
+(301, 'oshima', '2015-01-11 02:14:10', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''sleeping_in_the_car_seat.jpg'', ''Upload via Ajax.'', ''sleeping_in_the_car_seat.jpg'')', 'Nova mídia cadastrada no sistema'),
+(302, 'oshima', '2015-01-11 02:14:10', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''baby_against_blue_sky_204313.jpg'', ''Upload via Ajax.'', ''baby_against_blue_sky_204313.jpg'')', 'Nova mídia cadastrada no sistema'),
+(303, 'oshima', '2015-01-11 02:16:44', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''01.jpg'', ''Upload via Ajax.'', ''01.jpg'')', 'Nova mídia cadastrada no sistema'),
+(304, 'oshima', '2015-01-11 02:16:44', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''02.jpg'', ''Upload via Ajax.'', ''02.jpg'')', 'Nova mídia cadastrada no sistema'),
+(305, 'oshima', '2015-01-11 02:16:45', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''04.jpg'', ''Upload via Ajax.'', ''04.jpg'')', 'Nova mídia cadastrada no sistema'),
+(306, 'oshima', '2015-01-11 02:16:45', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''baby_against_blue_sky_204313.jpg'', ''Upload via Ajax.'', ''baby_against_blue_sky_204313.jpg'')', 'Nova mídia cadastrada no sistema'),
+(307, 'oshima', '2015-01-11 02:16:45', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''03.jpg'', ''Upload via Ajax.'', ''03.jpg'')', 'Nova mídia cadastrada no sistema'),
+(308, 'oshima', '2015-01-11 02:16:45', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''06.jpg'', ''Upload via Ajax.'', ''06.jpg'')', 'Nova mídia cadastrada no sistema'),
+(309, 'oshima', '2015-01-11 02:16:45', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''05.jpg'', ''Upload via Ajax.'', ''05.jpg'')', 'Nova mídia cadastrada no sistema'),
+(310, 'oshima', '2015-01-11 02:16:45', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''sleeping_in_the_car_seat.jpg'', ''Upload via Ajax.'', ''sleeping_in_the_car_seat.jpg'')', 'Nova mídia cadastrada no sistema'),
+(311, 'oshima', '2015-01-11 03:25:40', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(312, 'oshima', '2015-01-11 03:26:03', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''021.jpg'', ''Upload via Ajax.'', ''021.jpg'')', 'Nova mídia cadastrada no sistema'),
+(313, 'oshima', '2015-01-11 03:26:03', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''041.jpg'', ''Upload via Ajax.'', ''041.jpg'')', 'Nova mídia cadastrada no sistema'),
+(314, 'oshima', '2015-01-11 03:26:03', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''baby_against_blue_sky_2043131.jpg'', ''Upload via Ajax.'', ''baby_against_blue_sky_2043131.jpg'')', 'Nova mídia cadastrada no sistema'),
+(315, 'oshima', '2015-01-11 03:26:03', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''sleeping_in_the_car_seat1.jpg'', ''Upload via Ajax.'', ''sleeping_in_the_car_seat1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(316, 'oshima', '2015-01-11 03:26:03', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''031.jpg'', ''Upload via Ajax.'', ''031.jpg'')', 'Nova mídia cadastrada no sistema'),
+(317, 'oshima', '2015-01-11 03:26:03', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''4'', ''G'', ''061.jpg'', ''Upload via Ajax.'', ''061.jpg'')', 'Nova mídia cadastrada no sistema'),
+(318, 'oshima', '2015-01-11 15:30:41', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(319, 'oshima', '2015-01-11 15:33:23', 'Inclusão de página', 'INSERT INTO `posts` (`titulo`, `slug`, `conteudo`) VALUES (''Mussum ipsum'', ''mussum-ipsum'', ''&lt;p&gt;Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&amp;aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&amp;eacute; pra quem &amp;eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.&lt;/p&gt;\\r\\n&lt;p&gt;Suco de cevadiss, &amp;eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&amp;eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&amp;eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.&lt;/p&gt;\\r\\n&lt;p&gt;Casamentiss faiz malandris se pirulit&amp;aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&amp;eacute; intende tudis nuam golada, vinho, uiski, carir&amp;iacute;, rum da jamaikis, s&amp;oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;'')', 'Nova página cadastrada no sistema'),
+(320, 'oshima', '2015-01-11 15:33:45', 'Inclusão de página', 'INSERT INTO `posts` (`titulo`, `slug`, `conteudo`) VALUES (''Mussum ipsum 2'', ''mussum-ipsum-2'', ''&lt;p&gt;Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&amp;aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&amp;eacute; pra quem &amp;eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.&lt;/p&gt;\\r\\n&lt;p&gt;Suco de cevadiss, &amp;eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&amp;eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&amp;eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.&lt;/p&gt;\\r\\n&lt;p&gt;Casamentiss faiz malandris se pirulit&amp;aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&amp;eacute; intende tudis nuam golada, vinho, uiski, carir&amp;iacute;, rum da jamaikis, s&amp;oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;'')', 'Nova página cadastrada no sistema'),
+(321, 'oshima', '2015-01-11 15:34:10', 'Inclusão de página', 'INSERT INTO `posts` (`titulo`, `slug`, `conteudo`) VALUES (''Mussum ipsum 3'', ''mussum-ipsum-3'', ''&lt;p&gt;Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&amp;aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&amp;eacute; pra quem &amp;eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.&lt;/p&gt;\\r\\n&lt;p&gt;Suco de cevadiss, &amp;eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&amp;eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&amp;eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.&lt;/p&gt;\\r\\n&lt;p&gt;Casamentiss faiz malandris se pirulit&amp;aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&amp;eacute; intende tudis nuam golada, vinho, uiski, carir&amp;iacute;, rum da jamaikis, s&amp;oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;'')', 'Nova página cadastrada no sistema'),
+(322, 'oshima', '2015-01-11 16:49:25', 'Inclusão de mídia', 'INSERT INTO `midia` (`tipo`, `nome`, `descricao`, `arquivo`) VALUES (''B'', ''Maluco doido'', ''DOP - Maluco doido'', ''385429_2201173323250_1664840903_1757753_150102401_n.jpg'')', 'Nova mídia cadastrada no sistema'),
+(323, 'oshima', '2015-01-11 16:49:42', 'Inclusão de mídia', 'INSERT INTO `midia` (`tipo`, `nome`, `descricao`, `arquivo`) VALUES (''B'', ''Maluco doido 2'', ''DOP - Maluco doido 2'', ''393414_2201175523305_2130581748_n.jpg'')', 'Nova mídia cadastrada no sistema'),
+(324, 'oshima', '2015-01-11 17:08:05', 'Exclusão de página', 'DELETE FROM `posts`\nWHERE `id` =  ''3''', 'A página com o id "3" foi excluída'),
+(325, 'oshima', '2015-01-11 17:08:08', 'Exclusão de página', 'DELETE FROM `posts`\nWHERE `id` =  ''1''', 'A página com o id "1" foi excluída'),
+(326, 'oshima', '2015-01-11 17:08:10', 'Exclusão de página', 'DELETE FROM `posts`\nWHERE `id` =  ''2''', 'A página com o id "2" foi excluída'),
+(327, 'oshima', '2015-01-11 17:12:31', 'Inclusão de página', 'INSERT INTO `posts` (`titulo`, `slug`, `conteudo`, `dataCreate`) VALUES (''Mussum ipsum'', ''mussum-ipsum'', ''&lt;p&gt;Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&amp;aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&amp;eacute; pra quem &amp;eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.&lt;/p&gt;\\r\\n&lt;p&gt;Suco de cevadiss, &amp;eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&amp;eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&amp;eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.&lt;/p&gt;\\r\\n&lt;p&gt;Casamentiss faiz malandris se pirulit&amp;aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&amp;eacute; intende tudis nuam golada, vinho, uiski, carir&amp;iacute;, rum da jamaikis, s&amp;oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;\\r\\n&lt;p&gt;Cevadis im ampola pa arma uma pindureta. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justis enim. Atirei o pau no gatis. Viva Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &amp;eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravidis.&lt;/p&gt;\\r\\n&lt;p&gt;Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &amp;eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Etiam ultricies tincidunt ligula, sed accumsan sapien mollis et. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravida. Quisque vitae metus id massa tincidunt iaculis sed sed purus. Vestibulum viverra lobortis faucibus. Vestibulum et turpis.&lt;/p&gt;\\r\\n&lt;p&gt;Vitis e adipiscing enim. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justo enim. Atirei o pau no gatis. Quisque dignissim felis quis sapien ullamcorper varius tempor sem varius. Vivamus lobortis posuere facilisis. Sed auctor eros ac sapien sagittis accumsan. Integer semper accumsan arcu, at aliquam nisl sollicitudin non. Nullam pellentesque metus nec libero laoreet vitae vestibulum ante ultricies. Phasellus non mollis purus. Integer vel lacus dolor. Proin eget mi nec mauris convallis ullamcorper vel ac nulla. Nulla et semper metus.&lt;/p&gt;'', ''2015-01-11 14:12:31'')', 'Nova página cadastrada no sistema'),
+(328, 'oshima', '2015-01-11 17:15:00', 'Exclusão de página', 'DELETE FROM `posts`\nWHERE `id` =  ''4''', 'A página com o id "4" foi excluída'),
+(329, 'oshima', '2015-01-11 17:15:17', 'Inclusão de página', 'INSERT INTO `posts` (`titulo`, `slug`, `conteudo`, `dataCreate`, `arquivo`) VALUES (''Mussum ipsum'', ''mussum-ipsum'', ''&lt;p&gt;Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&amp;aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&amp;eacute; pra quem &amp;eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.&lt;/p&gt;\\r\\n&lt;p&gt;Suco de cevadiss, &amp;eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&amp;eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&amp;eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.&lt;/p&gt;\\r\\n&lt;p&gt;Casamentiss faiz malandris se pirulit&amp;aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&amp;eacute; intende tudis nuam golada, vinho, uiski, carir&amp;iacute;, rum da jamaikis, s&amp;oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;\\r\\n&lt;p&gt;Cevadis im ampola pa arma uma pindureta. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justis enim. Atirei o pau no gatis. Viva Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &amp;eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravidis.&lt;/p&gt;\\r\\n&lt;p&gt;Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &amp;eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Etiam ultricies tincidunt ligula, sed accumsan sapien mollis et. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravida. Quisque vitae metus id massa tincidunt iaculis sed sed purus. Vestibulum viverra lobortis faucibus. Vestibulum et turpis.&lt;/p&gt;\\r\\n&lt;p&gt;Vitis e adipiscing enim. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justo enim. Atirei o pau no gatis. Quisque dignissim felis quis sapien ullamcorper varius tempor sem varius. Vivamus lobortis posuere facilisis. Sed auctor eros ac sapien sagittis accumsan. Integer semper accumsan arcu, at aliquam nisl sollicitudin non. Nullam pellentesque metus nec libero laoreet vitae vestibulum ante ultricies. Phasellus non mollis purus. Integer vel lacus dolor. Proin eget mi nec mauris convallis ullamcorper vel ac nulla. Nulla et semper metus.&lt;/p&gt;'', ''2015-01-11 14:15:17'', ''393414_2201175523305_2130581748_n2.jpg'')', 'Nova página cadastrada no sistema'),
+(330, 'oshima', '2015-01-11 18:43:43', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(331, 'oshima', '2015-01-11 18:44:24', 'Inclusão de página', 'INSERT INTO `agenda` (`titulo`, `descricao`, `data`, `hora`, `logradouro`, `bairro`, `numero`, `cidade`, `estado`, `banner`) VALUES (''Mussum ipsum'', ''<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&eacute; pra quem &eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>\\r\\n<p>Suco de cevadiss, &eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>\\r\\n<p>Casamentiss faiz malandris se pirulit&aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&eacute; intende tudis nuam golada, vinho, uiski, carir&iacute;, rum da jamaikis, s&oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>\\r\\n<p>Cevadis im ampola pa arma uma pindureta. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justis enim. Atirei o pau no gatis. Viva Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravidis.</p>\\r\\n<p>Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Etiam ultricies tincidunt ligula, sed accumsan sapien mollis et. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravida. Quisque vitae metus id massa tincidunt iaculis sed sed purus. Vestibulum viverra lobortis faucibus. Vestibulum et turpis.</p>\\r\\n<p>Vitis e adipiscing enim. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justo enim. Atirei o pau no gatis. Quisque dignissim felis quis sapien ullamcorper varius tempor sem varius. Vivamus lobortis posuere facilisis. Sed auctor eros ac sapien sagittis accumsan. Integer semper accumsan arcu, at aliquam nisl sollicitudin non. Nullam pellentesque metus nec libero laoreet vitae vestibulum ante ultricies. Phasellus non mollis purus. Integer vel lacus dolor. Proin eget mi nec mauris convallis ullamcorper vel ac nulla. Nulla et semper metus.</p>'', ''16/01/2015'', ''20:00'', ''rua 303'', ''Jangurussu'', ''284'', ''fortaleza'', ''ce'', ''385429_2201173323250_1664840903_1757753_150102401_n1.jpg'')', 'Nova página cadastrada no sistema'),
+(332, 'oshima', '2015-01-12 21:58:13', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(333, 'oshima', '2015-01-13 00:46:24', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(334, 'oshima', '2015-01-14 13:12:07', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(335, 'oshima', '2015-01-14 17:19:32', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(336, 'oshima', '2015-01-15 19:27:44', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(337, 'oshima', '2015-01-15 19:28:34', 'Inclusão de produto', 'INSERT INTO `produtos` (`titulo`, `conteudo`, `preco`, `slug`, `cat_prod`, `arquivo`, `tags`) VALUES (''SnupDog'', ''&lt;p&gt;&lt;img src=&quot;http://localhost/mixirico/assets/uploads/sleeping_in_the_car_seat.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;'', ''10.00'', ''snupdog'', ''5'', ''393414_2201175523305_2130581748_n.jpg'', ''SnupDog'')', 'Nova produto cadastrado no sistema'),
+(338, 'oshima', '2015-01-15 19:35:29', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''16''', 'A mídia com o id "16" foi excluída');
+INSERT INTO `auditoria` (`id`, `usuario`, `data_hora`, `operacao`, `query`, `observacao`) VALUES
+(339, 'oshima', '2015-01-15 19:35:39', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''15''', 'A mídia com o id "15" foi excluída');
 
 -- --------------------------------------------------------
 
@@ -296,27 +439,64 @@ INSERT INTO `cat_prod` (`id`, `cat_pai_id`, `nome`, `descricao`, `slug`, `tags`)
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `galerias`
+--
+
+CREATE TABLE IF NOT EXISTS `galerias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) NOT NULL,
+  `descricao` longtext NOT NULL,
+  `arquivo` varchar(255) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Extraindo dados da tabela `galerias`
+--
+
+INSERT INTO `galerias` (`id`, `titulo`, `descricao`, `arquivo`, `status`) VALUES
+(1, 'Participação no programa do Faustão', 'Participação no programa do Faustão', '1', '0'),
+(2, 'FOTOS DO SHOWS', 'Magnis', '2', '0'),
+(4, 'FOTO DO SHOWS', '*MIXIRICO UM SUPER SHOW DE HUMOR*', '2', '0'),
+(5, 'FOTOS DO SHOW', 'MIXIRICO UM SUPER SHOW DE HUMOR!!', '6', '1'),
+(6, 'PARTICIPAÇÃO NO PROGRAMA DO FAUSTÃO!!', 'PARTICIPAÇÃO NO PROGRAMA DO FAUSTÃO', '1', '1');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `midia`
 --
 
 CREATE TABLE IF NOT EXISTS `midia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idGal` int(11) NOT NULL,
   `tipo` char(1) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `descricao` varchar(255) NOT NULL,
   `arquivo` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Extraindo dados da tabela `midia`
 --
 
-INSERT INTO `midia` (`id`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES
-(2, 'G', 'Logo', 'logo', 'logo-estampas-e-bordados.png'),
-(3, 'B', 'DOP', 'DOP - Dop', '01.jpg'),
-(4, 'B', 'Maluco doido', 'DOP - Maluco doido', '05.jpg'),
-(5, 'B', 'Maluco doido', 'Maluco doido DOIDO', '04.jpg');
+INSERT INTO `midia` (`id`, `idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES
+(1, 4, 'G', '01.jpg', 'Upload via Ajax.', '01.jpg'),
+(2, 4, 'G', '02.jpg', 'Upload via Ajax.', '02.jpg'),
+(3, 4, 'G', '03.jpg', 'Upload via Ajax.', '03.jpg'),
+(4, 4, 'G', '06.jpg', 'Upload via Ajax.', '06.jpg'),
+(5, 4, 'G', '05.jpg', 'Upload via Ajax.', '05.jpg'),
+(6, 4, 'G', '04.jpg', 'Upload via Ajax.', '04.jpg'),
+(7, 4, 'G', 'baby_against_blue_sky_204313.jpg', 'Upload via Ajax.', 'baby_against_blue_sky_204313.jpg'),
+(8, 4, 'G', 'sleeping_in_the_car_seat.jpg', 'Upload via Ajax.', 'sleeping_in_the_car_seat.jpg'),
+(9, 4, 'G', '021.jpg', 'Upload via Ajax.', '021.jpg'),
+(10, 4, 'G', '031.jpg', 'Upload via Ajax.', '031.jpg'),
+(11, 4, 'G', 'sleeping_in_the_car_seat1.jpg', 'Upload via Ajax.', 'sleeping_in_the_car_seat1.jpg'),
+(12, 4, 'G', '041.jpg', 'Upload via Ajax.', '041.jpg'),
+(13, 4, 'G', 'baby_against_blue_sky_2043131.jpg', 'Upload via Ajax.', 'baby_against_blue_sky_2043131.jpg'),
+(14, 4, 'G', '061.jpg', 'Upload via Ajax.', '061.jpg');
 
 -- --------------------------------------------------------
 
@@ -352,8 +532,17 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `slug` varchar(150) NOT NULL,
   `tags` varchar(255) NOT NULL,
   `conteudo` longtext NOT NULL,
+  `arquivo` varchar(255) NOT NULL,
+  `dataCreate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `posts`
+--
+
+INSERT INTO `posts` (`id`, `titulo`, `slug`, `tags`, `conteudo`, `arquivo`, `dataCreate`) VALUES
+(5, 'Mussum ipsum', 'mussum-ipsum', '', '&lt;p&gt;Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&amp;aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&amp;eacute; pra quem &amp;eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.&lt;/p&gt;\r\n&lt;p&gt;Suco de cevadiss, &amp;eacute; um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no m&amp;eacute;, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet m&amp;eacute; vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.&lt;/p&gt;\r\n&lt;p&gt;Casamentiss faiz malandris se pirulit&amp;aacute;, Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer Ispecialista im m&amp;eacute; intende tudis nuam golada, vinho, uiski, carir&amp;iacute;, rum da jamaikis, s&amp;oacute; num pode ser mijis. Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;\r\n&lt;p&gt;Cevadis im ampola pa arma uma pindureta. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justis enim. Atirei o pau no gatis. Viva Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &amp;eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravidis.&lt;/p&gt;\r\n&lt;p&gt;Forevis aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Copo furadis &amp;eacute; disculpa de babadis, arcu quam euismod magna, bibendum egestas augue arcu ut est. Etiam ultricies tincidunt ligula, sed accumsan sapien mollis et. Delegadis gente finis. In sit amet mattis porris, paradis. Paisis, filhis, espiritis santis. M&amp;eacute; faiz elementum girarzis. Pellentesque viverra accumsan ipsum elementum gravida. Quisque vitae metus id massa tincidunt iaculis sed sed purus. Vestibulum viverra lobortis faucibus. Vestibulum et turpis.&lt;/p&gt;\r\n&lt;p&gt;Vitis e adipiscing enim. Nam varius eleifend orci, sed viverra nisl condimentum ut. Donec eget justo enim. Atirei o pau no gatis. Quisque dignissim felis quis sapien ullamcorper varius tempor sem varius. Vivamus lobortis posuere facilisis. Sed auctor eros ac sapien sagittis accumsan. Integer semper accumsan arcu, at aliquam nisl sollicitudin non. Nullam pellentesque metus nec libero laoreet vitae vestibulum ante ultricies. Phasellus non mollis purus. Integer vel lacus dolor. Proin eget mi nec mauris convallis ullamcorper vel ac nulla. Nulla et semper metus.&lt;/p&gt;', '393414_2201175523305_2130581748_n2.jpg', '2015-01-11 14:15:17');
 
 -- --------------------------------------------------------
 
@@ -371,7 +560,14 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `tags` varchar(100) NOT NULL,
   `conteudo` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `titulo`, `cat_prod`, `preco`, `arquivo`, `slug`, `tags`, `conteudo`) VALUES
+(1, 'SnupDog', 5, 10, '393414_2201175523305_2130581748_n.jpg', 'snupdog', 'SnupDog', '&lt;p&gt;&lt;img src=&quot;http://localhost/mixirico/assets/uploads/sleeping_in_the_car_seat.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;');
 
 -- --------------------------------------------------------
 
@@ -384,7 +580,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `nome_config` varchar(255) NOT NULL,
   `valor_config` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Extraindo dados da tabela `settings`
@@ -398,7 +594,7 @@ INSERT INTO `settings` (`id`, `nome_config`, `valor_config`) VALUES
 (15, 'cep', '60.866-320'),
 (16, 'telcom', '(85) 8796-1779'),
 (17, 'telcel', '(85) 8548-7735'),
-(18, 'facebook', 'https://www.facebook.com/doctypesolution'),
+(18, 'facebook', 'https://www.facebook.com/pages/Zedoidin/1545837109005479'),
 (20, 'skype', 'oshima.gdm'),
 (21, 'rua', 'Rua 303, 284'),
 (22, 'bairro', 'Jangurussu'),
@@ -407,9 +603,7 @@ INSERT INTO `settings` (`id`, `nome_config`, `valor_config`) VALUES
 (25, 'descricao_site', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapi'),
 (26, 'descricao_curta', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integ'),
 (27, 'keywords_site', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet '),
-(28, 'txt_home', '<p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>'),
-(29, 'instagram', ''),
-(30, 'youtube', '');
+(28, 'txt_home', '<p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>');
 
 -- --------------------------------------------------------
 
@@ -450,7 +644,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `server` varchar(50) NOT NULL,
   `status` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `videos`
@@ -459,7 +653,7 @@ CREATE TABLE IF NOT EXISTS `videos` (
 INSERT INTO `videos` (`id`, `titulo`, `descricao`, `thumb`, `embed`, `server`, `status`) VALUES
 (1, 'OlimPiadas - Marcos Aurélio (Mixirico)', 'humorista cearense Marcos Aurélio (Mixirico) participando do OlimPiadas quadro do Programa Tudo é Possível com Ana Hickman na Rede Record. Gleiciano Silva FG...', 'http://i1.ytimg.com/vi/zvAwku9GKrI/default.jpg', 'zvAwku9GKrI', 'YouTube', '1'),
 (2, 'Quarteto em Rir - Ceará No Faustão.', 'Apresentação do grupo cearense em que nosso amigo Juan esteve participando. Parabéns Juan!!!', 'http://i1.ytimg.com/vi/EEjMdOrSFn4/default.jpg', 'EEjMdOrSFn4', 'YouTube', '1'),
-(3, 'Humor de graça - Mixirico', 'fgdfgdfgdfg', 'http://i1.ytimg.com/vi/YjLMA5DoX24/default.jpg', 'YjLMA5DoX24', 'YouTube', '1'),
+(3, 'Humor de graça - Mixirico', 'iosdhfgpaudshfgiphaipdfhgiupsdfipgasipudgiups', 'http://i1.ytimg.com/vi/YjLMA5DoX24/default.jpg', 'YjLMA5DoX24', 'YouTube', '1'),
 (4, 'Video SBT', 'Video gravado em um restaurante local.', 'http://i1.ytimg.com/vi/N0Sdgi2Mxng/default.jpg', 'N0Sdgi2Mxng', 'YouTube', '1'),
 (5, 'show de humor com mixirico', 'Um humorista cearense.', 'http://i1.ytimg.com/vi/kJrf2W3p7-M/default.jpg', 'kJrf2W3p7-M', 'YouTube', '1'),
 (6, 'Programa Leruaite 22/10/2014 - Humorista Mixirico', 'Programa Leruaite 22/10/2014 - Humorista Mixirico', 'http://i1.ytimg.com/vi/tl95fmvREqk/default.jpg', 'tl95fmvREqk', 'YouTube', '1');
