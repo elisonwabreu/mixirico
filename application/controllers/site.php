@@ -95,6 +95,13 @@ class Site extends CI_Controller {
         set_tema('conteudo', load_modulo('produtos', 'detalhes', 'site'));
         load_template();
     }
+    public function post() {
+        set_tema('titulo', 'Post - '.$this->uri->segment(3). '' . get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
+        set_tema('conteudo', load_modulo('posts', 'single', 'site'));
+        load_template();
+    }
     public function faleconosco(){
             $this->form_validation->set_rules('nome', 'NOME', 'trim|required|ucfirst');
             $this->form_validation->set_rules('email', 'E-MAIL', 'trim|required');

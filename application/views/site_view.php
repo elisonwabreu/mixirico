@@ -134,16 +134,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
-                    <nav>
-                        <ul class="pager">
-                            <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Postagens Antigas</a></li>
-                            <li class="next"><a href="#">Postagens Recentes <span aria-hidden="true">&rarr;</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
             <!-- footer -->
             <div class="row">
                 {rodape}
