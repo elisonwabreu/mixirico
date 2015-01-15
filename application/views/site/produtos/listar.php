@@ -16,11 +16,10 @@ foreach ($this->listProdutos as $prods) {
                                     </div>
                                     <div class="info">
                                         <div class="row">
-                                                <div class="price col-md-6">
+                                                <div class="price col-md-12">
                                                         <h5>'.$prods->titulo.'</h5>
                                                         <h5 class="price-text-color">R$ '.$prods->preco.'</h5>
                                                 </div>
-                                                <div class="rating hidden-sm col-md-6"></div>
                                         </div>
                                         <div class="separator clear-left">
                                                 <p class="btn-add"></p>
