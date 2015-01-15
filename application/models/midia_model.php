@@ -117,11 +117,23 @@ class Midia_model extends CI_Model {
     public function get_banner() {
         $this->db->where('tipo', 'B');
         $this->db->order_by('id', 'desc');
-        $this->db->limit(15);
+        $this->db->limit(3);
+        return $this->db->get('midia');
+    }
+    
+    public function get_imagem_4_desc() {
+        $this->db->where('tipo', 'G');
+        $this->db->order_by('id', 'desc');
+        $this->db->limit(4);
         return $this->db->get('midia');
     }
     
     public function get_video_all() {
+        return $this->db->get('videos');
+    }
+    public function get_video_4_desc() {
+        $this->db->order_by('id', 'desc');
+        $this->db->limit(4);
         return $this->db->get('videos');
     }
     

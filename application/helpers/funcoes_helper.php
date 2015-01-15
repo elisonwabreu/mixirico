@@ -733,6 +733,28 @@ function get_agendas() {
         }
         
 }
+function get_videos_desc() {
+    $CI = & get_instance();
+    $CI->load->model('midia_model', 'midia');
+    $video = $CI->midia->get_video_4_desc()->result();
+    echo '<ul class="uVideos">';
+    foreach ($video as $value) {
+        if($value->server == "YouTube"){
+                $serverVid = "http://www.youtube.com/embed/";
+        }elseif($value->server == "Vimeo"){
+                $serverVid = "http://player.vimeo.com/video/";
+        }
+        echo '
+            <li>
+                <a title="'.$value->titulo.'" href="'.$serverVid.$value->embed.'" rel="shadowbox;width=800;height=600">
+                    <img src="'.$value->thumb.'" alt="'.$value->titulo.'" title="'.$value->titulo.'" class="img-thumbnail iVideo" />
+                </a>
+            </li>
+        ';
+    }
+    echo '</ul>';
+        
+}
 //
 function formata_CEP($numero) {
     $numero = preg_replace("[' '-./ t]", '', $numero);

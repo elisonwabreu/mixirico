@@ -87,6 +87,19 @@ body{
     margin-top: -4px;
 }
 
+.iVideo{
+    width: 114px;
+}
+
+.uVideos{
+    margin-left: -42px;
+    list-style: none;
+}
+
+.uVideos li{
+    display: inline-table;
+}
+
 .bemvindos {
     background-image: url(../img/bemvindos.png); /* Insere a imagem */
     width: 245px;
