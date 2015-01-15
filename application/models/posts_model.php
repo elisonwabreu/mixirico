@@ -56,10 +56,10 @@ class Posts_model extends CI_Model {
         }
         
         public function get_posts($limite, $offset = 0) {
-        $this->db->order_by('id','desc');
-        $this->db->limit($limite, $offset);
-        return $this->db->get('posts');
-    }
+            $this->db->order_by('id','desc');
+            $this->db->limit($limite, $offset);
+            return $this->db->get('posts');
+        }
 	
 	public function get_all(){
 		return $this->db->get('posts');

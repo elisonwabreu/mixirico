@@ -121,6 +121,12 @@ class Midia_model extends CI_Model {
         return $this->db->get('midia');
     }
     
+    public function get_videos($limite, $offset = 0) {
+        $this->db->order_by('id','desc');
+        $this->db->limit($limite, $offset);
+        return $this->db->get('videos');
+    }
+    
     public function get_imagem_4_desc() {
         $this->db->where('tipo', 'G');
         $this->db->order_by('id', 'desc');
