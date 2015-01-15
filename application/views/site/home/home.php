@@ -1,21 +1,34 @@
-    <?php if (!defined("BASEPATH"))  exit("No direct script access allowed");?>
+<?php if (!defined("BASEPATH"))  exit("No direct script access allowed"); 
 
+if($this->listPosts != null){
 
-<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 noticia">
+foreach ($this->listPosts as $posts) {
+    $data = date('d/M', strtotime($posts->dataCreate));
+    $data = explode('/', $data);
+    echo '
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 noticia">
+        <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
+            '.thumb_banner($posts->arquivo, 124, 124, $posts->titulo,'class="foto"').'
+            <span class="bandeira"><em class="numero">'.$data[0].'</em><hr class="dividiBandeira"/>'.$data[1].'</span>
+        </div>
 
-    <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
-        <img class="foto" src="<?php echo base_url(); ?>assets/theme_site/img/mi.jpg">
-        <span class="bandeira"><em class="numero">19</em><hr class="dividiBandeira"/>NOV</span>
+        <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7">
+            <p class="titulo">'. ucwords($posts->titulo). '</p>
+            <p>'.resumo_post($posts->conteudo, 45).'</p>
+            <a href="'.base_url("site/post/$posts->slug").'" title="'.$posts->titulo.'">Clique para ler a notícia completa</a>
+        </div>
+        </div>
+    ';
+}
+
+echo '<div class="clearfix"></div>';
+echo '<div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+        <nav>
+            '. $this->paginar .'
+        </nav>
     </div>
-    
-    <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7">
-        <p class="titulo">Mixirico ganha prêmio de show de humor</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            placerat diam quis nisl vestibulum dignissim. In hac habitasse
-            platea dictumst. Interdum et malesuada fames ac ante ipsum primis
-            in faucibus. Pellentesque habitant morbi tristique senectus et
-            netus et malesuada fames ac turpis egestas.</p>
-        <a href="#">Clique para ler a notícia completa</a>
-    </div>
-
-</div>
+</div>';
+} else {
+    echo '<div class="alert alert-error">Nenhuma postagem foi cadastrada. Por favor volte mais tarde!</div>';
+}

@@ -8,6 +8,7 @@ class Site extends CI_Controller {
         $this->load->model('midia_model', 'midia');
         $this->load->model('depoimentos_model', 'depoimentos');        
         $this->load->model('produtos_model', 'produtos');
+        $this->load->model('posts_model', 'posts');
     }
 
     public function index() {
@@ -15,30 +16,46 @@ class Site extends CI_Controller {
     }
 
     public function inicio() {
-        set_tema('titulo', 'Estampas & Bordados!');
-        set_tema('description', 'Estampas & Bordados!');
-        set_tema('keywords', 'Estampas & Bordados, estamapas, bordados, sublimação, canecas, camisas');
+        $this->start = $this->uri->segment(3);
+        if (trim($this->start) == '') {
+                $this->start = 0;
+        }
+        $this->mostrar_por_pagina = 10;		
+        $this->listPosts           = $this->posts->get_posts($this->mostrar_por_pagina, $this->start)->result();
+        $this->numero_itens        = $this->db->get('posts')->num_rows();
+        $config['base_url']        = base_url().'site/inicio';
+        $config['total_rows']      = $this->numero_itens;
+        $config['per_page']        = $this->mostrar_por_pagina;
+        $config['num_link']        = 2;		
+        $config['uri_segment']     = 3;	
+        $config['display_pages']   = FALSE;
+        $this->pagination->initialize($config);
+        $this->paginar = $this->pagination->create_links();
+        set_tema('titulo', get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('home', 'home', 'site'));
         load_template();
     }
 
     public function produtos() {
         $this->start = $this->uri->segment(3);
-		if (trim($this->start) == '') {
-			$this->start = 0;
-		}
-		$this->mostrar_por_pagina = 24;		
-		$this->listProdutos = $this->produtos->get_page($this->mostrar_por_pagina, $this->start)->result();
-		$this->numero_itens = $this->db->get('produtos')->num_rows();
-		$config['base_url']        = base_url().'site/produtos';
-		$config['total_rows']      = $this->numero_itens;
-		$config['per_page']        = $this->mostrar_por_pagina;
-		$config['num_link']        = 3;		
-		$config['uri_segment']     = 3;	
-		$this->pagination->initialize($config);
-		$this->paginar = $this->pagination->create_links();
-		set_tema('titulo', '.:: PRODUTOS ::. ');
-        set_tema('titulo', 'Comentários realizados por nosso clientes.');
+        if (trim($this->start) == '') {
+                $this->start = 0;
+        }
+        $this->mostrar_por_pagina = 24;		
+        $this->listProdutos = $this->produtos->get_page($this->mostrar_por_pagina, $this->start)->result();
+        $this->numero_itens = $this->db->get('produtos')->num_rows();
+        $config['base_url']        = base_url().'site/produtos';
+        $config['total_rows']      = $this->numero_itens;
+        $config['per_page']        = $this->mostrar_por_pagina;
+        $config['num_link']        = 3;		
+        $config['uri_segment']     = 3;	
+        $this->pagination->initialize($config);
+        $this->paginar = $this->pagination->create_links();
+        set_tema('titulo', '.:: PRODUTOS ::.  ' . get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('produtos', 'listar', 'site'));
         load_template();
     }
@@ -58,17 +75,23 @@ class Site extends CI_Controller {
         $config['uri_segment']     = 4;	
         $this->pagination->initialize($config);
         $this->paginar = $this->pagination->create_links();
-        set_tema('titulo', '.:: PRODUTOS POR CATEGORIA ::. ');
+        set_tema('titulo', '.:: PRODUTOS POR CATEGORIA ::.  ' . get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('produtos', 'categoria', 'site'));
         load_template();
     }
     public function sobre() {
-        set_tema('titulo', 'Sobre nós!');
+        set_tema('titulo', 'Sobre nós! ' . get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('sobre', 'sobre', 'site'));
         load_template();
     }
     public function detalhes() {
-        set_tema('titulo', 'Detalhes do Produto!');
+        set_tema('titulo', 'Detalhes do Produto! ' . get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('produtos', 'detalhes', 'site'));
         load_template();
     }
@@ -127,12 +150,16 @@ class Site extends CI_Controller {
 //        load_template();
 //    }
     public function contato_sucesso() {
-        set_tema('titulo', 'Contato Realizado');
+        set_tema('titulo', 'Contato Realizado! ' . get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('site', 'contato_sucesso', 'site'));
         load_template();
     }
 	public function contato_erro() {
-        set_tema('titulo', 'Não foi possível realizar o contato.');
+        set_tema('titulo', 'Não foi possível realizar o contato! ' . get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('site', 'contato_erro', 'site'));
         load_template();
     }
