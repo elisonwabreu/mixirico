@@ -116,6 +116,7 @@
                     <div class="boxLateral">
                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                             <h4><i class="fa fa-picture-o"></i> Ultimas Fotos</h4>
+                            <?php get_imagem_desc(); ?>
                         </div>
                     </div>
                     <div class="boxLateral">

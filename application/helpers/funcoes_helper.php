@@ -757,6 +757,23 @@ function get_videos_desc() {
     echo '</ul>';
         
 }
+function get_imagem_desc() {
+    $CI = & get_instance();
+    $CI->load->model('midia_model', 'midia');
+    $imagem = $CI->midia->get_imagem_4_desc()->result();
+    echo '<ul class="uVideos">';
+    foreach ($imagem as $value) {
+        echo '
+            <li>
+                <a href="'. thumb($value->arquivo, 800, 600, '', false) .'" title="'.$value->nome.'" rel="shadowbox[vocation]">
+                '. thumb_banner($value->arquivo, 114, 75, $value->nome,'class="img-thumbnail iVideo"').'
+                </a>
+            </li>
+        ';
+    }
+    echo '</ul>';
+        
+}
 //
 function formata_CEP($numero) {
     $numero = preg_replace("[' '-./ t]", '', $numero);
