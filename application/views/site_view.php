@@ -96,15 +96,18 @@
                             <h5><a href="#">Ver agenda completa</a></h5>
                         </div>
                     </div>
-
                     <div class="row">
+                        <?php get_agendas(); ?>
+                    </div>
+
+<!--                    <div class="row">
                         <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 text-center">
-                            <img alt="" src="<?php echo base_url(); ?>assets/theme_site/img/calendario.png">
+                            <img alt="" src="<?php //echo base_url(); ?>assets/theme_site/img/calendario.png">
                         </div>
                         <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8 text-center">
                             <h5><a href="#">Show de Humor</a></h5>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="clearfix"></div>

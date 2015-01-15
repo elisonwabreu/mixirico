@@ -719,6 +719,20 @@ function get_slide_show() {
         return NULL;
     endif;
 }
+function get_agendas() {
+    $CI = & get_instance();
+    $CI->load->model('agenda_model', 'agenda');
+    $agenda = $CI->agenda->get_5_desc()->result();
+        foreach ($agenda as $value) {
+            echo '<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 text-center">
+                    <img alt="" src="'. base_url() .'assets/theme_site/img/calendario.png">
+                </div>
+            <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8 text-center">
+                <h5><a href="'. base_url('site/agenda') . '/'. $value->id .'">'.$value->titulo.'</a></h5>
+            </div>';
+        }
+        
+}
 //
 function formata_CEP($numero) {
     $numero = preg_replace("[' '-./ t]", '', $numero);

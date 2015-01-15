@@ -58,6 +58,11 @@ class Agenda_model extends CI_Model {
 	public function get_all(){
 		return $this->db->get('agenda');
 	}
+        
+        public function get_5_desc(){
+            $this->db->order_by('id','desc');
+            return $this->db->get('agenda');
+	}
 
 	public function get_byid($id=NULL){
 		if ($id != NULL):
