@@ -15,7 +15,7 @@ foreach ($this->listVideos as $videos) {
                     <img src="'.$videos->thumb.'" alt="Barca" class="img-responsive" height="130px" />
                     <h2>'.$videos->titulo.'</h2>
                     <span class="glyphicon glyphicon-play-circle"></span>
-                    <span class="duration"></span>
+                    <span class="duration">--:--</span>
 		</a>
 	</li>
     ';
