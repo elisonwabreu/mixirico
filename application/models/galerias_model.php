@@ -44,6 +44,12 @@ class Galerias_model extends CI_Model {
 	public function get_all(){
 		return $this->db->get('galerias');
 	}
+        
+        public function get_galerias($limite, $offset = 0) {
+            $this->db->order_by('id','desc');
+            $this->db->limit($limite, $offset);
+            return $this->db->get('galerias');
+        }
 
 	public function get_byid($id=NULL){
 		if ($id != NULL):

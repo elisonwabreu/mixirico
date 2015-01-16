@@ -9,6 +9,7 @@ class Site extends CI_Controller {
         $this->load->model('depoimentos_model', 'depoimentos');        
         $this->load->model('produtos_model', 'produtos');
         $this->load->model('posts_model', 'posts');
+        $this->load->model('galerias_model', 'galerias');
     }
 
     public function index() {
@@ -43,7 +44,7 @@ class Site extends CI_Controller {
         if (trim($this->start) == '') {
                 $this->start = 0;
         }
-        $this->mostrar_por_pagina = 12;		
+        $this->mostrar_por_pagina = 16;		
         $this->listVideos           = $this->midia->get_videos($this->mostrar_por_pagina, $this->start)->result();
         $this->numero_itens        = $this->db->get('videos')->num_rows();
         $config['base_url']        = base_url().'site/videos';
@@ -73,6 +74,43 @@ class Site extends CI_Controller {
         set_tema('description', get_setting('descricao_site'));
         set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('videos', 'videos', 'site'));
+        load_template();
+    }
+    public function galerias() {
+        $this->start = $this->uri->segment(3);
+        if (trim($this->start) == '') {
+                $this->start = 0;
+        }
+        $this->mostrar_por_pagina = 16;		
+        $this->listGalerias        = $this->galerias->get_galerias($this->mostrar_por_pagina, $this->start)->result();
+        $this->numero_itens        = $this->db->get('galerias')->num_rows();
+        $config['base_url']        = base_url().'site/galerias';
+        $config['total_rows']      = $this->numero_itens;
+        $config['per_page']        = $this->mostrar_por_pagina;
+        $config['num_link']        = 4;		
+        $config['uri_segment']     = 3;	
+        $config['full_tag_open']   = '<nav><ul class="pagination pagination-lg">';
+        $config['full_tag_close']  = '</ul>';
+        $config['num_tag_open']    = '<li>';
+        $config['num_tag_close']   = '</li>';
+        $config['cur_tag_open']    = '<li class="active"><a href="#">';
+        $config['cur_tag_close']   = '</a></li>';
+        $config['prev_tag_open']   = '<li>';
+        $config['prev_tag_close']  = '</li>';
+        $config['next_tag_open']   = '<li>';
+        $config['next_tag_close']  = '</li>';
+        $config['last_tag_open']   = '<li>';
+        $config['last_tag_close']  = '</li>';
+        $config['first_tag_open']  = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['first_tag_open']  = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $this->pagination->initialize($config);
+        $this->paginar = $this->pagination->create_links();
+        set_tema('titulo', 'Videos - '.get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
+        set_tema('conteudo', load_modulo('galerias', 'galerias', 'site'));
         load_template();
     }
 
