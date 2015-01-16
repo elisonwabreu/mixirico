@@ -6,7 +6,7 @@ echo '<div class="panel panel-default">
     <h3 class="panel-title">Albuns do Mixirico</h3>
   </div>
   <div class="panel-body">';
-echo '<div class="row id="tourpackages-carousel">';
+echo '<div class="row">';
 foreach ($this->listGalerias as $galerias) {
     echo '
         <div class="col-xs-18 col-sm-6 col-md-3">
@@ -26,5 +26,5 @@ echo '</div>';
 echo '<div class="clearfix"></div>';
 echo "<div class='pagination-centered'>" . $this->paginar . "</div>";
 } else {
-    echo '<div class="alert alert-error">Nenhum video foi cadastrado. Por favor volte mais tarde!</div>';
+    echo '<div class="alert alert-danger" role="alert">Nenhuma galeria foi cadastrada. Por favor volte mais tarde!</div>';
 }

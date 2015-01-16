@@ -83,8 +83,9 @@
                 <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
                     {conteudo}
                 </div>
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
                 <!-- Agenda -->
-                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 text-center agenda">
+                <div class="text-center agenda">
                     <div class="bemvindos"></div>
                     <div class="cabeca"></div>
                     <div class="mao"></div>
@@ -100,7 +101,7 @@
                         <?php get_agendas(); ?>
                     </div>
                 </div>
-                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 boxLateral">
                             <h4><i class="fa fa-video-camera"></i> Ultimos Vídeos</h4>
                             <?php get_videos_desc(); ?>
