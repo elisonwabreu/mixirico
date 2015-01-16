@@ -16,8 +16,7 @@ foreach ($this->listVideos as $videos) {
     echo '
         <li class="col-lg-3 col-sm-4 col-xs-6">
 		<a href="'.$serverVid.$videos->embed.'" title="'.$videos->titulo.'" rel="shadowbox;width=800;height=600">
-                    <img src="'.$videos->thumb.'" alt="Barca" class="img-responsive" height="130px" />
-                    <h2>'.$videos->titulo.'</h2>
+                    <img src="'.$videos->thumb.'" alt="'.$videos->titulo.'" class="img-responsive miniVideo" />
                     <span class="glyphicon glyphicon-play-circle"></span>
                     <span class="duration">--:--</span>
 		</a>
