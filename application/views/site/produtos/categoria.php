@@ -1,7 +1,11 @@
 <?php if (!defined("BASEPATH")) exit("No direct script access allowed");
 
 if($this->listProdutos != null){
-echo '<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 listaVideos">';
+echo '<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Produtos do Mixirico</h3>
+  </div>
+  <div class="panel-body">';
 echo '<div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">';
 foreach ($this->listProdutos as $prods) {
         echo '
@@ -36,6 +40,7 @@ foreach ($this->listProdutos as $prods) {
                 </div>
         ';
 }
+echo '</div>';
 echo '</div>';
 echo '</div>';
 echo '<div class="clearfix"></div>';

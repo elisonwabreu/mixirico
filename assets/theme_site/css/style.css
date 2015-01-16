@@ -33,6 +33,7 @@ body{
     position: absolute;
     left: 302px;
     margin-top: -50px;
+    z-index: 1;
 }
 
 .nav>li>a {
@@ -50,8 +51,9 @@ body{
 
 .agenda {
     background-color: white;
-
+    min-height: 250px;
     border-radius: 5px;
+    margin-bottom: 5px;
     position: relative;
 }
 
@@ -118,7 +120,7 @@ body{
     position: absolute; 
     top : 0px;
     right: -30px;
-    z-index: 10000;
+    z-index: 1;
 
 }
 
