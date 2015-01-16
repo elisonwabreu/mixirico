@@ -14,7 +14,7 @@ foreach ($this->listGalerias as $galerias) {
             <img src="'.thumb($galerias->arquivo, 500, 300, '',FALSE).'" alt="">
               <div class="caption">
                 <h4>'.$galerias->titulo.'</h4>
-                <p><a href="'.base_url().'/'.$galerias->id.'" class="btn btn-info btn-xs" role="button">Ver Fotos</a>
+                <p><a href="'.base_url('site/imagens_galeria').'/'.$galerias->id.'" class="btn btn-info btn-xs" role="button">Ver Fotos</a>
             </div>
           </div>
         </div>
