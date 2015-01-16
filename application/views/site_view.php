@@ -49,12 +49,12 @@
                     <nav class="navbar navbar-default navbar-static-top menu" role="navigation">
 
                         <ul class="nav nav-tabs">
-                            <li><a href="#">Realese</a></li>
-                            <li><a href="#">Fotos</a></li>
-                            <li><a href="#">Videos</a></li>
-                            <li><a href="#">Produtos</a></li>
-                            <li><a href="#">Agenda</a></li>
-                            <li><a href="#">Contato</a></li>
+                            <li><a href="<?php echo base_url('site/release'); ?>">Realese</a></li>
+                            <li><a href="<?php echo base_url('site/galerias'); ?>">Fotos</a></li>
+                            <li><a href="<?php echo base_url('site/videos'); ?>">Videos</a></li>
+                            <li><a href="<?php echo base_url('site/produtos'); ?>">Produtos</a></li>
+                            <li><a href="<?php echo base_url('site/agenda'); ?>">Agenda</a></li>
+                            <li><a href="<?php echo base_url('site/faleconosco'); ?>">Contato</a></li>
                         </ul>
                     </nav>
                     <!-- Menu -->
