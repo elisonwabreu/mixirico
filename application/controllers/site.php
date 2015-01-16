@@ -39,14 +39,6 @@ class Site extends CI_Controller {
         load_template();
     }
     
-    public function release() {
-        set_tema('titulo', 'Release - '.get_setting('nome_site'));
-        set_tema('description', get_setting('descricao_site'));
-        set_tema('keywords', get_setting('keywords_site'));
-        set_tema('conteudo', load_modulo('home', 'release', 'site'));
-        load_template();
-    }
-    
     public function videos() {
         $this->start = $this->uri->segment(3);
         if (trim($this->start) == '') {
@@ -115,8 +107,7 @@ class Site extends CI_Controller {
         $config['first_tag_close'] = '</li>';
         $this->pagination->initialize($config);
         $this->paginar = $this->pagination->create_links();
-        
-        set_tema('titulo', 'Albuns do Mixirico - '.get_setting('nome_site'));
+        set_tema('titulo', 'Videos - '.get_setting('nome_site'));
         set_tema('description', get_setting('descricao_site'));
         set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('galerias', 'galerias', 'site'));
@@ -126,7 +117,7 @@ class Site extends CI_Controller {
         $this->idGal = $this->uri->segment(3);	
         $this->listImagens         = $this->midia->get_all_by_gal_id($this->idGal)->result();
         
-        set_tema('titulo', 'Albuns do Mixirico - '.get_setting('nome_site'));
+        set_tema('titulo', 'Videos - '.get_setting('nome_site'));
         set_tema('description', get_setting('descricao_site'));
         set_tema('keywords', get_setting('keywords_site'));
         set_tema('conteudo', load_modulo('galerias', 'imagens-galeria', 'site'));
