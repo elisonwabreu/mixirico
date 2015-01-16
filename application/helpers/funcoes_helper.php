@@ -92,7 +92,8 @@ function init_site() {
     set_tema('headerinc2', load_css(array('shadowbox'), 'assets/theme_site/shadowbox'), FALSE);  
     set_tema('headerinc2', load_css(array('font-awesome','style'), 'assets/theme_site/css'), FALSE);
     set_tema('footerinc2', load_js(array('bootstrap.min','npm', 'app'), 'assets/theme_site/js'), FALSE);
-    set_tema('headerinc2', load_js(array('shadowbox'), 'assets/theme_site/shadowbox'), FALSE);
+    set_tema('footerinc2', load_js(array('shadowbox'), 'assets/theme_site/shadowbox'), FALSE);
+    set_tema('footerinc', '', FALSE);
 }
 
 //inicializa o tinymce para criação de textarea com editor html
