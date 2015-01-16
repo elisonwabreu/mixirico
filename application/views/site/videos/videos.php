@@ -1,7 +1,11 @@
 <?php if (!defined("BASEPATH"))  exit("No direct script access allowed"); 
 
 if($this->listVideos != null){    
-echo '<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 listaVideos">';
+echo '<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Videos do Mixirico</h3>
+  </div>
+  <div class="panel-body">';
 echo '<ul class="list-unstyled video-list-thumbs row">';
 foreach ($this->listVideos as $videos) {
     if($videos->server == "YouTube"){
@@ -21,6 +25,7 @@ foreach ($this->listVideos as $videos) {
     ';
 }
 echo '</ul>';
+echo '</div>';
 echo '</div>';
 echo '<div class="clearfix"></div>';
 echo "<div class='pagination pagination-large pagination-centered'>" . $this->paginar . "</div>";
