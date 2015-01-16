@@ -113,6 +113,16 @@ class Site extends CI_Controller {
         set_tema('conteudo', load_modulo('galerias', 'galerias', 'site'));
         load_template();
     }
+    public function imagens_galeria() {
+        $this->idGal = $this->uri->segment(3);	
+        $this->listImagens         = $this->midia->get_all_by_gal_id($this->idGal)->result();
+        
+        set_tema('titulo', 'Videos - '.get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
+        set_tema('conteudo', load_modulo('galerias', 'imagens-galeria', 'site'));
+        load_template();
+    }
 
     public function produtos() {
         $this->start = $this->uri->segment(3);

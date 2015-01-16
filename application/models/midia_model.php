@@ -113,6 +113,14 @@ class Midia_model extends CI_Model {
             return FALSE;
         endif;
     }
+    public function get_all_by_gal_id($id = NULL) {
+        if ($id != NULL):
+            $this->db->where('idGal', $id);
+            return $this->db->get('midia');
+        else:
+            return FALSE;
+        endif;
+    }
     
     public function get_banner() {
         $this->db->where('tipo', 'B');
