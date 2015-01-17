@@ -43,11 +43,9 @@
             </div>
             <!-- Imgens do topo -->
             <div class="row">
-
                 <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9 text-center LogoAjuste">
                     <!-- Menu -->
                     <nav class="navbar navbar-default navbar-static-top menu" role="navigation">
-
                         <ul class="nav nav-tabs">
                             <li><a href="<?php echo base_url('site/release'); ?>">Realese</a></li>
                             <li><a href="<?php echo base_url('site/galerias'); ?>">Fotos</a></li>
@@ -58,7 +56,6 @@
                         </ul>
                     </nav>
                     <!-- Menu -->
-                    
                     <?php if ($this->uri->segment(1) == NULL): ?>
                     <!-- Carrossel -->
                     <div id="carousel-example-generic" class="carousel slide">
@@ -76,16 +73,9 @@
                     </div>
                     <!-- Carrossel -->
                     <?php endif;?>
+                    <!-- Agenda -->
                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="row">
-                <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
-                    {conteudo}
-                </div>
-                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
-                <!-- Agenda -->
-                <div class="text-center agenda">
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 text-center agenda">
                     <div class="bemvindos"></div>
                     <div class="cabeca"></div>
                     <div class="mao"></div>
@@ -101,7 +91,13 @@
                         <?php get_agendas(); ?>
                     </div>
                 </div>
-                
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+                    {conteudo}
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 boxLateral">
                             <h4><i class="fa fa-video-camera"></i> Ultimos Vídeos</h4>
                             <?php get_videos_desc(); ?>
