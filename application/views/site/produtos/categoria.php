@@ -5,7 +5,7 @@ echo '<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Produtos do Mixirico</h3>
   </div>
-  <div class="panel-body">';
+  <div class="panel-body pageErros">';
 echo '<div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">';
 foreach ($this->listProdutos as $prods) {
         echo '

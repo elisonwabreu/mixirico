@@ -5,7 +5,7 @@ echo '<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Videos do Mixirico</h3>
   </div>
-  <div class="panel-body">';
+  <div class="panel-body pageErros">';
 echo '<ul class="list-unstyled video-list-thumbs row">';
 foreach ($this->listVideos as $videos) {
     if($videos->server == "YouTube"){

@@ -5,48 +5,39 @@ echo '<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Produtos do Mixirico</h3>
   </div>
-  <div class="panel-body">';
-echo '<div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">';
+  <div class="panel-body pageErros">';
+echo '<div>';
 foreach ($this->listProdutos as $prods) {
         echo '
-                <!-- Wrapper for slides -->
-		<div class="carousel-inner">
-                    <div class="item active">
+            <!-- Wrapper for slides -->
+            <div class="col-sm-3">
+                <div class="col-item">
+                    <div class="photo">
+                        <img src="'.thumb($prods->arquivo, 350, 260, '',FALSE).'" class="img-responsive" alt="'.$prods->titulo.'" />
+                    </div>
+                    <div class="info">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <div class="col-item">
-                                    <div class="photo">
-                                            <img src="'.thumb($prods->arquivo, 350, 260, '',FALSE).'" class="img-responsive" alt="'.$prods->titulo.'" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="row">
-                                                <div class="price col-md-12">
-                                                        <h5>'.$prods->titulo.'</h5>
-                                                        <h5 class="price-text-color">R$ '.$prods->preco.'</h5>
-                                                </div>
-                                        </div>
-                                        <div class="separator clear-left">
-                                                <p class="btn-add"></p>
-                                                <p class="btn-details">
-                                                    <a href="'.base_url("site/detalhes/$prods->slug").'" class="hidden-sm">Detalhes</a>
-                                                </p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                </div>
+                            <div class="price col-md-12">
+                                    <h5>'.$prods->titulo.'</h5>
+                                    <h5 class="price-text-color">R$ '.$prods->preco.'</h5>
+                            </div>
                         </div>
+                        <div class="separator clear-left">
+                            <p class="btn-details pull-right">
+                                <a href="'.base_url("site/detalhes/$prods->slug").'" class="hidden-sm">Detalhes</a>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-                </div>
-                </div>
-                </div>
+            </div>
         ';
-}
-
-		
+}		
 echo '</div>';
 echo '</div>';
 echo '</div>';
 echo '<div class="clearfix"></div>';
-echo "<div class='pagination pagination-large pagination-centered'>" . $this->paginar . "</div>";
+echo "<div class='pagination-centered'>" . $this->paginar . "</div>";
 } else {
     echo '<div class="panel panel-default">
         <div class="panel-heading">

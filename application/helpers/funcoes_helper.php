@@ -376,13 +376,37 @@ function set_msg($id = 'msgerro', $msg = NULL, $tipo = 'erro') {
     $CI = & get_instance();
     switch ($tipo):
         case 'erro':
-            $CI->session->set_flashdata($id, '<div class="alert alert-danger" role="alert"><p>' . $msg . '</p></div>');
+            $CI->session->set_flashdata($id, '<div class="col-sm-12 col-md-12">
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    ×</button>
+               <span class="glyphicon glyphicon-hand-right"></span> <strong>Erro ao concluir a operação.</strong>
+                <hr class="message-inner-separator">
+                <p>' . $msg . '</p>
+                </div>
+            </div>');
             break;
         case 'sucesso':
-            $CI->session->set_flashdata($id, '<div class="alert alert-success" role="alert"><p>' . $msg . '</p></div>');
+            $CI->session->set_flashdata($id, '<div class="col-sm-12 col-md-12">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    ×</button>
+               <span class="glyphicon glyphicon-ok"></span> <strong>Operação realizada com sucesso.</strong>
+                <hr class="message-inner-separator">
+                <p>' . $msg . '</p>
+                </div>
+            </div>');
             break;
         default:
-            $CI->session->set_flashdata($id, '<div class="alert alert-info" role="alert"><p>' . $msg . '</p></div>');
+            $CI->session->set_flashdata($id, '<div class="col-sm-12 col-md-12">
+            <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    ×</button>
+               <span class="glyphicon glyphicon-info-sign"></span> <strong>Infomativo.</strong>
+                <hr class="message-inner-separator">
+                <p>' . $msg . '</p>
+                </div>
+            </div>');
             break;
     endswitch;
 }

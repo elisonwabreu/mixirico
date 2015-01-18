@@ -6,7 +6,7 @@ echo '<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">'.$query->titulo.'</h3>
   </div>
-  <div class="panel-body">';
+  <div class="panel-body pageErros">';
 echo '
     ' . thumb($query->arquivo, 450, 450, $query->titulo) . '
     ' . to_html($query->conteudo) . '

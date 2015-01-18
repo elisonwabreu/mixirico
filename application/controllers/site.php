@@ -223,7 +223,7 @@ class Site extends CI_Controller {
                     $dados['assunto'] = $this->input->post('assunto');
                     $dados['mensagem'] = $this->input->post('mensagem') .'<br/>'. date('d/m/Y H:i:s');
                     if ($this->sistema->enviar_email(get_setting('emailcom'), $dados['assunto'] . ' - ' . $dados['nome'] .' '. $dados['email'], $dados['mensagem'])) {
-                            set_msg('msgok', 'E-mail enviado com sucesso', 'sucesso');
+                            set_msg('msgok', 'E-mail enviado com sucesso '.get_setting('emailcom'), 'sucesso');
                             redirect('site/faleconosco');
                     }else{
                             set_msg('msgerro', 'Não foi possivel enviar o e-mail! Tente novamente mais tarde.', 'erro');

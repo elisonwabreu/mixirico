@@ -1,19 +1,17 @@
 <?php if ( ! defined("BASEPATH")) exit("No direct script access allowed");
-echo $map['js'];
-get_msg('msgok');
-get_msg('msgerro');
 echo '<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Fale Conosco!</h3>
   </div>
   <div class="panel-body pageErros">';
+echo $map['js'];
+get_msg('msgok');
+get_msg('msgerro');
 echo '
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-            ';
-            echo form_open('faleconosco');
-            '
+                <form method="post" accept-charset="utf-8" action="faleconosco" />
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
