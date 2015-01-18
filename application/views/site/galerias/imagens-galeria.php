@@ -5,7 +5,7 @@ echo '<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Albuns do Mixirico</h3>
   </div>
-  <div class="panel-body">';
+  <div class="panel-body pageErros">';
 echo '<div class="row galeriaMix">';
 foreach ($this->listImagens as $galerias) {
     echo '
@@ -20,5 +20,12 @@ echo '</div>';
 echo '</div>';
 echo '</div>';
 } else {
+    echo '<div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Erro!</h3>
+        </div>
+        <div class="panel-body pageErros">';
     echo '<div class="alert alert-danger" role="alert">Nenhuma imagem foi cadastrada para essa galeria. Por favor volte mais tarde!</div>';
+    echo '</div>';
+    echo '</div>';
 }

@@ -162,7 +162,7 @@ body{
 .carousel-inner > .item > a > img {
     display: block;
     max-width: 100%;
-    height: auto;
+    height: 403px;
     margin-bottom: 5px;
 }
 
@@ -294,6 +294,13 @@ body{
 .miniVideo{
     width: 100%;
     height: 100px;
+}
+
+.pageErros{
+    min-height: 250px;
+}
+.sobeTopo{
+    margin-top: -255px;
 }
 /*listagem de produtos*/
 .col-item

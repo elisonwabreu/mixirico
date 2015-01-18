@@ -71,11 +71,11 @@
                             <span class="icon-next"></span>
                         </a>
                     </div>
-                    <!-- Carrossel -->
-                    <?php endif;?>
-                    <!-- Agenda -->
-                </div>
-                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 text-center agenda">
+                    <!-- Carrossel -->   
+                <?php endif;?>
+                    </div>
+                <!-- Agenda -->
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 text-center agenda pull-right">
                     <div class="bemvindos"></div>
                     <div class="cabeca"></div>
                     <div class="mao"></div>
@@ -91,12 +91,14 @@
                         <?php get_agendas(); ?>
                     </div>
                 </div>
+                
             </div>
             <div class="clearfix"></div>
             <div class="row">
-                <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+                <?php $sobeTopo = ( $this->uri->segment(1) != NULL ) ? ' sobeTopo':'';?>
+                <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9<?php echo $sobeTopo; ?>">
                     {conteudo}
-                </div>
+                </div>                
                 <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 boxLateral">
                             <h4><i class="fa fa-video-camera"></i> Ultimos Vídeos</h4>

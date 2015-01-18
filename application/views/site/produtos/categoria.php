@@ -46,5 +46,13 @@ echo '</div>';
 echo '<div class="clearfix"></div>';
 echo "<div class='pagination pagination-large pagination-centered'>" . $this->paginar . "</div>";
 } else {
-    echo '<div class="alert alert-error">Nenhum produto encontrado para essa categoria. Por favor volte mais tarde!</div>';
+    
+    echo '<div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">ERRO!</h3>
+        </div>
+        <div class="panel-body pageErros">';
+    echo '<div class="alert alert-danger" role="alert">Nenhum produto encontrado para essa categoria. Por favor volte mais tarde!</div>';
+    echo '</div>';
+    echo '</div>'; 
 }
