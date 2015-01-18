@@ -39,6 +39,14 @@ class Site extends CI_Controller {
         load_template();
     }
     
+    public function release() {
+        set_tema('titulo', get_setting('nome_site'));
+        set_tema('description', get_setting('descricao_site'));
+        set_tema('keywords', get_setting('keywords_site'));
+        set_tema('conteudo', load_modulo('home', 'release', 'site'));
+        load_template();
+    }
+    
     public function videos() {
         $this->start = $this->uri->segment(3);
         if (trim($this->start) == '') {
