@@ -1,11 +1,15 @@
 <?php if ( ! defined("BASEPATH")) exit("No direct script access allowed");
 
-$slug = $this->uri->segment(3);
+$slug  = $this->uri->segment(3);
 $query = $this->posts->get_byslug($slug)->row();
-echo '<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 noticia">';
-echo heading("$query->titulo", 1);
+echo '<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">'.$query->titulo.'</h3>
+  </div>
+  <div class="panel-body">';
 echo '
-        ' . thumb($query->arquivo, 450, 450, $query->titulo) . '
-        ' . to_html($query->conteudo) . '
+    ' . thumb($query->arquivo, 450, 450, $query->titulo) . '
+    ' . to_html($query->conteudo) . '
     ';
+echo '</div>';
 echo '</div>';

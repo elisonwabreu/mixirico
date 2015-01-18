@@ -5,7 +5,7 @@ echo '<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Release do Mixirico</h3>
   </div>
-  <div class="panel-body">';
+  <div class="panel-body pageErros">';
 echo get_setting('txt_home');
 echo '</div>';
 echo '</div>';

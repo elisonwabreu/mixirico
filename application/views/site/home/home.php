@@ -30,5 +30,13 @@ echo '<div class="row">
     </div>
 </div>';
 } else {
-    echo '<div class="alert alert-error">Nenhuma postagem foi cadastrada. Por favor volte mais tarde!</div>';
+    
+    echo '<div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">ERRO!</h3>
+        </div>
+        <div class="panel-body pageErros">';
+    echo '<div class="alert alert-danger" role="alert">Nenhuma postagem foi cadastrada. Por favor volte mais tarde!</div>';
+    echo '</div>';
+    echo '</div>'; 
 }
