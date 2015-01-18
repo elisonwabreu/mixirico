@@ -2,65 +2,60 @@
 echo $map['js'];
 get_msg('msgok');
 get_msg('msgerro');
+echo '<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Fale Conosco!</h3>
+  </div>
+  <div class="panel-body pageErros">';
 echo '
-                <div class="row central">
-                        <form action="faleconosco" method="post" accept-charset="utf-8" class="form-horizontal marron2 radius shadow central">
-                        <fieldset>
-
-                        <!-- Form Name -->
-                        <legend>Fale Conosco</legend>
-
-                        <!-- Text input-->
-                        <div class="control-group">
-                          <label class="control-label">Nome</label>
-                          <div class="controls">
-                            <input id="nome" name="nome" type="text" placeholder="Digite seu nome aqui" class="input-xlarge" required="">
-
-                          </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+            ';
+            echo form_open('faleconosco');
+            '
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome" required="required" />
                         </div>
-
-                        <!-- Prepended text-->
-                        <div class="control-group">
-                          <label class="control-label">E-mail</label>
-                          <div class="controls">
-                            <div class="input-prepend">
-                              <span class="add-on">@</span>
-                              <input id="email" name="email" class="span3" placeholder="Seu e-mail aqui" type="text" required="">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email" required="required" />
                             </div>
-
-                          </div>
                         </div>
-
-                        <!-- Text input-->
-                        <div class="control-group">
-                          <label class="control-label">Assunto</label>
-                          <div class="controls">
-                            <input id="assunto" name="assunto" type="text" placeholder="seu assunto aqui" class="input-xlarge" required="">
-
-                          </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <select id="assunto" name="assunto" class="form-control" required="required">
+                                <option value="" selected="">Escolha um assunto:</option>
+                                <option value="Elogios / Criticas">Elogios / Criticas</option>
+                                <option value="Vem pra cá Mixirico">Vem pra cá Mixirico</option>
+                                <option value="Outros mungangos">Outros mungangos</option>
+                            </select>
                         </div>
-
-                        <!-- Textarea -->
-                        <div class="control-group">
-                          <label class="control-label">Mensagem</label>
-                          <div class="controls">                     
-                            <textarea id="mensagem" class="input-xlarge" name="mensagem">sua mensagem aqui</textarea>
-                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea name="mensagem" id="mensagem" class="form-control" rows="9" cols="25" required="required" placeholder="mensagem"></textarea>
                         </div>
-
-                        <!-- Button -->
-                        <div class="control-group">
-                          <label class="control-label"></label>
-                          <div class="controls">
-                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Enviar</button>
-                          </div>
-                        </div>
-
-                        </fieldset>
-                        </form>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-danger pull-right" id="btnContactUs">Enviar Mensagem</button>
+                    </div>
                 </div>
-                <a href="#mapCF" role="button" class="btn btn-danger btn-block mapCF" data-toggle="modal" data-target="#mapCF">Como chegar</a>
+                </form>
+            </div>
+        </div>
+        </div>
 ';
+echo '</div>';
+echo '</div>';
 ?>
 <!-- /.modal -->
         <div class="modal fade" id="mapCF">
