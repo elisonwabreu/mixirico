@@ -4,7 +4,7 @@ echo '<div class="panel panel-default">
     <h3 class="panel-title">Fale Conosco!</h3>
   </div>
   <div class="panel-body pageErros">';
-echo $map['js'];
+
 get_msg('msgok');
 get_msg('msgerro');
 echo '
@@ -55,23 +55,3 @@ echo '
 echo '</div>';
 echo '</div>';
 ?>
-<!-- /.modal -->
-        <div class="modal fade" id="mapCF">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Nossa Localização.</h4>
-
-                    </div>
-                    <div class="modal-body">
-                        <div class="row-fluid">                            
-                            <?php echo $map['html']; ?>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->

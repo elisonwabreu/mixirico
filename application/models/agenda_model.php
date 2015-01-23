@@ -54,6 +54,12 @@ class Agenda_model extends CI_Model {
                 return $this->upload->display_errors();
             endif;
         }
+        
+        public function get_shows($limite, $offset = 0) {
+            $this->db->order_by('id','desc');
+            $this->db->limit($limite, $offset);
+            return $this->db->get('agenda');
+        }
 	
 	public function get_all(){
 		return $this->db->get('agenda');

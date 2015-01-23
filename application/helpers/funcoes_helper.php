@@ -755,7 +755,7 @@ function get_agendas() {
                     <img alt="" src="'. base_url() .'assets/theme_site/img/calendario.png">
                 </div>
             <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8 text-center">
-                <h5><a href="'. base_url('site/agenda') . '/'. $value->id .'">'.$value->titulo.'</a></h5>
+                <h5><a href="'. base_url('site/detalhes_agenda') . '/'. $value->id .'">'.$value->titulo.'</a></h5>
             </div>';
         }
         
