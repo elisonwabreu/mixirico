@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Jan-2015 às 16:43
+-- Generation Time: 24-Jan-2015 às 02:05
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `auditoria` (
   `query` text NOT NULL,
   `observacao` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=340 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=371 ;
 
 --
 -- Extraindo dados da tabela `auditoria`
@@ -410,7 +410,38 @@ INSERT INTO `auditoria` (`id`, `usuario`, `data_hora`, `operacao`, `query`, `obs
 (337, 'oshima', '2015-01-15 19:28:34', 'Inclusão de produto', 'INSERT INTO `produtos` (`titulo`, `conteudo`, `preco`, `slug`, `cat_prod`, `arquivo`, `tags`) VALUES (''SnupDog'', ''&lt;p&gt;&lt;img src=&quot;http://localhost/mixirico/assets/uploads/sleeping_in_the_car_seat.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;'', ''10.00'', ''snupdog'', ''5'', ''393414_2201175523305_2130581748_n.jpg'', ''SnupDog'')', 'Nova produto cadastrado no sistema'),
 (338, 'oshima', '2015-01-15 19:35:29', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''16''', 'A mídia com o id "16" foi excluída');
 INSERT INTO `auditoria` (`id`, `usuario`, `data_hora`, `operacao`, `query`, `observacao`) VALUES
-(339, 'oshima', '2015-01-15 19:35:39', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''15''', 'A mídia com o id "15" foi excluída');
+(339, 'oshima', '2015-01-15 19:35:39', 'Exclusão de mídia', 'DELETE FROM `midia`\nWHERE `id` =  ''15''', 'A mídia com o id "15" foi excluída'),
+(340, 'oshima', '2015-01-15 19:46:32', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(341, 'oshima', '2015-01-15 19:46:46', 'Exclusão de página', 'DELETE FROM `produtos`\nWHERE `id` =  ''1''', 'A página com o id "1" foi excluída'),
+(342, 'oshima', '2015-01-15 19:48:26', 'Inclusão de produto', 'INSERT INTO `produtos` (`titulo`, `conteudo`, `preco`, `slug`, `cat_prod`, `arquivo`, `tags`) VALUES (''Mussum ipsum'', ''&lt;p&gt;&lt;img src=&quot;http://localhost/mixirico/assets/uploads/04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;'', ''100.63'', ''mussum-ipsum'', ''5'', ''sucos_diversos.jpg'', ''Mussum ipsum'')', 'Nova produto cadastrado no sistema'),
+(343, 'oshima', '2015-01-16 14:26:38', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(344, 'oshima', '2015-01-16 14:27:01', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''6'', ''G'', ''385429_2201173323250_1664840903_1757753_150102401_n.jpg'', ''Upload via Ajax.'', ''385429_2201173323250_1664840903_1757753_150102401_n.jpg'')', 'Nova mídia cadastrada no sistema'),
+(345, 'oshima', '2015-01-16 14:27:01', 'Inclusão de mídia', 'INSERT INTO `midia` (`idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALUES (''6'', ''G'', ''393414_2201175523305_2130581748_n.jpg'', ''Upload via Ajax.'', ''393414_2201175523305_2130581748_n.jpg'')', 'Nova mídia cadastrada no sistema'),
+(346, 'oshima', '2015-01-17 13:48:29', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(347, 'oshima', '2015-01-17 13:49:06', 'Inclusão de mídia', 'INSERT INTO `midia` (`tipo`, `nome`, `descricao`, `arquivo`) VALUES (''B'', ''Maluco doido'', ''DOP'', ''393414_2201175523305_2130581748_n1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(348, 'oshima', '2015-01-17 13:49:22', 'Inclusão de mídia', 'INSERT INTO `midia` (`tipo`, `nome`, `descricao`, `arquivo`) VALUES (''B'', ''DOPhg'', ''DOP - Maluco doido'', ''385429_2201173323250_1664840903_1757753_150102401_n1.jpg'')', 'Nova mídia cadastrada no sistema'),
+(349, 'oshima', '2015-01-18 02:00:46', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(350, 'oshima', '2015-01-18 02:01:10', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''instagram'', '''')', 'Nova configuração cadastrada no sistema'),
+(351, 'oshima', '2015-01-18 02:01:10', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''youtube'', '''')', 'Nova configuração cadastrada no sistema'),
+(352, 'oshima', '2015-01-18 17:32:52', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(353, 'oshima', '2015-01-18 17:33:11', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''emailcom'', `valor_config` = ''antevertonlima@gmail.com'' WHERE `nome_config` =  ''emailcom''', 'A configuração para o campo "emailcom" foi alterada'),
+(354, 'oshima', '2015-01-18 17:33:12', 'Exclusão de configuração', 'DELETE FROM `settings`\nWHERE `nome_config` =  ''instagram''', 'A configuração do campo "instagram" foi excluída'),
+(355, 'oshima', '2015-01-18 17:33:12', 'Exclusão de configuração', 'DELETE FROM `settings`\nWHERE `nome_config` =  ''youtube''', 'A configuração do campo "youtube" foi excluída'),
+(356, 'oshima', '2015-01-18 17:33:59', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''email_adm'', `valor_config` = ''antevertonlima@gmail.com'' WHERE `nome_config` =  ''email_adm''', 'A configuração para o campo "email_adm" foi alterada'),
+(357, 'oshima', '2015-01-18 17:34:00', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''instagram'', '''')', 'Nova configuração cadastrada no sistema'),
+(358, 'oshima', '2015-01-18 17:34:00', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''youtube'', '''')', 'Nova configuração cadastrada no sistema'),
+(359, 'oshima', '2015-01-19 04:58:40', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(360, 'oshima', '2015-01-19 04:58:48', 'Exclusão de configuração', 'DELETE FROM `settings`\nWHERE `nome_config` =  ''instagram''', 'A configuração do campo "instagram" foi excluída'),
+(361, 'oshima', '2015-01-19 04:58:48', 'Exclusão de configuração', 'DELETE FROM `settings`\nWHERE `nome_config` =  ''youtube''', 'A configuração do campo "youtube" foi excluída'),
+(362, 'oshima', '2015-01-22 01:13:04', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(363, 'oshima', '2015-01-22 01:14:18', 'Logoff no sistema', '', 'O usuário "oshima" fez logoff do sistema'),
+(364, 'oshima', '2015-01-24 01:43:01', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(365, 'oshima', '2015-01-24 01:59:25', 'Login no sistema', 'SELECT *\nFROM (`usuarios`)\nWHERE `login` =  ''oshima''\nLIMIT 1', 'Usuário "oshima" fez login no sistema'),
+(366, 'oshima', '2015-01-24 02:00:58', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''rua'', `valor_config` = ''Rua Barão do Rio Branco, 2027'' WHERE `nome_config` =  ''rua''', 'A configuração para o campo "rua" foi alterada'),
+(367, 'oshima', '2015-01-24 02:00:58', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''bairro'', `valor_config` = ''Pan Americano'' WHERE `nome_config` =  ''bairro''', 'A configuração para o campo "bairro" foi alterada'),
+(368, 'oshima', '2015-01-24 02:00:58', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''instagram'', '''')', 'Nova configuração cadastrada no sistema'),
+(369, 'oshima', '2015-01-24 02:00:58', 'Inclusão de configuração', 'INSERT INTO `settings` (`nome_config`, `valor_config`) VALUES (''youtube'', '''')', 'Nova configuração cadastrada no sistema'),
+(370, 'oshima', '2015-01-24 02:00:59', 'Alteração de configuração', 'UPDATE `settings` SET `nome_config` = ''cep'', `valor_config` = ''60.000-000'' WHERE `nome_config` =  ''cep''', 'A configuração para o campo "cep" foi alterada');
 
 -- --------------------------------------------------------
 
@@ -456,11 +487,11 @@ CREATE TABLE IF NOT EXISTS `galerias` (
 --
 
 INSERT INTO `galerias` (`id`, `titulo`, `descricao`, `arquivo`, `status`) VALUES
-(1, 'Participação no programa do Faustão', 'Participação no programa do Faustão', '1', '0'),
-(2, 'FOTOS DO SHOWS', 'Magnis', '2', '0'),
-(4, 'FOTO DO SHOWS', '*MIXIRICO UM SUPER SHOW DE HUMOR*', '2', '0'),
-(5, 'FOTOS DO SHOW', 'MIXIRICO UM SUPER SHOW DE HUMOR!!', '6', '1'),
-(6, 'PARTICIPAÇÃO NO PROGRAMA DO FAUSTÃO!!', 'PARTICIPAÇÃO NO PROGRAMA DO FAUSTÃO', '1', '1');
+(1, 'Participação no programa do Faustão', 'Participação no programa do Faustão', '', '0'),
+(2, 'FOTOS DO SHOWS', 'Magnis', '', '0'),
+(4, 'FOTO DO SHOWS', '*MIXIRICO UM SUPER SHOW DE HUMOR*', '', '0'),
+(5, 'FOTOS DO SHOW', 'MIXIRICO UM SUPER SHOW DE HUMOR!!', '', '1'),
+(6, 'PARTICIPAÇÃO NO PROGRAMA DO FAUSTÃO!!', 'PARTICIPAÇÃO NO PROGRAMA DO FAUSTÃO', '', '1');
 
 -- --------------------------------------------------------
 
@@ -476,7 +507,7 @@ CREATE TABLE IF NOT EXISTS `midia` (
   `descricao` varchar(255) NOT NULL,
   `arquivo` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Extraindo dados da tabela `midia`
@@ -496,7 +527,11 @@ INSERT INTO `midia` (`id`, `idGal`, `tipo`, `nome`, `descricao`, `arquivo`) VALU
 (11, 4, 'G', 'sleeping_in_the_car_seat1.jpg', 'Upload via Ajax.', 'sleeping_in_the_car_seat1.jpg'),
 (12, 4, 'G', '041.jpg', 'Upload via Ajax.', '041.jpg'),
 (13, 4, 'G', 'baby_against_blue_sky_2043131.jpg', 'Upload via Ajax.', 'baby_against_blue_sky_2043131.jpg'),
-(14, 4, 'G', '061.jpg', 'Upload via Ajax.', '061.jpg');
+(14, 4, 'G', '061.jpg', 'Upload via Ajax.', '061.jpg'),
+(15, 6, 'G', '385429_2201173323250_1664840903_1757753_15010', 'Upload via Ajax.', '385429_2201173323250_1664840903_1757753_150102401_n.jpg'),
+(16, 6, 'G', '393414_2201175523305_2130581748_n.jpg', 'Upload via Ajax.', '393414_2201175523305_2130581748_n.jpg'),
+(17, 0, 'B', 'Maluco doido', 'DOP', '393414_2201175523305_2130581748_n1.jpg'),
+(18, 0, 'B', 'DOPhg', 'DOP - Maluco doido', '385429_2201173323250_1664840903_1757753_150102401_n1.jpg');
 
 -- --------------------------------------------------------
 
@@ -560,14 +595,14 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `tags` varchar(100) NOT NULL,
   `conteudo` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
 INSERT INTO `produtos` (`id`, `titulo`, `cat_prod`, `preco`, `arquivo`, `slug`, `tags`, `conteudo`) VALUES
-(1, 'SnupDog', 5, 10, '393414_2201175523305_2130581748_n.jpg', 'snupdog', 'SnupDog', '&lt;p&gt;&lt;img src=&quot;http://localhost/mixirico/assets/uploads/sleeping_in_the_car_seat.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;');
+(2, 'Mussum ipsum', 5, 100.63, 'sucos_diversos.jpg', 'mussum-ipsum', 'Mussum ipsum', '&lt;p&gt;&lt;img src=&quot;http://localhost/mixirico/assets/uploads/04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;');
 
 -- --------------------------------------------------------
 
@@ -580,7 +615,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `nome_config` varchar(255) NOT NULL,
   `valor_config` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Extraindo dados da tabela `settings`
@@ -589,21 +624,23 @@ CREATE TABLE IF NOT EXISTS `settings` (
 INSERT INTO `settings` (`id`, `nome_config`, `valor_config`) VALUES
 (1, 'nome_site', 'SCWPANEL'),
 (2, 'url_logomarca', 'http://localhost/scwpanel/assets/uploads/logo-estampas-e-bordados.png'),
-(3, 'email_adm', 'elisonwabreu@gmail.com.br'),
+(3, 'email_adm', 'antevertonlima@gmail.com'),
 (9, 'twitter', '@everton_rolim'),
-(15, 'cep', '60.866-320'),
+(15, 'cep', '60.000-000'),
 (16, 'telcom', '(85) 8796-1779'),
 (17, 'telcel', '(85) 8548-7735'),
 (18, 'facebook', 'https://www.facebook.com/pages/Zedoidin/1545837109005479'),
 (20, 'skype', 'oshima.gdm'),
-(21, 'rua', 'Rua 303, 284'),
-(22, 'bairro', 'Jangurussu'),
+(21, 'rua', 'Rua Barão do Rio Branco, 2027'),
+(22, 'bairro', 'Pan Americano'),
 (23, 'cid_uf', 'Fortaleza'),
-(24, 'emailcom', 'elisonwabreu@gmail.com'),
+(24, 'emailcom', 'antevertonlima@gmail.com'),
 (25, 'descricao_site', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapi'),
 (26, 'descricao_curta', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integ'),
 (27, 'keywords_site', 'This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet '),
-(28, 'txt_home', '<p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>');
+(28, 'txt_home', '<p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet.</p>'),
+(29, 'instagram', ''),
+(30, 'youtube', '');
 
 -- --------------------------------------------------------
 

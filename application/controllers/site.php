@@ -253,12 +253,14 @@ class Site extends CI_Controller {
     }
     public function detalhes_agenda() {
         $this->load->library('googlemaps');
+        $id = $this->uri->segment(3);
+        $query = $this->db->get_where('agenda', array('id' => $id))->row();
 
-        $config['center']          = get_setting('rua').', '. get_setting('bairro').', '.get_setting('cid_uf');
+        $config['center']          = $query->logradouro .', '. $query->numero .', '. $query->bairro .', '. $query->cidade .', '. $query->estado;
         $config['zoom']            = 'auto';
         $config['directions']      = TRUE;
-        $config['directionsStart'] = get_setting('rua').', '. get_setting('bairro').', '.get_setting('cid_uf');
-        $config['directionsEnd']   = get_setting('rua').', '. get_setting('bairro').', '.get_setting('cid_uf');
+        $config['directionsStart'] = $query->logradouro .', '. $query->numero .', '. $query->bairro .', '. $query->cidade .', '. $query->estado;
+        $config['directionsEnd']   = $query->logradouro .', '. $query->numero .', '. $query->bairro .', '. $query->cidade .', '. $query->estado;
         $config['directionsDivID'] = 'directionsDiv';
         $this->googlemaps->initialize($config);
         $data['map'] = $this->googlemaps->create_map();

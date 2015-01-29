@@ -18,14 +18,19 @@ class Usuarios extends CI_Controller {
             $usuario = $this->input->post('usuario', TRUE);
             $senha = md5($this->input->post('senha', TRUE));
             $redirect = $this->input->post('redirect', TRUE);
+							
+	   $this->firephp->log($redirect); 
             if ($this->usuarios->do_login($usuario, $senha) == TRUE):
                 $query = $this->usuarios->get_bylogin($usuario)->row();
+                $this->firephp->log($query);                
                 $dados = array(
                     'user_id' => $query->id,
                     'user_nome' => $query->nome,
                     'user_admin' => $query->adm,
                     'user_logado' => TRUE,
-                );
+                );				
+								
+                $this->firephp->log($dados);
                 $this->session->set_userdata($dados);
                 auditoria('Login no sistema', 'Usuário "' . $usuario . '" fez login no sistema');
                 if ($redirect != ''):

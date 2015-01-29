@@ -1,8 +1,5 @@
-<?php
-
-if (! defined ( 'BASEPATH' ))
-	exit ( 'No direct script access allowed' );
-	/*
+<?php if (! defined ( 'BASEPATH' )) exit ( 'No direct script access allowed' );
+/*
  * | -------------------------------------------------------------------
  * | AUTO-LOADER
  * | -------------------------------------------------------------------
@@ -54,7 +51,7 @@ $autoload ['packages'] = array ();
  * |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
  */
 
-$autoload ['libraries'] = array ('database','firephp','fb');
+$autoload ['libraries'] = array ('database','firephp');
 
 /*
  * | -------------------------------------------------------------------
